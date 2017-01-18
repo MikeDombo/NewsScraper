@@ -1,23 +1,24 @@
-.. NewsScraper documentation master file, created by
-   sphinx-quickstart on Mon Jan 16 00:25:23 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+NewsScraper Documentation
+=====================
 
-Welcome to NewsScraper's documentation!
-=======================================
+Independent Study files for analyzing the sourcing of news articles
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   
-		app <app.rst>
-		Article <Article.rst>
-		Scrapers <Scrapers.rst>
-		Parsers <Parsers.rst>
+	
+	Main Driver <app.rst>
+	Scrapers <Scrapers.rst>
+	Parsers <Parsers.rst>
+	Router <Router.rst>
+	API <API.rst>
+	Article Class <Article.rst>
 
 
 Indices and tables
 ==================
+.. toctree::
+   :maxdepth: 2
 
 * :ref:`genindex`
 * :ref:`modindex`

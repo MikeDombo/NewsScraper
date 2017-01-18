@@ -7,11 +7,9 @@ import re
 
 
 class NYTimes(Scrapers):
-	def get_article_data(self):
-		super(NYTimes, self).get_article_data()
-
-	def get_article_list(self, date=None):
-		articleList = []
+	@staticmethod
+	def get_article_list(date=None):
+		article_list = []
 		if date is None:
 			dateurl = dt.datetime.now().strftime("%Y/%m/%d")
 		elif isinstance(date, dt.datetime):
@@ -23,14 +21,14 @@ class NYTimes(Scrapers):
 		page = BeautifulSoup(response, 'html.parser')
 		for articles in page.findAll("div", {"class": "columnGroup"}):
 			for links in articles.findAll("a", {"class": None}):
-				articleLink = links.get('href')
-				if articleLink is not None:
-					href = urlparse(articleLink)
-					articleLink = href.scheme+'://'+href.netloc+href.path
-					hasMatch = re.match('.*/\d{4}/\d{2}/\d{2}/*', articleLink) is not None
-					if articleLink not in articleList and hasMatch:
-						articleList.append(articleLink)
-		return articleList
+				article_link = links.get('href')
+				if article_link is not None:
+					href = urlparse(article_link)
+					article_link = href.scheme+'://'+href.netloc+href.path
+					has_match = re.match('.*/\d{4}/\d{2}/\d{2}/*', article_link) is not None
+					if article_link not in article_list and has_match:
+						article_list.append(article_link)
+		return article_list
 
 	def __init__(self, db):
 		super(NYTimes, self).__init__(db)

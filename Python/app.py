@@ -21,84 +21,84 @@ def print_full_help():
 
 
 def main():
-	NewsDatabase = 'news.db'
+	database_filename = 'news.db'
 
-	queueOnly = False
+	queue_only = False
 	reparse = False
-	noDB = False
+	no_db = False
 
 	# Parse Command Line Arguments
 	if len(sys.argv) > 1:
 		args = sys.argv
-		recognizedArgs = ["-q", "-r", "-n", "-f", "-h"]
+		recognized_args = ["-q", "-r", "-n", "-f", "-h"]
 		del args[0]  # Remove script name from arguments
 
 		if '-h' in args:
 			print_full_help()
 			exit(0)
 		if '-q' in args:
-			queueOnly = True
+			queue_only = True
 			print("Running in queue only mode")
 		if '-n' in args:
-			noDB = True
+			no_db = True
 			print("Running with no database. No data will be stored!")
 		if '-r' in args:
 			reparse = True
 			print("Running in reparse mode")
 		if '-f' in args:
 			filename = args.index("-f")
-			if len(args) <= filename+1 or args[filename+1] in recognizedArgs:
+			if len(args) <= filename+1 or args[filename+1] in recognized_args:
 				command_error_exit("Database filename must be specified!\r\n")
-			NewsDatabase = args[filename+1]
+			database_filename = args[filename + 1]
 
-		if not any(a in args for a in recognizedArgs):
+		if not any(a in args for a in recognized_args):
 			command_error_exit("Unrecognized argument!\r\n")
 	else:
 		print("Running with defaults\r\n")
 
 	# If we are using a database, then verify or create it
-	if not noDB:
-		verify_db(NewsDatabase)
-		print("Running with database: " + NewsDatabase)
+	if not no_db:
+		verify_db(database_filename)
+		print("Running with database: " + database_filename)
 
 	print("Queuing Today's Articles")
 
 	q = []
 	from Router import Router
-	my_router = Router(NewsDatabase)
+	my_router = Router(database_filename)
 	i = 0
 	for s in my_router.get_scrapers():
 		articles = s.get_article_list()
 		for a in articles:
 			q.append([i, a, dt.now()])
 			i += 1
-		if not noDB:
+		if not no_db:
 			s.queue_article_list(articles)
 
 	print("Queuing Complete With " + str(i) + " Articles")
-	if queueOnly:
+	if queue_only:
 		return
 
-	sc = Scrapers.Scrapers(NewsDatabase)
+	sc = Scrapers.Scrapers(database_filename)
 	# If we are running with a database, overwrite the local q with one from the database
-	if not noDB:
+	if not no_db:
 		q = sc.read_article_queue()
 
 	print("Beginning Scraping and Parsing")
 	print("==============================\r\n")
 
 	for a in q:
-		sc = Scrapers.Scrapers(NewsDatabase)
+		sc = Scrapers.Scrapers(database_filename)
 		sc.url = a[1]
-		sc.myParser = my_router.get_parsers_by_url(sc.url)
-		if noDB or reparse or not sc.is_already_analyzed():
-			if not noDB and sc.is_already_analyzed():
+		sc.my_parser = my_router.get_parsers_by_url(sc.url)
+		if no_db or reparse or not sc.is_already_analyzed():
+			if not no_db and sc.is_already_analyzed():
 				print("Reparsing: " + sc.url)
 			else:
 				print(sc.url)
 			time.sleep(1)
 			sc.get_article_data()
-			if not noDB:
+			if not no_db:
 				sc.save_data_to_db()
 
 	print("\r\n==============================")

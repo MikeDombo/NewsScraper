@@ -1,43 +1,61 @@
 from bs4 import BeautifulSoup
+import urlparse
 
 
-class Parsers:
+class Parsers(object):
 	def __init__(self):
 		pass
 
-	def url_recognized(self, url):
-		return False
+	__recognized_urls = []
 
-	def get_article_text(self, webpage):
+	@classmethod
+	def url_recognized(cls, url):
+		"""
+		Checks if this parser can parse a given URL
+
+		:param url: URL to check if this parser can recognize it
+		:return: True if this parser can parse the given URL
+		:rtype: Boolean
+		"""
+		return any(u in urlparse.urlparse(url).netloc for u in cls.__recognized_urls)
+
+	@staticmethod
+	def get_article_text(webpage):
 		return webpage
 
-	def get_article_section(self, webpage, url):
-		pass
+	@staticmethod
+	def get_article_section(webpage, url):
+		return []
 
-	def get_article_title(self, webpage):
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		return beautifulWebpage.title.string
+	@staticmethod
+	def get_article_title(webpage):
+		bw = BeautifulSoup(webpage, 'html.parser')
+		return bw.title.string
 
-	def get_article_author(self, webpage):
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		return beautifulWebpage.find("meta", {"name": "author"})['content']
+	@staticmethod
+	def get_article_author(webpage):
+		bw = BeautifulSoup(webpage, 'html.parser')
+		return bw.find("meta", {"name": "author"})['content']
 
-	def get_article_publish_date(self, webpage):
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		pdate = beautifulWebpage.find("meta", {"name": "pdate"})['content']
+	@staticmethod
+	def get_article_publish_date(webpage):
+		bw = BeautifulSoup(webpage, 'html.parser')
+		pdate = bw.find("meta", {"name": "pdate"})['content']
 		from dateutil.parser import parse
 		return parse(pdate)
 
-	def get_article_publisher(self, webpage):
+	@staticmethod
+	def get_article_publisher(webpage, url):
 		from urlparse import urlparse
-		o = urlparse(self.url)
+		o = urlparse(url)
 		return o.hostname
 
-	def get_article_sources(self, webpage):
-		mySources = []
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		for link in beautifulWebpage.find_all('a'):
+	@staticmethod
+	def get_article_sources(webpage):
+		my_sources = []
+		bw = BeautifulSoup(webpage, 'html.parser')
+		for link in bw.find_all('a'):
 			l = link.get('href')
 			if l.find("mailto:") == -1:
-				mySources.append(l)
-		return mySources
+				my_sources.append(l)
+		return my_sources

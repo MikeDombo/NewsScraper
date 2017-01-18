@@ -1,44 +1,45 @@
 from Parsers import Parsers
 from bs4 import BeautifulSoup
-import urlparse
 
 
-class NYTimes(object, Parsers):
+class NYTimes(Parsers):
 	def __init__(self):
 		super(NYTimes, self).__init__()
 
-	__recognizedURLs = ["nytimes.com", "nyt.com", "nyti.ms", "newyorktimes.com", "thenewyorktimes.com"]
+	__recognized_urls = ["nytimes.com", "nyt.com", "nyti.ms", "newyorktimes.com", "thenewyorktimes.com"]
 
-	def url_recognized(self, url):
-		return any(u in urlparse.urlparse(url).netloc for u in self.__recognizedURLs)
-
-	def get_article_publisher(self, webpage):
+	@classmethod
+	def get_article_publisher(cls, webpage, url):
 		return "The New York Times"
 
-	def get_article_section(self, webpage, url):
+	@staticmethod
+	def get_article_section(webpage, url):
 		pass
 
-	def get_article_text(self, webpage):
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		returnText = ""
-		for text in beautifulWebpage.find_all("p", {"class": 'story-body-text'}):
+	@staticmethod
+	def get_article_text(webpage):
+		bw = BeautifulSoup(webpage, 'html.parser')
+		return_text = ""
+		for text in bw.find_all("p", {"class": 'story-body-text'}):
 			for br in text.find_all("br"):
 				br.replace_with("\r\n")
-			returnText += text.text + "\r\n\r\n"
-		returnText = returnText.strip()
-		return returnText
+			return_text += text.text + "\r\n\r\n"
+		return_text = return_text.strip()
+		return return_text
 
-	def get_article_sources(self, webpage):
-		mySources = []
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		for text in beautifulWebpage.find_all("p", {"class": 'story-body-text'}):
+	@staticmethod
+	def get_article_sources(webpage):
+		my_sources = []
+		bw = BeautifulSoup(webpage, 'html.parser')
+		for text in bw.find_all("p", {"class": 'story-body-text'}):
 			for link in text.find_all("a"):
 				if link.get('class') is None:
 					l = link.get('href')
 					if l.find("mailto:") == -1:
-						mySources.append(l)
-		return mySources
+						my_sources.append(l)
+		return my_sources
 
-	def get_article_title(self, webpage):
-		beautifulWebpage = BeautifulSoup(webpage, 'html.parser')
-		return beautifulWebpage.find("meta", {"name": "hdl"})['content']
+	@staticmethod
+	def get_article_title(webpage):
+		bw = BeautifulSoup(webpage, 'html.parser')
+		return bw.find("meta", {"name": "hdl"})['content']

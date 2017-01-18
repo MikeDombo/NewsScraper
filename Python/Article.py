@@ -1,18 +1,18 @@
-class Article:
+class Article(object):
 	url = ""
-	articleTitle = ""
-	articleSubtitle = ""
-	articleAuthor = ""
-	articlePublisher = ""
-	articleDate = ""
-	articleText = ""
-	articleHTML = ""
+	title = ""
+	subtitle = ""
+	author = ""
+	publisher = ""
+	publish_date = ""
+	article_text = ""
+	full_html = ""
 	sources = []
-	fetchedDate = ""
-	articleUpdates = False
-	articleNotes = False
-	articleCorrections = False
-	articleSection = []
+	fetch_date = ""
+	updates = False
+	editor_notes = False
+	corrections = False
+	section = []
 
 	def __init__(self):
 		pass
