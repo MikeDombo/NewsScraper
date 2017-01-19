@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scrapers package &#8212; NewsScraper 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parsers package" href="Parsers.html" />
+    <link rel="prev" title="app module" href="app.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Parsers.html" title="Parsers package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="app.html" title="app module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NewsScraper 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="scrapers-package">
+<h1>Scrapers package<a class="headerlink" href="#scrapers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-Scrapers.NYTimes">
+<span id="scrapers-nytimes-module"></span><h2>Scrapers.NYTimes module<a class="headerlink" href="#module-Scrapers.NYTimes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Scrapers.NYTimes.NYTimes">
+<em class="property">class </em><code class="descclassname">Scrapers.NYTimes.</code><code class="descname">NYTimes</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.NYTimes.NYTimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Scrapers.Scrapers" title="Scrapers.Scrapers"><code class="xref py py-class docutils literal"><span class="pre">Scrapers.Scrapers</span></code></a></p>
+<dl class="staticmethod">
+<dt id="Scrapers.NYTimes.NYTimes.get_article_list">
+<em class="property">static </em><code class="descname">get_article_list</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.NYTimes.NYTimes.get_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of article URLs from a given scraper subclass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> (<em>DateTime</em>) &#8211; date of articles to be enumerated or None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of URLs of articles to be analyzed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Scrapers.WashingtonPost">
+<span id="scrapers-washingtonpost-module"></span><h2>Scrapers.WashingtonPost module<a class="headerlink" href="#module-Scrapers.WashingtonPost" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Scrapers.WashingtonPost.WashingtonPost">
+<em class="property">class </em><code class="descclassname">Scrapers.WashingtonPost.</code><code class="descname">WashingtonPost</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.WashingtonPost.WashingtonPost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Scrapers.Scrapers" title="Scrapers.Scrapers"><code class="xref py py-class docutils literal"><span class="pre">Scrapers.Scrapers</span></code></a></p>
+<dl class="staticmethod">
+<dt id="Scrapers.WashingtonPost.WashingtonPost.get_article_list">
+<em class="property">static </em><code class="descname">get_article_list</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.WashingtonPost.WashingtonPost.get_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of article URLs from a given scraper subclass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> (<em>DateTime</em>) &#8211; date of articles to be enumerated or None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of URLs of articles to be analyzed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Scrapers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Scrapers" title="Permalink to this headline">¶</a></h2>
+<p>The Scrapers Module is used for getting a list of articles to download, downloading, sending to the parser, and then
+saving the data to a database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Last Modified:</th><td class="field-body">2017-01-18</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Author:</th><td class="field-body">Michael Dombrowski</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="Scrapers.Scrapers">
+<em class="property">class </em><code class="descclassname">Scrapers.</code><code class="descname">Scrapers</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="Scrapers.Scrapers.get_article_data">
+<code class="descname">get_article_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.get_article_data" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>Uses class <cite>url</cite> variable to download the webpage</li>
+<li>Parses the webpage using <cite>my_parser</cite></li>
+<li>Saves parsed data into <cite>current_article</cite></li>
+</ul>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Scrapers.Scrapers.get_article_list">
+<em class="property">static </em><code class="descname">get_article_list</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.get_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of article URLs from a given scraper subclass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> (<em>DateTime</em>) &#8211; date of articles to be enumerated or None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of URLs of articles to be analyzed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Scrapers.Scrapers.headers">
+<code class="descname">headers</code><em class="property"> = {'DNT': '1', 'Connection': 'keep-alive', 'Referer': 'https://www.google.com/', 'Accept-Encoding': 'gzip, deflate', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache', 'Accept-Language': 'en-US,en;q = 0.8', 'Upgrade-Insecure-Requests': '1', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}</em><a class="headerlink" href="#Scrapers.Scrapers.headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Scrapers.Scrapers.is_already_analyzed">
+<code class="descname">is_already_analyzed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.is_already_analyzed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the current URL is in the Articles table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the set URL is already in the Articles table of the database</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Scrapers.Scrapers.queue_article_list">
+<code class="descname">queue_article_list</code><span class="sig-paren">(</span><em>article_list</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.queue_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds each URL in the given article_list to the Queue table of the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article_list</strong> &#8211; List of article URLs to be inserted into the DB</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Void</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Scrapers.Scrapers.read_article_queue">
+<code class="descname">read_article_queue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.read_article_queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads database Queue table and returns the whole table as a list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of URLs to be downloaded and parsed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Scrapers.Scrapers.save_data_to_db">
+<code class="descname">save_data_to_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.save_data_to_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves current article to the connected database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Void</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Scrapers.Scrapers.url">
+<code class="descname">url</code><em class="property"> = ''</em><a class="headerlink" href="#Scrapers.Scrapers.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Scrapers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-Scrapers.NYTimes">Scrapers.NYTimes module</a></li>
+<li><a class="reference internal" href="#module-Scrapers.WashingtonPost">Scrapers.WashingtonPost module</a></li>
+<li><a class="reference internal" href="#module-Scrapers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="app.html"
+                        title="previous chapter">app module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Parsers.html"
+                        title="next chapter">Parsers package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Scrapers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Parsers.html" title="Parsers package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="app.html" title="app module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NewsScraper 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Michael Dombrowski.
+      Last updated on Jan 19, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

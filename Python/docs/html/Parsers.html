@@ -1,0 +1,555 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Parsers package &#8212; NewsScraper 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Router module" href="Router.html" />
+    <link rel="prev" title="Scrapers package" href="Scrapers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Router.html" title="Router module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Scrapers.html" title="Scrapers package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NewsScraper 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parsers-package">
+<h1>Parsers package<a class="headerlink" href="#parsers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-Parsers.NYTimes">
+<span id="parsers-nytimes-module"></span><h2>Parsers.NYTimes module<a class="headerlink" href="#module-Parsers.NYTimes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Parsers.NYTimes.NYTimes">
+<em class="property">class </em><code class="descclassname">Parsers.NYTimes.</code><code class="descname">NYTimes</code><a class="headerlink" href="#Parsers.NYTimes.NYTimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Parsers.Parsers" title="Parsers.Parsers"><code class="xref py py-class docutils literal"><span class="pre">Parsers.Parsers</span></code></a></p>
+<dl class="staticmethod">
+<dt id="Parsers.NYTimes.NYTimes.get_article_publisher">
+<em class="property">static </em><code class="descname">get_article_publisher</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.NYTimes.NYTimes.get_article_publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return the publisher of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Article publisher, ex: &#8220;The New York Times&#8221;</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.NYTimes.NYTimes.get_article_section">
+<em class="property">static </em><code class="descname">get_article_section</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.NYTimes.NYTimes.get_article_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return a list of sections/subsections that the article is in</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of section names in order from most narrow to biggest section</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.NYTimes.NYTimes.get_article_sources">
+<em class="property">static </em><code class="descname">get_article_sources</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.NYTimes.NYTimes.get_article_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to extract all sources from an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of sources, typically URLs of the sources</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.NYTimes.NYTimes.get_article_text">
+<em class="property">static </em><code class="descname">get_article_text</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.NYTimes.NYTimes.get_article_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the full plaintext of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Plaintext of article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.NYTimes.NYTimes.get_article_title">
+<em class="property">static </em><code class="descname">get_article_title</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.NYTimes.NYTimes.get_article_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the title/headline of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article headline</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Parsers.WashingtonPost">
+<span id="parsers-washingtonpost-module"></span><h2>Parsers.WashingtonPost module<a class="headerlink" href="#module-Parsers.WashingtonPost" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Parsers.WashingtonPost.WashingtonPost">
+<em class="property">class </em><code class="descclassname">Parsers.WashingtonPost.</code><code class="descname">WashingtonPost</code><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Parsers.Parsers" title="Parsers.Parsers"><code class="xref py py-class docutils literal"><span class="pre">Parsers.Parsers</span></code></a></p>
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_author">
+<em class="property">static </em><code class="descname">get_article_author</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the author of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Author of the article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_publish_date">
+<em class="property">static </em><code class="descname">get_article_publish_date</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_publish_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the date the article was published</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article publish date</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DateTime object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_publisher">
+<em class="property">static </em><code class="descname">get_article_publisher</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return the publisher of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Article publisher, ex: &#8220;The New York Times&#8221;</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_section">
+<em class="property">static </em><code class="descname">get_article_section</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return a list of sections/subsections that the article is in</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of section names in order from most narrow to biggest section</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_sources">
+<em class="property">static </em><code class="descname">get_article_sources</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to extract all sources from an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of sources, typically URLs of the sources</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_text">
+<em class="property">static </em><code class="descname">get_article_text</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the full plaintext of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Plaintext of article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.WashingtonPost.WashingtonPost.get_article_title">
+<em class="property">static </em><code class="descname">get_article_title</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.WashingtonPost.WashingtonPost.get_article_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the title/headline of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article headline</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Parsers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Parsers" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Parsers.Parsers">
+<em class="property">class </em><code class="descclassname">Parsers.</code><code class="descname">Parsers</code><a class="headerlink" href="#Parsers.Parsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_author">
+<em class="property">static </em><code class="descname">get_article_author</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the author of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Author of the article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_publish_date">
+<em class="property">static </em><code class="descname">get_article_publish_date</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_publish_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the date the article was published</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article publish date</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DateTime object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_publisher">
+<em class="property">static </em><code class="descname">get_article_publisher</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_publisher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return the publisher of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Article publisher, ex: &#8220;The New York Times&#8221;</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_section">
+<em class="property">static </em><code class="descname">get_article_section</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return a list of sections/subsections that the article is in</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of section names in order from most narrow to biggest section</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_sources">
+<em class="property">static </em><code class="descname">get_article_sources</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to extract all sources from an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of sources, typically URLs of the sources</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_text">
+<em class="property">static </em><code class="descname">get_article_text</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the full plaintext of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Plaintext of article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_title">
+<em class="property">static </em><code class="descname">get_article_title</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the title/headline of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article headline</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Parsers.Parsers.url_recognized">
+<code class="descname">url_recognized</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.url_recognized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if this parser can parse a given URL</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> &#8211; URL to check if this parser can recognize it</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if this parser can parse the given URL</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Parsers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-Parsers.NYTimes">Parsers.NYTimes module</a></li>
+<li><a class="reference internal" href="#module-Parsers.WashingtonPost">Parsers.WashingtonPost module</a></li>
+<li><a class="reference internal" href="#module-Parsers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Scrapers.html"
+                        title="previous chapter">Scrapers package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Router.html"
+                        title="next chapter">Router module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Parsers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Router.html" title="Router module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Scrapers.html" title="Scrapers package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NewsScraper 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Michael Dombrowski.
+      Last updated on Jan 19, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>

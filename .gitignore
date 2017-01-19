@@ -145,3 +145,5 @@ $RECYCLE.BIN/
 */*.db
 *.db
 */docs/*.db
+!*/docs/html/
+*/docs/doctrees/
