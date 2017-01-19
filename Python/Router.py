@@ -25,7 +25,7 @@ class Router(object):
 		for p in self.__parsers:
 			if p.url_recognized(url):
 				return p
-		print("Cannot find parser for" + url)
+		print("Cannot find parser for " + url)
 
 	def __import_submodules(self, package, recursive=True):
 		""" Import all submodules of a module, recursively, including subpackages

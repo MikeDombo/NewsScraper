@@ -9,6 +9,14 @@ import re
 class NYTimes(Scrapers):
 	@staticmethod
 	def get_article_list(date=None):
+		"""
+		Returns list of article URLs from a given scraper subclass
+
+		:param date: date of articles to be enumerated or None
+		:type date: DateTime
+		:return: list of URLs of articles to be analyzed
+		:rtype: list
+		"""
 		article_list = []
 		if date is None:
 			dateurl = dt.datetime.now().strftime("%Y/%m/%d")

@@ -5,19 +5,50 @@ from bs4 import BeautifulSoup
 class NYTimes(Parsers):
 	def __init__(self):
 		super(NYTimes, self).__init__()
+		self._recognized_urls = ["nytimes.com", "nyt.com", "nyti.ms", "newyorktimes.com", "thenewyorktimes.com"]
 
-	__recognized_urls = ["nytimes.com", "nyt.com", "nyti.ms", "newyorktimes.com", "thenewyorktimes.com"]
+	@staticmethod
+	def get_article_publisher(webpage, url):
+		"""
+		Parses webpage and/or url to return the publisher of an article
 
-	@classmethod
-	def get_article_publisher(cls, webpage, url):
+		:param webpage:
+		:param url:
+		:return: Article publisher, ex: "The New York Times"
+		:rtype: str
+		"""
 		return "The New York Times"
 
 	@staticmethod
 	def get_article_section(webpage, url):
-		pass
+		"""
+		Parses webpage and/or url to return a list of sections/subsections that the article is in
+
+		:param webpage:
+		:param url:
+		:return: list of section names in order from most narrow to biggest section
+		:rtype: list
+		"""
+		from urlparse import urlparse
+		import re
+		u = urlparse(url).path
+		a = re.match(".*/\d{4}/\d{2}/\d{2}/(?P<after_date>.*)", u)
+		sections = a.group("after_date").split("/")
+		# Remove article reference from matched URL
+		del sections[len(sections) - 1]
+		# Put sections in ascending order
+		sections.reverse()
+		return sections
 
 	@staticmethod
 	def get_article_text(webpage):
+		"""
+		Parses webpage to return the full plaintext of the article
+
+		:param webpage:
+		:return: Plaintext of article
+		:rtype: str
+		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return_text = ""
 		for text in bw.find_all("p", {"class": 'story-body-text'}):
@@ -29,6 +60,13 @@ class NYTimes(Parsers):
 
 	@staticmethod
 	def get_article_sources(webpage):
+		"""
+		Parses webpage to extract all sources from an article
+
+		:param webpage:
+		:return: list of sources, typically URLs of the sources
+		:rtype: list
+		"""
 		my_sources = []
 		bw = BeautifulSoup(webpage, 'html.parser')
 		for text in bw.find_all("p", {"class": 'story-body-text'}):
@@ -41,5 +79,12 @@ class NYTimes(Parsers):
 
 	@staticmethod
 	def get_article_title(webpage):
+		"""
+		Parses webpage to return the title/headline of an article
+
+		:param webpage:
+		:return: Article headline
+		:rtype: str
+		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return bw.find("meta", {"name": "hdl"})['content']

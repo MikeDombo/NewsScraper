@@ -7,6 +7,14 @@ from urlparse import urlparse
 class WashingtonPost(Scrapers):
 	@staticmethod
 	def get_article_list(date=None):
+		"""
+		Returns list of article URLs from a given scraper subclass
+
+		:param date: date of articles to be enumerated or None
+		:type date: DateTime
+		:return: list of URLs of articles to be analyzed
+		:rtype: list
+		"""
 		article_list = []
 		if date is not None:
 			raise ValueError("This scraper does not accept differing dates, it can only show the latest articles")
