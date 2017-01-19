@@ -144,6 +144,4 @@ $RECYCLE.BIN/
 */notes.txt
 */*.db
 *.db
-*/docs/*.db
-!*/docs/html/
-*/docs/doctrees/
+Python/docs/
