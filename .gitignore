@@ -146,5 +146,3 @@ $RECYCLE.BIN/
 *.db
 Python/docs/
 docs/doctrees/*
-docs/doctrees/
-docs/doctrees/environment.pickle
