@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Article</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">Article</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="#history">History</a>
+          </li>
+          <li>
+            <a href="../source/Article.php.html#line7">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>\</small>Article</h1>
+        <h4>Class to hold all data about individual articles based on the structure of the Articles table of the database</h4>
+        <p/>
+        <ul>
+          <li>Author: Michael Dombrowski</li>
+        </ul>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Article
+            {<br/><ul class="none"><li>// members</li><li>private  <a href="#members">$articleURL</a>;
+                    </li><li>private  <a href="#members">$headline</a>;
+                    </li><li>private  <a href="#members">$subtitle</a>;
+                    </li><li>private  <a href="#members">$author</a>;
+                    </li><li>private  <a href="#members">$publisher</a>;
+                    </li><li>private  <a href="#members">$publishDate</a>;
+                    </li><li>private  <a href="#members">$articleText</a>;
+                    </li><li>private  <a href="#members">$articleHTML</a>;
+                    </li><li>private  <a href="#members">$articleSources</a>;
+                    </li><li>private  <a href="#members">$retrievalDate</a>;
+                    </li><li>private  <a href="#members">$articleSection</a>;
+                    </li><li>private  <a href="#members">$isPrimarySource</a>;
+                    </li><li>private  <a href="#members">$hasUpdates</a>;
+                    </li><li>private  <a href="#members">$hasNotes</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Article" href="../classes/Article/__construct.html">__construct</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getArticleURL.html">getArticleURL</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setArticleURL.html">setArticleURL</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getHeadline.html">getHeadline</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setHeadline.html">setHeadline</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getSubtitle.html">getSubtitle</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setSubtitle.html">setSubtitle</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getAuthor.html">getAuthor</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setAuthor.html">setAuthor</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getPublisher.html">getPublisher</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setPublisher.html">setPublisher</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getPublishDate.html">getPublishDate</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setPublishDate.html">setPublishDate</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getArticleText.html">getArticleText</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setArticleText.html">setArticleText</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getArticleHTML.html">getArticleHTML</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setArticleHTML.html">setArticleHTML</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getArticleSources.html">getArticleSources</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setArticleSources.html">setArticleSources</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getRetrievalDate.html">getRetrievalDate</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setRetrievalDate.html">setRetrievalDate</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getArticleSection.html">getArticleSection</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setArticleSection.html">setArticleSection</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getIsPrimarySource.html">getIsPrimarySource</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setIsPrimarySource.html">setIsPrimarySource</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getHasUpdates.html">getHasUpdates</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setHasUpdates.html">setHasUpdates</a>()
+                    </li><li>public mixed <a title="Article" href="../classes/Article/getHasNotes.html">getHasNotes</a>()
+                    </li><li>public void <a title="Article" href="../classes/Article/setHasNotes.html">setHasNotes</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>private</h4>
+          <ul class="members">
+            <li id="articleHTML">
+              <strong>$articleHTML</strong>
+            </li>
+            <li id="articleSection">
+              <strong>$articleSection</strong>
+            </li>
+            <li id="articleSources">
+              <strong>$articleSources</strong>
+            </li>
+            <li id="articleText">
+              <strong>$articleText</strong>
+            </li>
+            <li id="articleURL">
+              <strong>$articleURL</strong>
+            </li>
+            <li id="author">
+              <strong>$author</strong>
+            </li>
+            <li id="hasNotes">
+              <strong>$hasNotes</strong>
+            </li>
+            <li id="hasUpdates">
+              <strong>$hasUpdates</strong>
+            </li>
+            <li id="headline">
+              <strong>$headline</strong>
+            </li>
+            <li id="isPrimarySource">
+              <strong>$isPrimarySource</strong>
+            </li>
+            <li id="publishDate">
+              <strong>$publishDate</strong>
+            </li>
+            <li id="publisher">
+              <strong>$publisher</strong>
+            </li>
+            <li id="retrievalDate">
+              <strong>$retrievalDate</strong>
+            </li>
+            <li id="subtitle">
+              <strong>$subtitle</strong>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Article" href="../classes/Article/__construct.html">__construct()</a>
+            </li>
+            <li id="getArticleHTML">
+              <a title="Article" href="../classes/Article/getArticleHTML.html">getArticleHTML()</a>
+            </li>
+            <li id="getArticleSection">
+              <a title="Article" href="../classes/Article/getArticleSection.html">getArticleSection()</a>
+            </li>
+            <li id="getArticleSources">
+              <a title="Article" href="../classes/Article/getArticleSources.html">getArticleSources()</a>
+            </li>
+            <li id="getArticleText">
+              <a title="Article" href="../classes/Article/getArticleText.html">getArticleText()</a>
+            </li>
+            <li id="getArticleURL">
+              <a title="Article" href="../classes/Article/getArticleURL.html">getArticleURL()</a>
+            </li>
+            <li id="getAuthor">
+              <a title="Article" href="../classes/Article/getAuthor.html">getAuthor()</a>
+            </li>
+            <li id="getHasNotes">
+              <a title="Article" href="../classes/Article/getHasNotes.html">getHasNotes()</a>
+            </li>
+            <li id="getHasUpdates">
+              <a title="Article" href="../classes/Article/getHasUpdates.html">getHasUpdates()</a>
+            </li>
+            <li id="getHeadline">
+              <a title="Article" href="../classes/Article/getHeadline.html">getHeadline()</a>
+            </li>
+            <li id="getIsPrimarySource">
+              <a title="Article" href="../classes/Article/getIsPrimarySource.html">getIsPrimarySource()</a>
+            </li>
+            <li id="getPublishDate">
+              <a title="Article" href="../classes/Article/getPublishDate.html">getPublishDate()</a>
+            </li>
+            <li id="getPublisher">
+              <a title="Article" href="../classes/Article/getPublisher.html">getPublisher()</a>
+            </li>
+            <li id="getRetrievalDate">
+              <a title="Article" href="../classes/Article/getRetrievalDate.html">getRetrievalDate()</a>
+            </li>
+            <li id="getSubtitle">
+              <a title="Article" href="../classes/Article/getSubtitle.html">getSubtitle()</a>
+            </li>
+            <li id="setArticleHTML">
+              <a title="Article" href="../classes/Article/setArticleHTML.html">setArticleHTML()</a>
+            </li>
+            <li id="setArticleSection">
+              <a title="Article" href="../classes/Article/setArticleSection.html">setArticleSection()</a>
+            </li>
+            <li id="setArticleSources">
+              <a title="Article" href="../classes/Article/setArticleSources.html">setArticleSources()</a>
+            </li>
+            <li id="setArticleText">
+              <a title="Article" href="../classes/Article/setArticleText.html">setArticleText()</a>
+            </li>
+            <li id="setArticleURL">
+              <a title="Article" href="../classes/Article/setArticleURL.html">setArticleURL()</a>
+            </li>
+            <li id="setAuthor">
+              <a title="Article" href="../classes/Article/setAuthor.html">setAuthor()</a>
+            </li>
+            <li id="setHasNotes">
+              <a title="Article" href="../classes/Article/setHasNotes.html">setHasNotes()</a>
+            </li>
+            <li id="setHasUpdates">
+              <a title="Article" href="../classes/Article/setHasUpdates.html">setHasUpdates()</a>
+            </li>
+            <li id="setHeadline">
+              <a title="Article" href="../classes/Article/setHeadline.html">setHeadline()</a>
+            </li>
+            <li id="setIsPrimarySource">
+              <a title="Article" href="../classes/Article/setIsPrimarySource.html">setIsPrimarySource()</a>
+            </li>
+            <li id="setPublishDate">
+              <a title="Article" href="../classes/Article/setPublishDate.html">setPublishDate()</a>
+            </li>
+            <li id="setPublisher">
+              <a title="Article" href="../classes/Article/setPublisher.html">setPublisher()</a>
+            </li>
+            <li id="setRetrievalDate">
+              <a title="Article" href="../classes/Article/setRetrievalDate.html">setRetrievalDate()</a>
+            </li>
+            <li id="setSubtitle">
+              <a title="Article" href="../classes/Article/setSubtitle.html">setSubtitle()</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="history">History</h2>
+        <ul class="styled history"/>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.9.0 - Copyright (C) 2010 - 2017 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -51,7 +51,7 @@ class NYTimes(Parsers):
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return_text = ""
-		for text in bw.find_all("p", {"class": 'story-body-text'}):
+		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p']}):
 			for br in text.find_all("br"):
 				br.replace_with("\r\n")
 			return_text += text.text + "\r\n\r\n"
@@ -69,7 +69,7 @@ class NYTimes(Parsers):
 		"""
 		my_sources = []
 		bw = BeautifulSoup(webpage, 'html.parser')
-		for text in bw.find_all("p", {"class": 'story-body-text'}):
+		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p']}):
 			for link in text.find_all("a"):
 				if link.get('class') is None:
 					l = link.get('href')
