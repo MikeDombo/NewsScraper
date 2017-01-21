@@ -145,3 +145,4 @@ $RECYCLE.BIN/
 */*.db
 *.db
 Python/docs/
+docs/doctrees/
