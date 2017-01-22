@@ -17,12 +17,14 @@ def print_full_help():
 	print("-q \t| Only adds articles from each publisher to the queue, but does not download and parse them.")
 	print("-r \t| Reparses all articles in queue, even those that have been downloaded and parsed before.")
 	print("-n \t| Run without saving anything to a database.")
+	print("-u <url> \t| Specify a URL to parse before the queue starts")
 	print("-h \t| Prints this help message.\r\n")
 
 
 def main():
 	database_filename = 'news.db'
 
+	one_url = None
 	queue_only = False
 	reparse = False
 	no_db = False
@@ -30,7 +32,7 @@ def main():
 	# Parse Command Line Arguments
 	if len(sys.argv) > 1:
 		args = sys.argv
-		recognized_args = ["-q", "-r", "-n", "-f", "-h"]
+		recognized_args = ["-q", "-r", "-n", "-f", "-u", "-h"]
 		del args[0]  # Remove script name from arguments
 
 		if '-h' in args:
@@ -50,6 +52,11 @@ def main():
 			if len(args) <= filename+1 or args[filename+1] in recognized_args:
 				command_error_exit("Database filename must be specified!\r\n")
 			database_filename = args[filename + 1]
+		if '-u' in args:
+			url = args.index("-u")
+			if len(args) <= url+1 or args[url+1] in recognized_args:
+				command_error_exit("URL must be specified!\r\n")
+			one_url = args[url + 1]
 
 		if not any(a in args for a in recognized_args):
 			command_error_exit("Unrecognized argument!\r\n")
@@ -79,30 +86,46 @@ def main():
 	if queue_only:
 		return
 
-	sc = Scrapers.Scrapers(database_filename)
-	# If we are running with a database, overwrite the local q with one from the database
+	# If we are running with a database, overwrite the local q with one from the database which will already contain q
 	if not no_db:
-		q = sc.read_article_queue()
+		q = Scrapers.Scrapers.read_article_queue(database_filename)
 
 	print("Beginning Scraping and Parsing")
 	print("==============================\r\n")
 
+	if one_url is not None:
+		print("Starting with user-specified URL")
+		# Execute a single article with no sleeping, and reparse implicitly set to True
+		# because if a user gives us a URL, they want it parsed, even without the -r flag
+		execute_article_parse(one_url, database_filename, no_db, True, False)
+		print("Continuing with Queued Articles\r\n")
+
 	for a in q:
-		sc = Scrapers.Scrapers(database_filename)
-		sc.url = a[1]
-		sc.my_parser = my_router.get_parsers_by_url(sc.url)
-		if no_db or reparse or not sc.is_already_analyzed():
-			if not no_db and sc.is_already_analyzed():
-				print("Reparsing: " + sc.url)
-			else:
-				print(sc.url)
-			time.sleep(1)
-			sc.get_article_data()
-			if not no_db:
-				sc.save_data_to_db()
+		execute_article_parse(a[1], database_filename, no_db, reparse, True)
 
 	print("\r\n==============================")
 	print("Program Complete!")
+
+
+def execute_article_parse(url, database_filename, no_db, reparse, sleep=True):
+	# Basic setup of objects
+	from Router import Router
+	my_router = Router(database_filename)
+	sc = Scrapers.Scrapers(database_filename)
+	sc.url = url
+	sc.my_parser = my_router.get_parsers_by_url(sc.url)
+
+	# Check if we should download and parse the article or not
+	if no_db or reparse or not sc.is_already_analyzed():
+		if not no_db and sc.is_already_analyzed():
+			print("Reparsing: " + sc.url)
+		else:
+			print(sc.url)
+		if sleep:
+			time.sleep(1)
+		sc.get_article_data()
+		if not no_db:
+			sc.save_data_to_db()
 
 
 def is_sqlite3(filename):

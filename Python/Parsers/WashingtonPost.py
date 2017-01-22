@@ -80,7 +80,7 @@ class WashingtonPost(Parsers):
 		:rtype: str
 		"""
 		property = "this.props.author"
-		return WashingtonPost.__read_property(webpage, property)
+		return WashingtonPost.__read_property(webpage, property).decode('unicode-escape')
 
 	@staticmethod
 	def get_article_publish_date(webpage):

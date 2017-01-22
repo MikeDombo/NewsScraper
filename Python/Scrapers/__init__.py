@@ -109,7 +109,7 @@ class Scrapers(object):
 		ca = self.current_article
 		conn = sqlite3.connect(self.database_filename)
 		c = conn.cursor()
-		c.execute('''INSERT OR IGNORE INTO `Articles` (ArticleURL, Headline, Subtitle, Author, Publisher, PublishDate, ArticleText,
+		c.execute('''REPLACE INTO `Articles` (ArticleURL, Headline, Subtitle, Author, Publisher, PublishDate, ArticleText,
 				  ArticleHTML, ArticleSources, RetrievalDate, ArticleSection, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)''',
 				  [self.url, ca.title, ca.subtitle, ca.author, ca.publisher,
 				   ca.publish_date, ca.article_text, ca.full_html, json.dumps(ca.sources), ca.fetch_date,
@@ -117,13 +117,14 @@ class Scrapers(object):
 		conn.commit()
 		conn.close()
 
-	def read_article_queue(self):
+	@staticmethod
+	def read_article_queue(database_filename):
 		"""
 		Reads database Queue table and returns the whole table as a list
 
 		:return: list of URLs to be downloaded and parsed
 		"""
-		conn = sqlite3.connect(self.database_filename)
+		conn = sqlite3.connect(database_filename)
 		c = conn.cursor()
 		c.execute('SELECT * FROM `Queue`')
 		ret = c.fetchall()
