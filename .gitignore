@@ -62,9 +62,6 @@ instance/
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
-*/docs/_build/
-
 # PyBuilder
 target/
 
@@ -144,5 +141,4 @@ $RECYCLE.BIN/
 */notes.txt
 */*.db
 *.db
-Python/docs/
-docs/doctrees/*
+*.doctree

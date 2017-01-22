@@ -1,3 +1,2 @@
 @echo off
-cd docs
-.\make.bat html
+%~dp0%docs\make.bat html
