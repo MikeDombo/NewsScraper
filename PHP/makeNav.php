@@ -6,11 +6,13 @@
 				 "section"=>"Sections"];
 ?>
 <div class="container">
-	<h1 class="display-3 d-flex justify-content-center p-5">NewsScraper Analysis</h1>
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<h1 class="display-4 d-flex justify-content-center pt-5">NewsScraper Analysis</h1>
+	<a href="http://mikedombrowski.com"><h2 class="d-flex justify-content-center pb-5 text-muted">Michael Dombrowski</h1></a>
+	<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		<a class="navbar-brand" href="#">&nbsp</a>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mx-auto">
 				<?php
@@ -28,14 +30,13 @@
 		</div>
 	</nav>
 </div>
-
 <?php
 function getActivePage(){
 	$path = explode('/', parse_url($_SERVER['REQUEST_URI'])["path"]);
 	if(end($path) == ""){
 		unset($path[count($path)-1]);
 	}
-	if("/".end($path) == getSubfolder() or end($path) == getSubfolder()){
+	if("/".end($path) == getSubfolder() || end($path) == getSubfolder()){
 		return "home";
 	}
 	return end($path);
@@ -44,7 +45,6 @@ function getActivePage(){
 function getSubfolder(){
 	$path = explode('/', parse_url($_SERVER['REQUEST_URI'])["path"]);
 	unset($path[count($path)-1]);
-	$subfolder = implode($path, "/");
-	return $subfolder;
+	return implode($path, "/");
 }
 ?>
