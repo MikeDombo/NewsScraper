@@ -29,6 +29,24 @@ class Scrapers(object):
 	}
 	url = ""
 
+	@staticmethod
+	def normalize_url(url):
+		"""
+		Parses a given url and normalizes it to be all lowercase, be http, and have "www.".
+
+		This is used to prevent duplication of articles due to non-unique URLs.
+
+		:param url: unnormalized url
+		:return: normalized url
+		"""
+		from urlparse import urlparse
+		u = urlparse(url)
+		url = u.hostname.lower()+u.path.lower()
+		if not url.find("www.") == 0:
+			url = "www."+url
+		url = "http://"+url
+		return url
+
 	def get_article_data(self):
 		# Get the webpage
 		"""
@@ -45,7 +63,7 @@ class Scrapers(object):
 		response = response.text
 
 		# Parse the webpage and save the data
-		self.current_article.url = self.url
+		self.current_article.url = self.normalize_url(self.url)
 		self.current_article.fetch_date = dt.datetime.now()
 		self.current_article.section = self.my_parser.get_article_section(response, self.url)
 		self.current_article.title = self.my_parser.get_article_title(response)
@@ -78,7 +96,7 @@ class Scrapers(object):
 		conn = sqlite3.connect(self.database_filename)
 		c = conn.cursor()
 		for a in article_list:
-			c.execute('INSERT OR IGNORE INTO `Queue` (url, dateAdded) VALUES (?,?)', [a, dt.datetime.now().__str__()])
+			c.execute('INSERT OR IGNORE INTO `Queue` (url, dateAdded) VALUES (?,?)', [self.normalize_url(a), dt.datetime.now().__str__()])
 		conn.commit()
 		conn.close()
 
