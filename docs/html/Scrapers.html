@@ -133,12 +133,28 @@ saving the data to a database</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="Scrapers.Scrapers.get_article_data">
-<code class="descname">get_article_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.get_article_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_article_data</code><span class="sig-paren">(</span><em>webpage=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.get_article_data" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Uses class <cite>url</cite> variable to download the webpage</li>
 <li>Parses the webpage using <cite>my_parser</cite></li>
 <li>Saves parsed data into <cite>current_article</cite></li>
 </ul>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Scrapers.Scrapers.get_article_html_from_db">
+<em class="property">static </em><code class="descname">get_article_html_from_db</code><span class="sig-paren">(</span><em>url</em>, <em>database_filename</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.Scrapers.get_article_html_from_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns only the HTML of the selected URL if it is in the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>database_filename</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -315,7 +331,7 @@ saving the data to a database</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Michael Dombrowski.
-      Last updated on Jan 21, 2017.
+      Last updated on Jan 22, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>

@@ -9,6 +9,7 @@ class Article(object):
 	full_html = ""
 	sources = []
 	fetch_date = ""
+	grade_level = 0
 	updates = False
 	editor_notes = False
 	corrections = False

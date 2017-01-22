@@ -16,12 +16,33 @@ class Article{
 	private $articleSources;
 	private $retrievalDate;
 	private $articleSection;
+	private $gradeLevel;
 	private $isPrimarySource;
 	private $hasUpdates;
 	private $hasNotes;
 
 	public function __construct(){
 	}
+
+	/**
+	 * @return float
+	 */
+	public function getGradeLevel(): float{
+		return $this->gradeLevel;
+	}
+
+	/**
+	 * @param float $gradeLevel
+	 */
+	public function setGradeLevel($gradeLevel){
+		if($gradeLevel == null){
+			$this->gradeLevel = 0;
+		}
+		else{
+			$this->gradeLevel = $gradeLevel;
+		}
+	}
+
 
 	/**
 	 * @return mixed

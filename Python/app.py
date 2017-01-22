@@ -15,7 +15,8 @@ def print_full_help():
 	print("Usage: \"python app.py [options]\" With the following options.\r\n")
 	print("-f <file path> \t| Specify path of database file to use.")
 	print("-q \t| Only adds articles from each publisher to the queue, but does not download and parse them.")
-	print("-r \t| Reparses all articles in queue, even those that have been downloaded and parsed before.")
+	print("-d \t| Redownloads and reparses all articles in queue, even those that have been downloaded and parsed before. -r is implicit.")
+	print("-r \t| Reparses all articles in queue (without redownloading), even those that have been downloaded and parsed before.")
 	print("-n \t| Run without saving anything to a database.")
 	print("-u <url> \t| Specify a URL to parse before the queue starts")
 	print("-h \t| Prints this help message.\r\n")
@@ -27,12 +28,13 @@ def main():
 	one_url = None
 	queue_only = False
 	reparse = False
+	redownload = False
 	no_db = False
 
 	# Parse Command Line Arguments
 	if len(sys.argv) > 1:
 		args = sys.argv
-		recognized_args = ["-q", "-r", "-n", "-f", "-u", "-h"]
+		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-u", "-h"]
 		del args[0]  # Remove script name from arguments
 
 		if '-h' in args:
@@ -47,6 +49,10 @@ def main():
 		if '-r' in args:
 			reparse = True
 			print("Running in reparse mode")
+		if '-d' in args:
+			reparse = True
+			redownload = True
+			print("Running in redownload and reparse mode")
 		if '-f' in args:
 			filename = args.index("-f")
 			if len(args) <= filename+1 or args[filename+1] in recognized_args:
@@ -97,17 +103,17 @@ def main():
 		print("Starting with user-specified URL")
 		# Execute a single article with no sleeping, and reparse implicitly set to True
 		# because if a user gives us a URL, they want it parsed, even without the -r flag
-		execute_article_parse(one_url, database_filename, no_db, True, False)
+		execute_article_parse(one_url, database_filename, no_db, True, True, False)
 		print("Continuing with Queued Articles\r\n")
 
 	for a in q:
-		execute_article_parse(a[1], database_filename, no_db, reparse, True)
+		execute_article_parse(a[1], database_filename, no_db, reparse, redownload, True)
 
 	print("\r\n==============================")
 	print("Program Complete!")
 
 
-def execute_article_parse(url, database_filename, no_db, reparse, sleep=True):
+def execute_article_parse(url, database_filename, no_db, reparse, redownload, sleep=True):
 	# Basic setup of objects
 	from Router import Router
 	my_router = Router(database_filename)
@@ -121,9 +127,12 @@ def execute_article_parse(url, database_filename, no_db, reparse, sleep=True):
 			print("Reparsing: " + sc.url)
 		else:
 			print(sc.url)
-		if sleep:
+		if (sleep and redownload) or (sleep and not (redownload or reparse)):
 			time.sleep(1)
-		sc.get_article_data()
+		if redownload:
+			sc.get_article_data()
+		else:
+			sc.get_article_data(sc.get_article_html_from_db(url, database_filename))
 		if not no_db:
 			sc.save_data_to_db()
 
@@ -158,6 +167,7 @@ def verify_db(file):
 						`ArticleSources` TEXT,
 						`RetrievalDate` TEXT,
 						`ArticleSection` TEXT,
+						`GradeLevel` REAL,
 						`IsPrimarySource` INTEGER,
 						`HasUpdates` INTEGER,
 						`HasNotes` INTEGER

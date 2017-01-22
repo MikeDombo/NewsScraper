@@ -12,6 +12,7 @@ import time
 import requests
 from Article import Article
 from Parsers import Parsers
+from textstat import textstat
 
 
 class Scrapers(object):
@@ -47,20 +48,23 @@ class Scrapers(object):
 		url = "http://"+url
 		return url
 
-	def get_article_data(self):
+	def get_article_data(self, webpage=None):
 		# Get the webpage
 		"""
 		- Uses class `url` variable to download the webpage
 		- Parses the webpage using `my_parser`
 		- Saves parsed data into `current_article`
 		"""
-		response = requests.get(self.url, headers=self.headers)
-		while not response.ok:
-			print("Sleeping 10 seconds and retrying " + self.url)
-			time.sleep(10)
+		if webpage is None:
 			response = requests.get(self.url, headers=self.headers)
-		# Get HTML from response object
-		response = response.text
+			while not response.ok:
+				print("Sleeping 10 seconds and retrying " + self.url)
+				time.sleep(10)
+				response = requests.get(self.url, headers=self.headers)
+			# Get HTML from response object
+			response = response.text
+		else:
+			response = webpage
 
 		# Parse the webpage and save the data
 		self.current_article.url = self.normalize_url(self.url)
@@ -73,6 +77,25 @@ class Scrapers(object):
 		self.current_article.sources = self.my_parser.get_article_sources(response)
 		self.current_article.full_html = response
 		self.current_article.article_text = self.my_parser.get_article_text(response)
+
+		text_stats = textstat.textstatistics()
+		self.current_article.grade_level = text_stats.flesch_kincaid_grade(self.current_article.article_text)
+
+	@staticmethod
+	def get_article_html_from_db(url, database_filename):
+		"""
+		Returns only the HTML of the selected URL if it is in the database
+
+		:param database_filename:
+		:return:
+		"""
+		conn = sqlite3.connect(database_filename)
+		c = conn.cursor()
+		c.execute('SELECT `ArticleURL`, `ArticleHTML` FROM `Articles` WHERE `ArticleURL` = ?', [url])
+		ret = c.fetchone()
+		conn.close()
+		# Return the HTML of the selected webpage
+		return ret[1]
 
 	@staticmethod
 	def get_article_list(date):
@@ -110,10 +133,10 @@ class Scrapers(object):
 		conn = sqlite3.connect(self.database_filename)
 		c = conn.cursor()
 		c.execute('''REPLACE INTO `Articles` (ArticleURL, Headline, Subtitle, Author, Publisher, PublishDate, ArticleText,
-				  ArticleHTML, ArticleSources, RetrievalDate, ArticleSection, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+				  ArticleHTML, ArticleSources, RetrievalDate, ArticleSection, GradeLevel, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
 				  [self.url, ca.title, ca.subtitle, ca.author, ca.publisher,
 				   ca.publish_date, ca.article_text, ca.full_html, json.dumps(ca.sources), ca.fetch_date,
-				   json.dumps(ca.section), ca.updates, ca.editor_notes])
+				   json.dumps(ca.section), ca.grade_level, ca.updates, ca.editor_notes])
 		conn.commit()
 		conn.close()
 

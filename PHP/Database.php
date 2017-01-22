@@ -187,6 +187,7 @@ class Database{
 			$article->setArticleSources(json_decode($a["ArticleSources"], true));
 			$article->setRetrievalDate($fDate);
 			$article->setArticleSection(json_decode($a["ArticleSection"], true));
+			$article->setGradeLevel($a["GradeLevel"]);
 			$article->setIsPrimarySource($a["IsPrimarySource"]);
 			$article->setHasUpdates($a["HasUpdates"]);
 			$article->setHasNotes($a["HasNotes"]);
