@@ -7,7 +7,7 @@
 ?>
 <div class="container">
 	<h1 class="display-4 d-flex justify-content-center pt-5">NewsScraper Analysis</h1>
-	<a href="http://mikedombrowski.com"><h2 class="d-flex justify-content-center pb-5 text-muted">Michael Dombrowski</h1></a>
+	<a href="http://mikedombrowski.com"><h2 class="d-flex justify-content-center pb-5 text-muted">Michael Dombrowski</h2></a>
 	<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
