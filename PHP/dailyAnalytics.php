@@ -14,10 +14,12 @@ catch(PDOException $p){
 
 $dbo = new Database($pdo);
 
+$singleDay = false;
 $days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 if(isset($_GET["day"])){
 	if(in_array(ucwords($_GET["day"]), $days, true)){
 		$days = [ucwords($_GET["day"])];
+		$singleDay = true;
 	}
 }
 ?>
@@ -59,8 +61,9 @@ if(isset($_GET["day"])){
 			overallAnalytics($p);
 			?>
 			<div>
-				<button class="btn btn-outline-primary individualArticle">Individual Article Analytics</button>
-				<div class="collapse mt-2">
+				<?php if(!$singleDay){
+					print "<button class=\"btn btn-outline-primary individualArticle\">Individual Article Analytics</button>
+							<div class=\"collapse mt-2\">";}?>
 					<table class="table table-responsive analytics-table">
 						<thead>
 						<tr>
@@ -76,7 +79,7 @@ if(isset($_GET["day"])){
 						?>
 						</tbody>
 					</table>
-				</div>
+				<?php if(!$singleDay){print "</div>";}?>
 			</div>
 			<?php
 			}?>

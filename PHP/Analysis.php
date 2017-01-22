@@ -10,17 +10,14 @@ function analyticsByHeadline(array $articles){
 		$analytics = articleAnalytics($a);
 		print "<tr>";
 		print "<td><a target='_blank' href='".$a->getArticleURL()."'>".$a->getHeadline()."</a>";
-		print "<br/><a target='_self' href='author?author=".rawurlencode($a->getAuthor())."'>By: ".$a->getAuthor()."</td>";
-		print "<td><a target='_self' href='sources?url=".rawurlencode($a->getArticleURL())."'>".$analytics["numSources"]
+		print "<br/><a href='author?author=".rawurlencode($a->getAuthor())."'>By: ".$a->getAuthor()."</td>";
+		print "<td onclick='document.location.href=\"sources?url=".rawurlencode($a->getArticleURL())."\";'><a href='sources?url=".rawurlencode($a->getArticleURL())."'>"
+			.$analytics["numSources"]
 		."</a></td>";
 		print "<td>".number_format($analytics["sourcesPerMWords"], 2)."</td>";
 		print "<td>".number_format($analytics["numWords"])."</td>";
 		print "</tr>";
 	}
-}
-
-function sectionAnalytics($section, $articles){
-
 }
 
 /**
@@ -59,7 +56,17 @@ function overallAnalytics(array $articles){
 	$wordsPerArticle = $numArticles == 0 ? 0 : $numWords/$numArticles;
 
 
-	print "<h1 class='lead'>Sources per article: ".number_format($sourcesPerArticle, 2)."</h1>";
-	print "<h1 class='lead'>Sources per 1000 words: ".number_format($sourcesPerMWords, 2)."</h1>";
-	print "<h1 class='lead'>Average word count: ".number_format($wordsPerArticle, 0)."</h1>";
+	if(count($articles) > 1){
+		print "<h1 class='lead'>Sources per article: ".number_format($sourcesPerArticle, 2)."</h1>";
+		print "<h1 class='lead'>Sources per 1000 words: ".number_format($sourcesPerMWords, 2)."</h1>";
+		print "<h1 class='lead'>Average word count: ".number_format($wordsPerArticle, 0)."</h1>";
+	}
+	else if(count($articles) == 1){
+		print "<h1 class='lead'>Sources: ".number_format($sourcesPerArticle)."</h1>";
+		print "<h1 class='lead'>Sources per 1000 words: ".number_format($sourcesPerMWords, 2)."</h1>";
+		print "<h1 class='lead'>Word count: ".number_format($wordsPerArticle)."</h1>";
+	}
+	else if(count($articles) ==  0){
+		print "<h1 class='lead'>No Articles to Analyze</h1>";
+	}
 }

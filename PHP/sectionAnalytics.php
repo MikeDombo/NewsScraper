@@ -14,8 +14,10 @@ catch(PDOException $p){
 
 $dbo = new Database($pdo);
 
+$singleSection = false;
 if(isset($_GET["section"])){
 	$sectionList = [rawurldecode($_GET["section"])];
+	$singleSection = true;
 }
 else{
 	$sectionList = $dbo->listAllSections();
@@ -57,8 +59,10 @@ else{
 			overallAnalytics($p);
 			?>
 			<div>
-				<button class="btn btn-outline-primary individualArticle">Individual Article Analytics</button>
-				<div class="collapse mt-2">
+				<?php if(!$singleSection){
+					print "<button class=\"btn btn-outline-primary individualArticle\">Individual Article Analytics</button>
+				<div class=\"collapse mt-2\">";
+				}?>
 					<table class="table table-responsive analytics-table">
 						<thead>
 						<tr>
@@ -74,7 +78,7 @@ else{
 						?>
 						</tbody>
 					</table>
-				</div>
+				<?php if(!$singleSection){print "</div>";}?>
 			</div>
 			<?php }?>
 		<script>

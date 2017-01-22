@@ -57,30 +57,7 @@ $currentArticle = $dbo->getArticleByURL($url);
 	</style>
 </head>
 <body>
-<div class="container">
-	<h1 class="display-3 d-flex justify-content-center p-5">NewsScraper Analysis</h1>
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<ul class="navbar-nav mx-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="index.php">Publishers</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="day">Day of Week</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="author">Authors</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="section">Sections</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-</div>
+<?php include "makeNav.php";?>
 <div class="container-fluid" id="maincontent">
 	<div class="card-columns">
 		<div class="card">
@@ -96,26 +73,11 @@ $currentArticle = $dbo->getArticleByURL($url);
 				<?php
 				print "<h1 class='card-title'>Analytics For <em><a target='_blank' href='".$currentArticle->getArticleURL
 					()."'>".$currentArticle->getHeadline()."</em></a></h1>";
-				overallAnalytics([$currentArticle]);
 				?>
 				<p class="card-text">
-					<div>
-						<table class="table table-responsive analytics-table">
-							<thead>
-							<tr>
-								<th>Headline</th>
-								<th>Sources in Article</th>
-								<th>Sources per 1000 Words</th>
-								<th>Word Count</th>
-							</tr>
-							</thead>
-							<tbody>
-							<?php
-							analyticsByHeadline([$currentArticle]);
-							?>
-							</tbody>
-						</table>
-					</div>
+					<?php
+					overallAnalytics([$currentArticle]);
+					?>
 				</p>
 			</div>
 		</div>
