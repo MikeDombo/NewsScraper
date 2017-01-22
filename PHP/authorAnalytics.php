@@ -91,7 +91,7 @@ else{
 			responsiveContainer: function($table){
 				return $table.closest('.table-responsive');
 			},
-			position:'fixed'
+			position:'absolute'
 		});
 		$(".individualArticle").on('click', function(){
 			$(this).parent().find(".collapse").toggle();

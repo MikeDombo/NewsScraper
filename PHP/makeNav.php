@@ -5,7 +5,7 @@
 				 "author"=>"Authors",
 				 "section"=>"Sections"];
 ?>
-<div class="container">
+<div class="container pb-5">
 	<h1 class="display-4 d-flex justify-content-center pt-5">NewsScraper Analysis</h1>
 	<a href="http://mikedombrowski.com"><h2 class="d-flex justify-content-center pb-5 text-muted">Michael Dombrowski</h2></a>
 	<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">

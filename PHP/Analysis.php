@@ -57,11 +57,13 @@ function overallAnalytics(array $articles){
 
 
 	if(count($articles) > 1){
-		print "<h1 class='lead'>Sources per article: ".number_format($sourcesPerArticle, 2)."</h1>";
-		print "<h1 class='lead'>Sources per 1000 words: ".number_format($sourcesPerMWords, 2)."</h1>";
-		print "<h1 class='lead'>Average word count: ".number_format($wordsPerArticle, 0)."</h1>";
+		print "<h1 class='lead'>Number of Articles: ".number_format($numArticles)."</h1>";
+		print "<h1 class='lead'>Sources per Article: ".number_format($sourcesPerArticle, 2)."</h1>";
+		print "<h1 class='lead'>Sources per 1000 Words: ".number_format($sourcesPerMWords, 2)."</h1>";
+		print "<h1 class='lead'>Average Word Count: ".number_format($wordsPerArticle, 0)."</h1>";
 	}
 	else if(count($articles) == 1){
+		print "<h1 class='lead'>Number of Articles: ".number_format($numArticles)."</h1>";
 		print "<h1 class='lead'>Sources: ".number_format($sourcesPerArticle)."</h1>";
 		print "<h1 class='lead'>Sources per 1000 words: ".number_format($sourcesPerMWords, 2)."</h1>";
 		print "<h1 class='lead'>Word count: ".number_format($wordsPerArticle)."</h1>";

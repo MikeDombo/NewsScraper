@@ -86,8 +86,8 @@ else{
 				responsiveContainer: function($table){
 					return $table.closest('.table-responsive');
 				},
-				position:'fixed'
-			});
+				position:'absolute'
+			}).;
 		</script>
 	</div>
 </div>

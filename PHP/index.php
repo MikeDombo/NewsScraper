@@ -80,7 +80,7 @@ $dbo = new Database($pdo);
 						responsiveContainer: function($table){
 								return $table.closest('.table-responsive');
 						},
-						position:'fixed'
+						position:'absolute'
 					});
 				</script>
 			</div>
