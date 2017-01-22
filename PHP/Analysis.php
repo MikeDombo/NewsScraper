@@ -6,12 +6,15 @@
  */
 function analyticsByHeadline(array $articles){
 	foreach($articles as $a){
+		/* @var $a \Article */
 		$analytics = articleAnalytics($a);
 		print "<tr>";
-		print "<td><a target='_blank' href='".$a->getArticleURL()."'>".$a->getHeadline()."</a></td>";
-		print "<td>".$analytics["numSources"]."</td>";
+		print "<td><a target='_blank' href='".$a->getArticleURL()."'>".$a->getHeadline()."</a>";
+		print "<br/><a target='_self' href='author?author=".rawurlencode($a->getAuthor())."'>By: ".$a->getAuthor()."</td>";
+		print "<td><a target='_self' href='sources?url=".rawurlencode($a->getArticleURL())."'>".$analytics["numSources"]
+		."</a></td>";
 		print "<td>".number_format($analytics["sourcesPerMWords"], 2)."</td>";
-		print "<td>".$analytics["numWords"]."</td>";
+		print "<td>".number_format($analytics["numWords"])."</td>";
 		print "</tr>";
 	}
 }
@@ -45,12 +48,18 @@ function overallAnalytics(array $articles){
 	$numArticles = count($articles);
 
 	foreach($articles as $a){
-		$numArticles++;
+		/* @var $a \Article */
 		$numSources += count(array_unique($a->getArticleSources()));
 		$numWords += str_word_count($a->getArticleText());
 	}
 
-	print "<h1 class='lead'>Sources per article: ".number_format($numSources/$numArticles, 2)."</h1>";
-	print "<h1 class='lead'>Sources per 1000 words: ".number_format($numSources/($numWords/1000), 2)."</h1>";
-	print "<h1 class='lead'>Average word count: ".number_format($numWords/$numArticles, 0)."</h1>";
+	// Ternary operations added to resolve divide by zero errors
+	$sourcesPerArticle = $numArticles == 0 ? 0 : $numSources/$numArticles;
+	$sourcesPerMWords = $numWords == 0 ? 0 : $numSources/($numWords/1000);
+	$wordsPerArticle = $numArticles == 0 ? 0 : $numWords/$numArticles;
+
+
+	print "<h1 class='lead'>Sources per article: ".number_format($sourcesPerArticle, 2)."</h1>";
+	print "<h1 class='lead'>Sources per 1000 words: ".number_format($sourcesPerMWords, 2)."</h1>";
+	print "<h1 class='lead'>Average word count: ".number_format($wordsPerArticle, 0)."</h1>";
 }

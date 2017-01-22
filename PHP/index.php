@@ -38,8 +38,8 @@ $dbo = new Database($pdo);
 		<script src="js/jquery.floatThead.min.js"></script>
 	</head>
 	<body>
+		<?php include "makeNav.php";?>
 		<div class="container-fluid" id="maincontent">
-			<h1 class="display-3 d-flex justify-content-center">NewsScraper Analysis</h1>
 			<div class="col-lg-12">
 				<?php
 					print "<h1>Average Analytics:</h1>";

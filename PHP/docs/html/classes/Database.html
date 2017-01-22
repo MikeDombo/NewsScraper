@@ -72,15 +72,16 @@
             {<br/><ul class="none"><li>// members</li><li>private <span title="\PDO">PDO</span> <a href="#members">$pdo</a>;
                     </li><li>private <span title="\Article">Article</span> <a href="#members">$articles</a>;
                     </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Database" href="../classes/Database/__construct.html">__construct</a>()
-                    </li><li>public Article <a title="Database" href="../classes/Database/getArticles.html">getArticles</a>()
-                    </li><li>public array <a title="Database" href="../classes/Database/getArticlesByPublisher.html">getArticlesByPublisher</a>()
-                    </li><li>public array <a title="Database" href="../classes/Database/getArticlesByAuthor.html">getArticlesByAuthor</a>()
-                    </li><li>public array <a title="Database" href="../classes/Database/getArticlesBySection.html">getArticlesBySection</a>()
-                    </li><li>public Article <a title="Database" href="../classes/Database/getArticlesByDayOfWeek.html">getArticlesByDayOfWeek</a>()
+                    </li><li>public array|Article <a title="Database" href="../classes/Database/getArticles.html">getArticles</a>()
+                    </li><li>public Article <a title="Database" href="../classes/Database/getArticleByURL.html">getArticleByURL</a>()
+                    </li><li>public array|Article <a title="Database" href="../classes/Database/getArticlesByPublisher.html">getArticlesByPublisher</a>()
+                    </li><li>public array|Article <a title="Database" href="../classes/Database/getArticlesByAuthor.html">getArticlesByAuthor</a>()
+                    </li><li>public array|Article <a title="Database" href="../classes/Database/getArticlesBySection.html">getArticlesBySection</a>()
+                    </li><li>public array|Article <a title="Database" href="../classes/Database/getArticlesByDayOfWeek.html">getArticlesByDayOfWeek</a>()
                     </li><li>public array|string <a title="Database" href="../classes/Database/listAllSections.html">listAllSections</a>()
                     </li><li>public array|string <a title="Database" href="../classes/Database/listAllAuthors.html">listAllAuthors</a>()
                     </li><li>public array|string <a title="Database" href="../classes/Database/listAllPublishers.html">listAllPublishers</a>()
-                    </li><li>private Article <a title="Database" href="../classes/Database/readDatabase.html">readDatabase</a>()
+                    </li><li>private array|Article <a title="Database" href="../classes/Database/readDatabase.html">readDatabase</a>()
                     </li></ul>
 
             }<br/></div>
@@ -108,6 +109,8 @@
             <li id="__construct">
               <a title="Database" href="../classes/Database/__construct.html">__construct()</a>
             </li>
+            <li id="getArticleByURL"><a title="Database" href="../classes/Database/getArticleByURL.html">getArticleByURL()</a>
+                — Returns \Article object with the given URL</li>
             <li id="getArticles">
               <a title="Database" href="../classes/Database/getArticles.html">getArticles()</a>
             </li>

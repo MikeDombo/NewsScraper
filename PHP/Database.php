@@ -21,20 +21,36 @@ class Database{
 	}
 
 	/**
-	 * @return array|\Article
+	 * @return array|Article
 	 */
 	public function getArticles(): array {
 		return $this->articles;
 	}
 
 	/**
+	 * Returns \Article object with the given URL
+	 * @param string $url
+	 * @return \Article
+	 */
+	public function getArticleByURL(string $url): \Article {
+		foreach($this->articles as $a){
+			/* @var $a \Article */
+			if($a->getArticleURL() == $url){
+				return $a;
+			}
+		}
+		return null;
+	}
+
+	/**
 	 * Returns array of \Article objects that have the same publisher as the given $publisher
 	 * @param string $publisher
-	 * @return array
+	 * @return array|Article
 	 */
 	public function getArticlesByPublisher(string $publisher): array {
 		$selected = [];
 		foreach($this->articles as $a){
+			/* @var $a \Article */
 			if($a->getPublisher() == $publisher){
 				$selected[] = $a;
 			}
@@ -45,11 +61,12 @@ class Database{
 	/**
 	 * Returns array of \Article objects that have the same author as the given $author
 	 * @param string $author
-	 * @return array
+	 * @return array|Article
 	 */
 	public function getArticlesByAuthor(string $author): array {
 		$selected = [];
 		foreach($this->articles as $a){
+			/* @var $a \Article */
 			if($a->getAuthor() == $author){
 				$selected[] = $a;
 			}
@@ -60,13 +77,16 @@ class Database{
 	/**
 	 * Returns array of \Article objects that have the same section as the given $section
 	 * @param string $section
-	 * @return array
+	 * @return array|Article
 	 */
 	public function getArticlesBySection(string $section): array {
 		$selected = [];
 		foreach($this->articles as $a){
-			if(in_array($section, $a->getArticleSection())){
-				$selected[] = $a;
+			/* @var $a \Article */
+			foreach($a->getArticleSection() as $checkSection){
+				if(mb_strtolower($section) == mb_strtolower($checkSection)){
+					$selected[] = $a;
+				}
 			}
 		}
 		return $selected;
@@ -75,11 +95,12 @@ class Database{
 	/**
 	 * Returns array of \Article objects that were published on a given day of the week
 	 * @param string $day Day of the week
-	 * @return array|\Article
+	 * @return array|Article
 	 */
 	public function getArticlesByDayOfWeek(string $day): array {
 		$selected = [];
 		foreach($this->articles as $a){
+			/* @var $a \Article */
 			if(date_format($a->getPublishDate(), "l") == $day){
 				$selected[] = $a;
 			}
@@ -94,12 +115,15 @@ class Database{
 	public function listAllSections(): array {
 		$sections = [];
 		foreach($this->articles as $a){
+			/* @var $a \Article */
 			foreach($a->getArticleSection() as $s){
-				if(!in_array($s, $sections, true)){
-					$sections[] = $s;
+				/* @var $s string */
+				if(!in_array(mb_strtolower($s), $sections, true)){
+					$sections[] = mb_strtolower($s);
 				}
 			}
 		}
+		sort($sections);
 		return $sections;
 	}
 
@@ -110,10 +134,12 @@ class Database{
 	public function listAllAuthors(): array {
 		$authors = [];
 		foreach($this->articles as $a){
+			/* @var $a \Article */
 			if(!in_array($a->getAuthor(), $authors, true)){
 				$authors[] = $a->getAuthor();
 			}
 		}
+		sort($authors);
 		return $authors;
 	}
 
@@ -124,16 +150,18 @@ class Database{
 	public function listAllPublishers(): array {
 		$publishers = [];
 		foreach($this->articles as $a){
+			/* @var $a \Article */
 			if(!in_array($a->getPublisher(), $publishers, true)){
 				$publishers[] = $a->getPublisher();
 			}
 		}
+		sort($publishers);
 		return $publishers;
 	}
 
 	/**
 	 * Reads database of given \PDO and creates \Article objects for each row
-	 * @return array|\Article Array of article objects from the Articles table of the connected database
+	 * @return array|Article Array of article objects from the Articles table of the connected database
 	 */
 	private function readDatabase(): array {
 		$localArticles = [];
