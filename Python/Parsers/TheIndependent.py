@@ -20,10 +20,12 @@ class TheIndependent(Parsers):
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return_text = ""
 		for text in bw.find("div", {'itemprop':'articleBody'}).find_all("p", {'class':None}):
-			for br in text.find_all("br"):
-				br.replace_with("\r\n")
-			if not text.text == "":
-				return_text += text.text + "\r\n\r\n"
+			p = text.parent.find(class_="full-gallery")
+			if p is not None:
+				for br in text.find_all("br"):
+					br.replace_with("\r\n")
+				if not text.text == "":
+					return_text += text.text + "\r\n\r\n"
 		return_text = return_text.strip()
 		return return_text
 
