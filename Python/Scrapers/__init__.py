@@ -1,4 +1,5 @@
-"""The Scrapers Module is used for getting a list of articles to download, downloading, sending to the parser, and then
+"""
+The Scrapers Module is used for getting a list of articles to download, downloading, sending to the parser, and then
 saving the data to a database
 
 :Last Modified: 2017-01-18
@@ -71,6 +72,7 @@ class Scrapers(object):
 		self.current_article.fetch_date = dt.datetime.now()
 		self.current_article.section = self.my_parser.get_article_section(response, self.url)
 		self.current_article.title = self.my_parser.get_article_title(response)
+		self.current_article.subtitle = self.my_parser.get_article_subtitle(response)
 		self.current_article.author = self.my_parser.get_article_author(response)
 		self.current_article.publisher = self.my_parser.get_article_publisher(response, self.url)
 		self.current_article.publish_date = self.my_parser.get_article_publish_date(response)

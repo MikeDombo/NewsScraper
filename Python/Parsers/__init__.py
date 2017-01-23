@@ -49,7 +49,18 @@ class Parsers(object):
 		:rtype: str
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		return bw.title.string
+		return bw.find("meta", {"property": "og:title"})['content']
+
+	@staticmethod
+	def get_article_subtitle(webpage):
+		"""
+		Parses webpage to return the subtitle of an article
+
+		:param webpage:
+		:return: Article subtitle
+		:rtype: str
+		"""
+		return ""
 
 	@staticmethod
 	def get_article_author(webpage):
@@ -87,9 +98,8 @@ class Parsers(object):
 		:return: Article publisher, ex: "The New York Times"
 		:rtype: str
 		"""
-		from urlparse import urlparse
-		o = urlparse(url)
-		return o.hostname
+		bw = BeautifulSoup(webpage, 'html.parser')
+		return bw.find("meta", {"property": "og:site_name"})['content']
 
 	@staticmethod
 	def get_article_sources(webpage):

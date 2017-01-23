@@ -129,7 +129,7 @@ def execute_article_parse(url, database_filename, no_db, reparse, redownload, sl
 			print(sc.url)
 		if (sleep and redownload) or (sleep and not (redownload or reparse)):
 			time.sleep(1)
-		if redownload:
+		if redownload or not sc.is_already_analyzed():
 			sc.get_article_data()
 		else:
 			sc.get_article_data(sc.get_article_html_from_db(url, database_filename))

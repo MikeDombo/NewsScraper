@@ -10,8 +10,10 @@ class Router(object):
 		self.__import_submodules(Scrapers)
 		self.__import_submodules(Parsers)
 
-		self.__scrapers = [Scrapers.NYTimes.NYTimes(self.db), Scrapers.WashingtonPost.WashingtonPost(self.db)]
-		self.__parsers = [Parsers.NYTimes.NYTimes(), Parsers.WashingtonPost.WashingtonPost()]
+		self.__scrapers = [Scrapers.NYTimes.NYTimes(self.db), Scrapers.WashingtonPost.WashingtonPost(self.db),
+						   Scrapers.TheIndependent.TheIndependent(self.db)]
+		self.__parsers = [Parsers.NYTimes.NYTimes(), Parsers.WashingtonPost.WashingtonPost(),
+						  Parsers.TheIndependent.TheIndependent()]
 
 	def get_scrapers(self):
 		for s in self.__scrapers:
