@@ -12,6 +12,14 @@ Parsers.NYTimes module
     :undoc-members:
     :show-inheritance:
 
+Parsers.TheIndependent module
+-----------------------------
+
+.. automodule:: Parsers.TheIndependent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Parsers.WashingtonPost module
 -----------------------------
 

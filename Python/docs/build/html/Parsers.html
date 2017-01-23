@@ -170,6 +170,129 @@
 </dd></dl>
 
 </div>
+<div class="section" id="module-Parsers.TheIndependent">
+<span id="parsers-theindependent-module"></span><h2>Parsers.TheIndependent module<a class="headerlink" href="#module-Parsers.TheIndependent" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Parsers.TheIndependent.TheIndependent">
+<em class="property">class </em><code class="descclassname">Parsers.TheIndependent.</code><code class="descname">TheIndependent</code><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Parsers.Parsers" title="Parsers.Parsers"><code class="xref py py-class docutils literal"><span class="pre">Parsers.Parsers</span></code></a></p>
+<dl class="staticmethod">
+<dt id="Parsers.TheIndependent.TheIndependent.get_article_author">
+<em class="property">static </em><code class="descname">get_article_author</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent.get_article_author" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the author of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Author of the article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.TheIndependent.TheIndependent.get_article_publish_date">
+<em class="property">static </em><code class="descname">get_article_publish_date</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent.get_article_publish_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the date the article was published</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article publish date</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">DateTime object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.TheIndependent.TheIndependent.get_article_section">
+<em class="property">static </em><code class="descname">get_article_section</code><span class="sig-paren">(</span><em>webpage</em>, <em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent.get_article_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage and/or url to return a list of sections/subsections that the article is in</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>webpage</strong> &#8211; </li>
+<li><strong>url</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of section names in order from most narrow to biggest section</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.TheIndependent.TheIndependent.get_article_sources">
+<em class="property">static </em><code class="descname">get_article_sources</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent.get_article_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to extract all sources from an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of sources, typically URLs of the sources</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.TheIndependent.TheIndependent.get_article_subtitle">
+<em class="property">static </em><code class="descname">get_article_subtitle</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent.get_article_subtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the subtitle of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article subtitle</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="Parsers.TheIndependent.TheIndependent.get_article_text">
+<em class="property">static </em><code class="descname">get_article_text</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.TheIndependent.TheIndependent.get_article_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the full plaintext of the article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Plaintext of article</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-Parsers.WashingtonPost">
 <span id="parsers-washingtonpost-module"></span><h2>Parsers.WashingtonPost module<a class="headerlink" href="#module-Parsers.WashingtonPost" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -426,6 +549,24 @@
 </dd></dl>
 
 <dl class="staticmethod">
+<dt id="Parsers.Parsers.get_article_subtitle">
+<em class="property">static </em><code class="descname">get_article_subtitle</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_subtitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses webpage to return the subtitle of an article</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>webpage</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Article subtitle</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="Parsers.Parsers.get_article_text">
 <em class="property">static </em><code class="descname">get_article_text</code><span class="sig-paren">(</span><em>webpage</em><span class="sig-paren">)</span><a class="headerlink" href="#Parsers.Parsers.get_article_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses webpage to return the full plaintext of the article</p>
@@ -495,6 +636,7 @@
 <li><a class="reference internal" href="#">Parsers package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-Parsers.NYTimes">Parsers.NYTimes module</a></li>
+<li><a class="reference internal" href="#module-Parsers.TheIndependent">Parsers.TheIndependent module</a></li>
 <li><a class="reference internal" href="#module-Parsers.WashingtonPost">Parsers.WashingtonPost module</a></li>
 <li><a class="reference internal" href="#module-Parsers">Module contents</a></li>
 </ul>

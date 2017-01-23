@@ -12,6 +12,14 @@ Scrapers.NYTimes module
     :undoc-members:
     :show-inheritance:
 
+Scrapers.TheIndependent module
+------------------------------
+
+.. automodule:: Scrapers.TheIndependent
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Scrapers.WashingtonPost module
 ------------------------------
 
