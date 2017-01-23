@@ -5,6 +5,9 @@
 				 "author"=>"Authors",
 				 "section"=>"Sections"];
 ?>
+<script>
+	function navigate(e, url){if(e.ctrlKey){window.open(url, "_blank");}else{window.location = url;}}
+</script>
 <div class="container pb-5">
 	<h1 class="display-4 d-flex justify-content-center pt-5">NewsScraper Analysis</h1>
 	<a href="http://mikedombrowski.com"><h2 class="d-flex justify-content-center pb-5 text-muted">Michael Dombrowski</h2></a>

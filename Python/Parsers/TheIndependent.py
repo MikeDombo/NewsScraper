@@ -19,7 +19,7 @@ class TheIndependent(Parsers):
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return_text = ""
-		for text in bw.find("div", {'itemprop':'articleBody'}).find_all("p"):
+		for text in bw.find("div", {'itemprop': ['articleBody', 'reviewBody']}).find_all("p"):
 			p = text.parent.name
 			if not p == "li":
 				for br in text.find_all("br"):
@@ -40,14 +40,15 @@ class TheIndependent(Parsers):
 		"""
 		my_sources = []
 		bw = BeautifulSoup(webpage, 'html.parser')
-		for text in bw.find("div", {'itemprop': 'articleBody'}).find_all("p"):
+		for text in bw.find("div", {'itemprop': ['articleBody', 'reviewBody']}).find_all("p"):
 			p = text.parent.name
 			if not p == "li":
 				for link in text.find_all("a"):
 					if link.get('class') is None:
 						l = link.get('href')
-						if l.find("mailto:") == -1:
-							my_sources.append(l)
+						if l is not None:
+							if l.find("mailto:") == -1:
+								my_sources.append(l)
 		return my_sources
 
 	@staticmethod

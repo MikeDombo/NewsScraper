@@ -3,6 +3,7 @@ from Scrapers import Scrapers
 import requests
 from urlparse import urlparse, urljoin
 import datetime as dt
+import httplib
 
 
 class TheIndependent(Scrapers):
@@ -33,7 +34,11 @@ class TheIndependent(Scrapers):
 					article_link = urljoin(url, article_link)
 					href = urlparse(article_link)
 					article_link = href.scheme + '://' + href.netloc + href.path
-					article_list.append(article_link)
+					if "/competitions/" not in article_link:
+						conn = httplib.HTTPConnection(href.netloc)
+						conn.request("HEAD", href.path)
+						if conn.getresponse().status == 200:
+							article_list.append(article_link)
 		return article_list
 
 	def __init__(self, db):

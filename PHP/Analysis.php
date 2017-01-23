@@ -11,8 +11,8 @@ function analyticsByHeadline(array $articles){
 		print "<tr>";
 		print "<td><a target='_blank' href='".$a->getArticleURL()."'>".$a->getHeadline()."</a>";
 		print "<br/><a href='author?author=".rawurlencode($a->getAuthor())."'>By: ".$a->getAuthor()."</td>";
-		print "<td onclick='document.location.href=\"sources?url=".rawurlencode($a->getArticleURL())."\";'><a href='sources?url=".rawurlencode($a->getArticleURL())."'>"
-			.$analytics["numSources"]
+		print "<td onclick='return navigate(event, \"sources?url=".rawurlencode($a->getArticleURL())."\");'>
+			<a href='sources?url=".rawurlencode($a->getArticleURL())."'>".$analytics["numSources"]
 		."</a></td>";
 		print "<td>".number_format($analytics["sourcesPerMWords"], 2)."</td>";
 		print "<td>".number_format($analytics["numWords"])."</td>";
