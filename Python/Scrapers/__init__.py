@@ -133,6 +133,7 @@ class Scrapers(object):
 		"""
 		ca = self.current_article
 		conn = sqlite3.connect(self.database_filename)
+		conn.text_factory = str
 		c = conn.cursor()
 		c.execute('''REPLACE INTO `Articles` (ArticleURL, Headline, Subtitle, Author, Publisher, PublishDate, ArticleText,
 				  ArticleHTML, ArticleSources, RetrievalDate, ArticleSection, GradeLevel, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
