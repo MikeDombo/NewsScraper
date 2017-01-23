@@ -57,8 +57,11 @@ class TheIndependent(Parsers):
 		"""
 		subtitle = ""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		for text in bw.find("div", {'class': 'intro'}).find_all("p"):
-			subtitle += text.text + "\r\n"
+		try:
+			for text in bw.find("div", {'class': 'intro'}).find_all("p"):
+				subtitle += text.text + "\r\n"
+		except AttributeError:
+			subtitle = ""
 		return subtitle.strip()
 
 	@staticmethod
