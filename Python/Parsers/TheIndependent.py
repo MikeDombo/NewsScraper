@@ -41,11 +41,13 @@ class TheIndependent(Parsers):
 		my_sources = []
 		bw = BeautifulSoup(webpage, 'html.parser')
 		for text in bw.find("div", {'itemprop': 'articleBody'}).find_all("p", {'class': None}):
-			for link in text.find_all("a"):
-				if link.get('class') is None:
-					l = link.get('href')
-					if l.find("mailto:") == -1:
-						my_sources.append(l)
+			p = text.parent.find(class_="full-gallery")
+			if p is not None:
+				for link in text.find_all("a"):
+					if link.get('class') is None:
+						l = link.get('href')
+						if l.find("mailto:") == -1:
+							my_sources.append(l)
 		return my_sources
 
 	@staticmethod
