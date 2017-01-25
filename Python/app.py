@@ -1,8 +1,10 @@
 import sys
 import sqlite3
 from datetime import datetime as dt
+from datetime import timedelta
 import time
 import Scrapers
+import multiprocessing
 
 
 def command_error_exit(msg):
@@ -76,19 +78,18 @@ def main():
 
 	print("Queuing Today's Articles")
 
-	q = []
+	number_cores = multiprocessing.cpu_count()
+	pool = multiprocessing.Pool(processes=number_cores)
+
 	from Router import Router
 	my_router = Router(database_filename)
-	i = 0
-	for s in my_router.get_scrapers():
-		articles = s.get_article_list()
-		for a in articles:
-			q.append([i, a, dt.now()])
-			i += 1
-		if not no_db:
-			s.queue_article_list(articles)
+	r = [pool.apply_async(make_queue, args=(s, no_db)) for s in my_router.get_scrapers()]
+	q = [p.get() for p in r]
+	for q in q:
+		q.pop(0)
+	pool.terminate()
 
-	print("Queuing Complete With " + str(i) + " Articles")
+	print("Queuing Complete With " + str(len(q)) + " Articles")
 	if queue_only:
 		return
 
@@ -106,11 +107,29 @@ def main():
 		execute_article_parse(one_url, database_filename, no_db, True, True, False)
 		print("Continuing with Queued Articles\r\n")
 
-	for a in q:
-		execute_article_parse(a[1], database_filename, no_db, reparse, redownload, True)
+	pool = multiprocessing.Pool(processes=number_cores)
+	r = [pool.apply_async(execute_article_parse, args=(a[1], database_filename, no_db, reparse, redownload, True)) for a in q]
+	r = [p.get() for p in r]
+	pool.terminate()
 
 	print("\r\n==============================")
 	print("Program Complete!")
+
+
+def make_queue(s, no_db):
+	q = []
+	# Get today's articles
+	articles = s.get_article_list()
+	# Get articles from yesterday, if possible
+	try:
+		articles = articles + s.get_article_list(dt.today() - timedelta(1))
+	except ValueError:
+		pass
+	for a in articles:
+		q.append([0, a, dt.now()])
+	if not no_db:
+		s.queue_article_list(articles)
+	return q
 
 
 def execute_article_parse(url, database_filename, no_db, reparse, redownload, sleep=True):

@@ -34,7 +34,7 @@ class Scrapers(object):
 	@staticmethod
 	def normalize_url(url):
 		"""
-		Parses a given url and normalizes it to be all lowercase, be http, and have "www.".
+		Parses a given url and normalizes it to be all lowercase, be http, and not have "www.".
 
 		This is used to prevent duplication of articles due to non-unique URLs.
 
@@ -44,8 +44,8 @@ class Scrapers(object):
 		from urlparse import urlparse
 		u = urlparse(url)
 		url = u.hostname.lower()+u.path.lower()
-		if not url.find("www.") == 0:
-			url = "www."+url
+		if url.find("www.") == 0:
+			url = url.replace("www.", "")
 		url = "http://"+url
 		return url
 
