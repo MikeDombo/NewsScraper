@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+	<object class="tk.Frame" id="Toplevel_1">
+		<property name="height">600</property>
+		<property name="padx">20</property>
+		<property name="pady">20</property>
+		<property name="takefocus">true</property>
+		<property name="width">800</property>
+	<child>
+	  <object class="tk.Button" id="Button_6">
+		<property name="command">original_push</property>
+		<property name="text" translatable="yes">Original Reporting</property>
+		<property name="underline">0</property>
+		<layout>
+		  <property name="column">0</property>
+		  <property name="padx">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">1</property>
+		</layout>
+	  </object>
+	</child>
+	<child>
+	  <object class="tk.Button" id="Button_1">
+		<property name="command">primary_push</property>
+		<property name="text" translatable="yes">Primary Source</property>
+		<property name="underline">0</property>
+		<layout>
+		  <property name="column">1</property>
+		  <property name="padx">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">1</property>
+		</layout>
+	  </object>
+	</child>
+	<child>
+	  <object class="tk.Button" id="Button_2">
+		<property name="command">secondary_push</property>
+		<property name="text" translatable="yes">Secondary Source</property>
+		<property name="underline">0</property>
+		<layout>
+		  <property name="column">2</property>
+		  <property name="padx">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">1</property>
+		</layout>
+	  </object>
+	</child>
+	<child>
+	  <object class="tk.Button" id="Button_3">
+		<property name="command">quote_push</property>
+		<property name="text" translatable="yes">Quote</property>
+		<property name="underline">0</property>
+		<layout>
+		  <property name="column">3</property>
+		  <property name="padx">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">1</property>
+		</layout>
+	  </object>
+	</child>
+	<child>
+	  <object class="tk.Button" id="Button_4">
+		<property name="command">not_push</property>
+		<property name="text" translatable="yes">Not a Source</property>
+		<property name="underline">0</property>
+		<layout>
+		  <property name="column">4</property>
+		  <property name="padx">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">1</property>
+		</layout>
+	  </object>
+	</child>
+	<child>
+	  <object class="tk.Button" id="Button_5">
+		<property name="command">skip_push</property>
+		<property name="text" translatable="yes">Skip</property>
+		<property name="underline">1</property>
+		<layout>
+		  <property name="column">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">1</property>
+		</layout>
+	  </object>
+	</child>
+	<child>
+	  <object class="tk.Message" id="Message_1">
+		<property name="font">{Segoe UI} 12 {}</property>
+		<layout>
+		  <property name="column">0</property>
+		  <property name="columnspan">6</property>
+		  <property name="ipady">5</property>
+		  <property name="propagate">True</property>
+		  <property name="row">0</property>
+		</layout>
+	  </object>
+	</child>
+	</object>
+</interface>

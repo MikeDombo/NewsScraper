@@ -58,10 +58,8 @@ class Scrapers(object):
 		"""
 		if webpage is None:
 			response = requests.get(self.url, headers=self.headers)
-			while not response.ok:
-				print("Sleeping 10 seconds and retrying " + self.url)
-				time.sleep(10)
-				response = requests.get(self.url, headers=self.headers)
+			if not response.ok:
+				raise RuntimeError("Error with URL "+self.url)
 			# Get HTML from response object
 			response = response.text
 		else:

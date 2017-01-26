@@ -20,6 +20,7 @@ def print_full_help():
 	print("-d \t| Redownloads and reparses all articles in queue, even those that have been downloaded and parsed before. -r is implicit.")
 	print("-r \t| Reparses all articles in queue (without redownloading), even those that have been downloaded and parsed before.")
 	print("-n \t| Run without saving anything to a database.")
+	print("-m \t| Run without multiprocessing.")
 	print("-u <url> \t| Specify a URL to parse before the queue starts")
 	print("-h \t| Prints this help message.\r\n")
 
@@ -32,11 +33,12 @@ def main():
 	reparse = False
 	redownload = False
 	no_db = False
+	run_multiprocessing = True
 
 	# Parse Command Line Arguments
 	if len(sys.argv) > 1:
 		args = sys.argv
-		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-u", "-h"]
+		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-m, "-u", "-h"]
 		del args[0]  # Remove script name from arguments
 
 		if '-h' in args:
@@ -51,6 +53,8 @@ def main():
 		if '-r' in args:
 			reparse = True
 			print("Running in reparse mode")
+		if '-m' in args:
+			run_multiprocessing = False
 		if '-d' in args:
 			reparse = True
 			redownload = True
@@ -89,14 +93,15 @@ def main():
 		q.pop(0)
 	pool.terminate()
 
-	print("Queuing Complete With " + str(len(q)) + " Articles")
 	if queue_only:
+		print("Queuing Complete With " + str(len(q)) + " Articles")
 		return
 
 	# If we are running with a database, overwrite the local q with one from the database which will already contain q
 	if not no_db:
 		q = Scrapers.Scrapers.read_article_queue(database_filename)
 
+	print("Queuing Complete With " + str(len(q)) + " Articles")
 	print("Beginning Scraping and Parsing")
 	print("==============================\r\n")
 
@@ -107,10 +112,14 @@ def main():
 		execute_article_parse(one_url, database_filename, no_db, True, True, False)
 		print("Continuing with Queued Articles\r\n")
 
-	pool = multiprocessing.Pool(processes=number_cores)
-	r = [pool.apply_async(execute_article_parse, args=(a[1], database_filename, no_db, reparse, redownload, True)) for a in q]
-	r = [p.get() for p in r]
-	pool.terminate()
+	if run_multiprocessing:
+		pool = multiprocessing.Pool(processes=number_cores)
+		r = [pool.apply_async(execute_article_parse, args=(a[1], database_filename, no_db, reparse, redownload, True)) for a in q]
+		r = [p.get() for p in r]
+		pool.terminate()
+	else:
+		for a in q:
+			execute_article_parse(a[1], database_filename, no_db, reparse, redownload, True)
 
 	print("\r\n==============================")
 	print("Program Complete!")
@@ -148,12 +157,15 @@ def execute_article_parse(url, database_filename, no_db, reparse, redownload, sl
 			print(sc.url)
 		if (sleep and redownload) or (sleep and not (redownload or reparse)):
 			time.sleep(1)
-		if redownload or not sc.is_already_analyzed():
-			sc.get_article_data()
-		else:
-			sc.get_article_data(sc.get_article_html_from_db(url, database_filename))
-		if not no_db:
-			sc.save_data_to_db()
+		try:
+			if redownload or not sc.is_already_analyzed():
+				sc.get_article_data()
+			else:
+				sc.get_article_data(sc.get_article_html_from_db(url, database_filename))
+			if not no_db:
+				sc.save_data_to_db()
+		except RuntimeError:
+			print "Runtime Error"
 
 
 def is_sqlite3(filename):

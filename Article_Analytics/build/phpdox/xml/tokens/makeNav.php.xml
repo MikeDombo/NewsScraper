@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/PHP" file="makeNav.php" realpath="C:/Users/Mike/Desktop/NewsScraper/PHP/makeNav.php" size="1878" time="2017-01-23T06:03:35+01:00" unixtime="1485147815" sha1="c08f18b0f1dfcd5913ae49ca42c0a7a2cc79ef7f" relative="makeNav.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$page</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">getActivePage</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="3">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$navPages</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"home"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Publishers"</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="4">
+    <token name="T_WHITESPACE">				 </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"day"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Day of Week"</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="5">
+    <token name="T_WHITESPACE">				 </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"author"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Authors"</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="6">
+    <token name="T_WHITESPACE">				 </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"section"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Sections"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="7">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">&lt;script&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">	function navigate(e, url){if(e.ctrlKey){window.open(url, "_blank");}else{window.location = url;}}</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">&lt;/script&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">&lt;div class="container pb-5"&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">	&lt;h1 class="display-4 d-flex justify-content-center pt-5"&gt;NewsScraper Analysis&lt;/h1&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">	&lt;a href="http://mikedombrowski.com"&gt;&lt;h2 class="d-flex justify-content-center pb-5 text-muted"&gt;Michael Dombrowski&lt;/h2&gt;&lt;/a&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">	&lt;nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse"&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">		&lt;button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">			&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">		&lt;/button&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">		&lt;a class="navbar-brand" href="#"&gt;&amp;nbsp&lt;/a&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">		&lt;div class="collapse navbar-collapse" id="navbarCollapse"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">			&lt;ul class="navbar-nav mx-auto"&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">				</token>
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="22">
+    <token name="T_WHITESPACE">				</token>
+    <token name="T_FOREACH">foreach</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$navPages</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_AS">as</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$p</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="23">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$page</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;li class=\"nav-item active\"&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="24">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_ELSE">else</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;li class=\"nav-item\"&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="25">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"home"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">""</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="26">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;a class='nav-link' href='"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">getSubfolder</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">/</token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">'&gt;</token>
+    <token name="T_VARIABLE">$p</token>
+    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="27">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">""</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"home"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="28">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$page</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$k</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">" &lt;span class=\"sr-only\"&gt;(current)&lt;/span&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="29">
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/a&gt;&lt;/li&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="30">
+    <token name="T_WHITESPACE">				</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="31">
+    <token name="T_WHITESPACE">				</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">			&lt;/ul&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">	&lt;/nav&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="37">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">getActivePage</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="38">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">explode</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'/'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">parse_url</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_SERVER</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'REQUEST_URI'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"path"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="39">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">end</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">""</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="40">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_UNSET">unset</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_STRING">count</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_MINUS">-</token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="41">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="42">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_IF">if</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"/"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">end</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">getSubfolder</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_BOOLEAN_OR">||</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">end</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">getSubfolder</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="43">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"home"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="44">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="45">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">end</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="46">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="47"/>
+  <line no="48">
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">getSubfolder</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="49">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">explode</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'/'</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">parse_url</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$_SERVER</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'REQUEST_URI'</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"path"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="50">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_UNSET">unset</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_STRING">count</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_MINUS">-</token>
+    <token name="T_LNUMBER">1</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="51">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">implode</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$path</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"/"</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="52">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="53">
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+</source>
