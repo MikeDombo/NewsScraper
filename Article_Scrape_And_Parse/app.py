@@ -38,7 +38,7 @@ def main():
 	# Parse Command Line Arguments
 	if len(sys.argv) > 1:
 		args = sys.argv
-		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-m, "-u", "-h"]
+		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-m", "-u", "-h"]
 		del args[0]  # Remove script name from arguments
 
 		if '-h' in args:

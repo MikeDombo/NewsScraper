@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Article" namespace="" name="Article" abstract="false" final="false" start="7" end="244">
-  <file path="C:/Users/Mike/Desktop/NewsScraper/PHP" file="Article.php" realpath="C:/Users/Mike/Desktop/NewsScraper/PHP/Article.php" size="4226" time="2017-01-22T20:37:29+01:00" unixtime="1485113849" sha1="42f9a072fd0a38bd879ad0a9d365b298ec818f3f" relative="Article.php"/>
+  <file path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Article.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Article.php" size="4226" time="2017-01-22T20:37:29+01:00" unixtime="1485113849" sha1="42f9a072fd0a38bd879ad0a9d365b298ec818f3f" relative="Article.php"/>
   <docblock>
     <description compact="Class to hold all data about individual articles based on the structure of the Articles table of the database"/>
     <author value="Michael Dombrowski"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/PHP" file="route.php" realpath="C:/Users/Mike/Desktop/NewsScraper/PHP/route.php" size="747" time="2017-01-22T01:45:41+01:00" unixtime="1485045941" sha1="e4302f9a0920deddc25b3a5678e898291fc1d8ad" relative="route.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="route.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/route.php" size="747" time="2017-01-22T01:45:41+01:00" unixtime="1485045941" sha1="e4302f9a0920deddc25b3a5678e898291fc1d8ad" relative="route.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <index xmlns="http://xml.phpdox.net/src" basedir="C:/Users/Mike/Desktop/NewsScraper/PHP">
   <namespace name="">
-    <class name="Article" src="Article.php" description="Class to hold all data about individual articles based on the structure of the Articles table of the database" xml="classes/Article.xml"/>
-    <class name="Database" src="Database.php" xml="classes/Database.xml"/>
-  </namespace>
+    
+    
+  <class name="Article" src="Article.php" description="Class to hold all data about individual articles based on the structure of the Articles table of the database" xml="classes/Article.xml"/><class name="Database" src="Database.php" xml="classes/Database.xml"/></namespace>
 </index>

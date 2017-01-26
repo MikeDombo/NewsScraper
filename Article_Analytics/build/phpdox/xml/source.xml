@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <source xmlns="http://xml.phpdox.net/src">
-  <dir name="C:/Users/Mike/Desktop/NewsScraper/PHP">
+  <dir name="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics">
     <file name="Analysis.php" size="3392" time="2017-01-23T06:01:21+01:00" unixtime="1485147681" sha1="8f46231fbeaa0a70449c6c7f26ade9a3901a074f" xml="tokens/Analysis.php.xml"/>
     <file name="Article.php" size="4226" time="2017-01-22T20:37:29+01:00" unixtime="1485113849" sha1="42f9a072fd0a38bd879ad0a9d365b298ec818f3f" xml="tokens/Article.php.xml"/>
     <file name="authorAnalytics.php" size="2907" time="2017-01-22T05:23:44+01:00" unixtime="1485059024" sha1="20d2109f4b9e45b71f326cac5e8beaa87f0b7133" xml="tokens/authorAnalytics.php.xml"/>

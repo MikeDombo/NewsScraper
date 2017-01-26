@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="8" end="199">
-  <file path="C:/Users/Mike/Desktop/NewsScraper/PHP" file="Database.php" realpath="C:/Users/Mike/Desktop/NewsScraper/PHP/Database.php" size="5089" time="2017-01-22T20:34:42+01:00" unixtime="1485113682" sha1="2949afb8f9ef77c1aee0615601690f99681883c0" relative="Database.php"/>
+  <file path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Database.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Database.php" size="5089" time="2017-01-22T20:34:42+01:00" unixtime="1485113682" sha1="2949afb8f9ef77c1aee0615601690f99681883c0" relative="Database.php"/>
   <docblock>
     <description/>
     <author value="Michael Dombrowski"/>
