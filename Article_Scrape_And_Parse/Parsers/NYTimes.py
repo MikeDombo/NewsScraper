@@ -20,6 +20,20 @@ class NYTimes(Parsers):
 		return "The New York Times"
 
 	@staticmethod
+	def get_article_publish_date(webpage):
+		"""
+		Parses webpage to return the date the article was published
+
+		:param webpage:
+		:return: Article publish date
+		:rtype: DateTime object
+		"""
+		bw = BeautifulSoup(webpage, 'html.parser')
+		pdate = bw.find("meta", {"name": "pdate"})['content']
+		from dateutil.parser import parse
+		return parse(pdate)
+
+	@staticmethod
 	def get_article_section(webpage, url):
 		"""
 		Parses webpage and/or url to return a list of sections/subsections that the article is in
@@ -51,7 +65,7 @@ class NYTimes(Parsers):
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return_text = ""
-		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p']}):
+		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p', 'paragraph--story']}):
 			for br in text.find_all("br"):
 				br.replace_with("\r\n")
 			return_text += text.text + "\r\n\r\n"
@@ -69,7 +83,7 @@ class NYTimes(Parsers):
 		"""
 		my_sources = []
 		bw = BeautifulSoup(webpage, 'html.parser')
-		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p']}):
+		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p', 'paragraph--story']}):
 			for link in text.find_all("a"):
 				if link.get('class') is None:
 					l = link.get('href')

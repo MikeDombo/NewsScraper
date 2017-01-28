@@ -86,6 +86,41 @@
 </dd></dl>
 
 </div>
+<div class="section" id="module-Scrapers.TheGuardian">
+<span id="scrapers-theguardian-module"></span><h2>Scrapers.TheGuardian module<a class="headerlink" href="#module-Scrapers.TheGuardian" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Scrapers.TheGuardian.TheGuardian">
+<em class="property">class </em><code class="descclassname">Scrapers.TheGuardian.</code><code class="descname">TheGuardian</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.TheGuardian.TheGuardian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Scrapers.Scrapers" title="Scrapers.Scrapers"><code class="xref py py-class docutils literal"><span class="pre">Scrapers.Scrapers</span></code></a></p>
+<p>sections = [&#8220;uk-news&#8221;, &#8220;world/europe-news&#8221;, &#8220;world/americas&#8221;, &#8220;world/asia&#8221;, &#8220;world/middleeast&#8221;,
+&#8220;world/africa&#8221;, &#8220;australian-news&#8221;, &#8220;cities&#8221;, &#8220;global-development&#8221;, &#8220;us-news&#8221;, &#8220;us-news/us-politics&#8221;,
+&#8220;politics&#8221;, &#8220;uk/commentisfree&#8221;, &#8220;us/commentisfree&#8221;, &#8220;lifeandstyle/food-and-drink&#8221;,
+&#8220;lifeandstyle/health-and-wellbeing&#8221;, &#8220;lifeandstyle/love-and-sex&#8221;, &#8220;lifeandstyle/family&#8221;,
+&#8220;lifeandstyle/women&#8221;, &#8220;lifeandstyle/home-and-garden&#8221;, &#8220;fashion&#8221;, &#8220;environment/climate-change&#8221;,
+&#8220;environment/wildlife&#8221;, &#8220;environment/energy&#8221;, &#8220;environment/pollution&#8221;, &#8220;uk/technology&#8221;,
+&#8220;us/technology&#8221;, &#8220;travel/uk&#8221;, &#8220;travel/europe&#8221;, &#8220;travel/us&#8221;, &#8220;travel/skiing&#8221;, &#8220;money/property&#8221;,
+&#8220;money/savings&#8221;, &#8220;money/pensions&#8221;, &#8220;money/debt&#8221;, &#8220;money/work-and-careers&#8221;, &#8220;science&#8221;]</p>
+<dl class="staticmethod">
+<dt id="Scrapers.TheGuardian.TheGuardian.get_article_list">
+<em class="property">static </em><code class="descname">get_article_list</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Scrapers.TheGuardian.TheGuardian.get_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of article URLs from a given scraper subclass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>date</strong> (<em>DateTime</em>) &#8211; date of articles to be enumerated or None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of URLs of articles to be analyzed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-Scrapers.TheIndependent">
 <span id="scrapers-theindependent-module"></span><h2>Scrapers.TheIndependent module<a class="headerlink" href="#module-Scrapers.TheIndependent" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -305,6 +340,7 @@ saving the data to a database</p>
 <li><a class="reference internal" href="#">Scrapers package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 <li><a class="reference internal" href="#module-Scrapers.NYTimes">Scrapers.NYTimes module</a></li>
+<li><a class="reference internal" href="#module-Scrapers.TheGuardian">Scrapers.TheGuardian module</a></li>
 <li><a class="reference internal" href="#module-Scrapers.TheIndependent">Scrapers.TheIndependent module</a></li>
 <li><a class="reference internal" href="#module-Scrapers.WashingtonPost">Scrapers.WashingtonPost module</a></li>
 <li><a class="reference internal" href="#module-Scrapers">Module contents</a></li>
@@ -359,7 +395,7 @@ saving the data to a database</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2017, Michael Dombrowski.
-      Last updated on Jan 26, 2017.
+      Last updated on Jan 28, 2017.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
   </body>

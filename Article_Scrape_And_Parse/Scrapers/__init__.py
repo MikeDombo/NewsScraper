@@ -74,9 +74,9 @@ class Scrapers(object):
 		self.current_article.author = self.my_parser.get_article_author(response)
 		self.current_article.publisher = self.my_parser.get_article_publisher(response, self.url)
 		self.current_article.publish_date = self.my_parser.get_article_publish_date(response)
+		self.current_article.article_text = self.my_parser.get_article_text(response)
 		self.current_article.sources = self.my_parser.get_article_sources(response)
 		self.current_article.full_html = response
-		self.current_article.article_text = self.my_parser.get_article_text(response)
 
 		text_stats = textstat.textstatistics()
 		self.current_article.grade_level = text_stats.flesch_kincaid_grade(self.current_article.article_text)

@@ -60,7 +60,8 @@ class Parsers(object):
 		:return: Article subtitle
 		:rtype: str
 		"""
-		return ""
+		bw = BeautifulSoup(webpage, 'html.parser')
+		return bw.find("meta", {"property": "og:description"})['content']
 
 	@staticmethod
 	def get_article_author(webpage):
@@ -72,21 +73,11 @@ class Parsers(object):
 		:rtype: str
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		return bw.find("meta", {"name": "author"})['content']
-
-	@staticmethod
-	def get_article_publish_date(webpage):
-		"""
-		Parses webpage to return the date the article was published
-
-		:param webpage:
-		:return: Article publish date
-		:rtype: DateTime object
-		"""
-		bw = BeautifulSoup(webpage, 'html.parser')
-		pdate = bw.find("meta", {"name": "pdate"})['content']
-		from dateutil.parser import parse
-		return parse(pdate)
+		author_1 = bw.find("meta", {"name": "author"})
+		if author_1 is None:
+			return bw.find("meta", {"property": "article:author"})['content']
+		else:
+			return author_1['content']
 
 	@staticmethod
 	def get_article_publisher(webpage, url):
@@ -100,6 +91,20 @@ class Parsers(object):
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
 		return bw.find("meta", {"property": "og:site_name"})['content']
+
+	@staticmethod
+	def get_article_publish_date(webpage):
+		"""
+		Parses webpage to return the date the article was published
+
+		:param webpage:
+		:return: Article publish date
+		:rtype: DateTime object
+		"""
+		bw = BeautifulSoup(webpage, 'html.parser')
+		pdate = bw.find("meta", {"property": "article:published_time"})['content']
+		from dateutil.parser import parse
+		return parse(pdate)
 
 	@staticmethod
 	def get_article_sources(webpage):

@@ -3,10 +3,24 @@ from bs4 import BeautifulSoup
 import re
 
 
-class TheIndependent(Parsers):
+class TheGuardian(Parsers):
 	def __init__(self):
-		super(TheIndependent, self).__init__()
-		self._recognized_urls = ["independent.co.uk", "theindependent.co.uk"]
+		super(TheGuardian, self).__init__()
+		self._recognized_urls = ["theguardian.com", "theguardian.co.uk"]
+
+	@staticmethod
+	def get_article_publish_date(webpage):
+		"""
+		Parses webpage to return the date the article was published
+
+		:param webpage:
+		:return: Article publish date
+		:rtype: DateTime object
+		"""
+		bw = BeautifulSoup(webpage, 'html.parser')
+		pdate = bw.find("time", {"itemprop": "datePublished"})['datetime']
+		from dateutil.parser import parse
+		return parse(pdate)
 
 	@staticmethod
 	def get_article_text(webpage):
@@ -44,42 +58,12 @@ class TheIndependent(Parsers):
 			p = text.parent.name
 			if not p == "li":
 				for link in text.find_all("a"):
-					if link.get('class') is None:
+					if link.get('data-link-name') is not "auto-linked-tag":
 						l = link.get('href')
 						if l is not None:
 							if l.find("mailto:") == -1:
 								my_sources.append(l)
 		return my_sources
-
-	@staticmethod
-	def get_article_subtitle(webpage):
-		"""
-		Parses webpage to return the subtitle of an article
-
-		:param webpage:
-		:return: Article subtitle
-		:rtype: str
-		"""
-		subtitle = ""
-		bw = BeautifulSoup(webpage, 'html.parser')
-		try:
-			for text in bw.find("div", {'class': 'intro'}).find_all("p"):
-				subtitle += text.text + "\r\n"
-		except AttributeError:
-			subtitle = ""
-		return subtitle.strip()
-
-	@staticmethod
-	def get_article_author(webpage):
-		"""
-		Parses webpage to return the author of the article
-
-		:param webpage:
-		:return: Author of the article
-		:rtype: str
-		"""
-		bw = BeautifulSoup(webpage, 'html.parser')
-		return bw.find("meta", {"name": "article:author_name"})['content']
 
 	@staticmethod
 	def get_article_section(webpage, url):
@@ -92,8 +76,7 @@ class TheIndependent(Parsers):
 		:rtype: list
 		"""
 
-		section = re.findall(".*independent\.co\.uk/(.*)\.html$", url)[0]
+		section = re.findall("theguardian\.com/(.*)/\d{4}/\w{3}/\d{2}", url, re.IGNORECASE)[0]
 		section = section.split("/")
-		del[section[len(section)-1]]
 		section.reverse()
 		return section
