@@ -58,7 +58,7 @@ class TheGuardian(Parsers):
 			p = text.parent.name
 			if not p == "li":
 				for link in text.find_all("a"):
-					if link.get('data-link-name') is not "auto-linked-tag":
+					if "auto-linked-tag" not in link['data-link-name']:
 						l = link.get('href')
 						if l is not None:
 							if l.find("mailto:") == -1:
