@@ -42,7 +42,7 @@ class TheGuardian(Scrapers):
 				if article_link is not None:
 					href = urlparse(article_link)
 					article_link = href.scheme+'://'+href.netloc+href.path
-					if article_link not in article_list and "world/picture" not in article_link:
+					if article_link not in article_list and "/picture/" not in article_link:
 						article_list.append(article_link)
 		return article_list
 

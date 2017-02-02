@@ -164,8 +164,8 @@ def execute_article_parse(url, database_filename, no_db, reparse, redownload, sl
 				sc.get_article_data(sc.get_article_html_from_db(url, database_filename))
 			if not no_db:
 				sc.save_data_to_db()
-		except RuntimeError:
-			print "Runtime Error"
+		except RuntimeError as e:
+			print "Runtime Error: "+e.message
 
 
 def is_sqlite3(filename):

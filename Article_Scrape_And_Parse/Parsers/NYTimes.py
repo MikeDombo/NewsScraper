@@ -87,7 +87,7 @@ class NYTimes(Parsers):
 			for link in text.find_all("a"):
 				if link.get('class') is None:
 					l = link.get('href')
-					if l.find("mailto:") == -1:
+					if l is not None and l.find("mailto:") == -1:
 						my_sources.append(l)
 		return my_sources
 

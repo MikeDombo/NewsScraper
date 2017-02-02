@@ -1,5 +1,5 @@
 <?php if(isset($_GET["answer"])){
-	$db = "../news-old-1.db";
+	$db = "../news-old-2.db";
 	try{
 		$pdo = new PDO('sqlite:'.$db);
 	}

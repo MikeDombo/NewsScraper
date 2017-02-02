@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="3399" time="2017-01-27T04:17:03+01:00" unixtime="1485487023" sha1="6188e744547d12748e2469f21bb0e8aeb4f582a3" relative="classify.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="3399" time="2017-01-29T05:09:39+01:00" unixtime="1485662979" sha1="9d286b425d479cef9da6a0a8ccfd0cdd46eaeabe" relative="classify.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_IF">if</token>
@@ -21,7 +21,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_EQUAL">=</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"../news-old-1.db"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"../news-old-2.db"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="3">
