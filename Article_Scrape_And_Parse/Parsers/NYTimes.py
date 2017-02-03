@@ -28,10 +28,18 @@ class NYTimes(Parsers):
 		:return: Article publish date
 		:rtype: DateTime object
 		"""
-		bw = BeautifulSoup(webpage, 'html.parser')
-		pdate = bw.find("meta", {"name": "pdate"})['content']
 		from dateutil.parser import parse
-		return parse(pdate)
+		bw = BeautifulSoup(webpage, 'html.parser')
+		try:
+			pdate = bw.find("meta", {"name": "pdate"})['content']
+			return parse(pdate)
+		except:
+			url = bw.find("meta", {"property": "og:url"})['content']
+			from urlparse import urlparse
+			import re
+			u = urlparse(url).path
+			a = re.match(".*/(\d{4}/\d{2}/\d{2})/.*", u)
+			return parse(a.group(1))
 
 	@staticmethod
 	def get_article_section(webpage, url):
@@ -101,4 +109,7 @@ class NYTimes(Parsers):
 		:rtype: str
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		return bw.find("meta", {"name": "hdl"})['content']
+		try:
+			return bw.find("meta", {"name": "hdl"})['content']
+		except:
+			return bw.find("h1", {"class":"Post__headline"}).text

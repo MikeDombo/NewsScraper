@@ -29,6 +29,7 @@ def main():
 	database_filename = 'news.db'
 
 	one_url = None
+	no_queuing = False
 	queue_only = False
 	reparse = False
 	redownload = False
@@ -38,7 +39,7 @@ def main():
 	# Parse Command Line Arguments
 	if len(sys.argv) > 1:
 		args = sys.argv
-		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-m", "-u", "-h"]
+		recognized_args = ["-q", "-r", "-d", "-n", "-f", "-m", "-u", "-s", "-h"]
 		del args[0]  # Remove script name from arguments
 
 		if '-h' in args:
@@ -50,6 +51,9 @@ def main():
 		if '-n' in args:
 			no_db = True
 			print("Running with no database. No data will be stored!")
+		if '-s' in args:
+			no_queuing = True
+			print("Running without first queuing!")
 		if '-r' in args:
 			reparse = True
 			print("Running in reparse mode")
@@ -80,22 +84,23 @@ def main():
 		verify_db(database_filename)
 		print("Running with database: " + database_filename)
 
-	print("Queuing Today's Articles")
+	if not no_queuing:
+		print("Queuing Today's Articles")
 
-	number_cores = multiprocessing.cpu_count()
-	pool = multiprocessing.Pool(processes=number_cores)
+		number_cores = multiprocessing.cpu_count()
+		pool = multiprocessing.Pool(processes=number_cores)
 
-	from Router import Router
-	my_router = Router(database_filename)
-	r = [pool.apply_async(make_queue, args=(s, no_db)) for s in my_router.get_scrapers()]
-	q = [p.get() for p in r]
-	for q in q:
-		q.pop(0)
-	pool.terminate()
+		from Router import Router
+		my_router = Router(database_filename)
+		r = [pool.apply_async(make_queue, args=(s, no_db)) for s in my_router.get_scrapers()]
+		q = [p.get() for p in r]
+		for q in q:
+			q.pop(0)
+		pool.terminate()
 
-	if queue_only:
-		print("Queuing Complete With " + str(len(q)) + " Articles")
-		return
+		if queue_only:
+			print("Queuing Complete With " + str(len(q)) + " Articles")
+			return
 
 	# If we are running with a database, overwrite the local q with one from the database which will already contain q
 	if not no_db:
