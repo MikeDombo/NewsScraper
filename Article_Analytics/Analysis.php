@@ -27,7 +27,7 @@ function analyticsByHeadline(array $articles){
  * @return array
  */
 function articleAnalytics(\Article $article): array {
-	$numSources = count(array_unique($article->getArticleSources()));
+	$numSources = count($article->getArticleSources());
 	$numWords = str_word_count($article->getArticleText());
 	$sourcesPerMWords = $numSources/($numWords/1000);
 
@@ -47,7 +47,7 @@ function overallAnalytics(array $articles){
 
 	foreach($articles as $a){
 		/* @var $a \Article */
-		$numSources += count(array_unique($a->getArticleSources()));
+		$numSources += count($a->getArticleSources());
 		$numWords += str_word_count($a->getArticleText());
 		$cumulativeGradeLevel += $a->getGradeLevel();
 	}

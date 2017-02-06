@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Analysis.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Analysis.php" size="3392" time="2017-01-23T06:01:21+01:00" unixtime="1485147681" sha1="8f46231fbeaa0a70449c6c7f26ade9a3901a074f" relative="Analysis.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Analysis.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Analysis.php" size="3364" time="2017-02-05T20:00:48+01:00" unixtime="1486321248" sha1="2dfca3d44ec4591fde6eadb866cdf6adfcc12a12" relative="Analysis.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -248,13 +248,10 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">count</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_STRING">array_unique</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$article</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">getArticleSources</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
@@ -405,13 +402,10 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">count</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_STRING">array_unique</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$a</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">getArticleSources</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>

@@ -72,7 +72,7 @@ class NYTimes(Parsers):
 		:rtype: str
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		return_text = ""
+		return_text = u""
 		for text in bw.find_all("p", {"class": ['story-body-text', 'g-p', 'paragraph--story']}):
 			for br in text.find_all("br"):
 				br.replace_with("\r\n")
@@ -95,7 +95,7 @@ class NYTimes(Parsers):
 			for link in text.find_all("a"):
 				if link.get('class') is None:
 					l = link.get('href')
-					if l is not None and l.find("mailto:") == -1:
+					if l is not None and "mailto:" not in l and "tel:" not in l:
 						my_sources.append(l)
 		return my_sources
 

@@ -153,6 +153,9 @@ def execute_article_parse(url, database_filename, no_db, reparse, redownload, sl
 	sc = Scrapers.Scrapers(database_filename)
 	sc.url = url
 	sc.my_parser = my_router.get_parsers_by_url(sc.url)
+	if sc.my_parser is None:
+		print "Could not find parser for "+sc.url
+		return
 
 	# Check if we should download and parse the article or not
 	if no_db or reparse or not sc.is_already_analyzed():
@@ -201,6 +204,7 @@ def verify_db(file):
 						`ArticleText` TEXT,
 						`ArticleHTML` TEXT,
 						`ArticleSources` TEXT,
+						`TextSources` TEXT,
 						`RetrievalDate` TEXT,
 						`ArticleSection` TEXT,
 						`GradeLevel` REAL,

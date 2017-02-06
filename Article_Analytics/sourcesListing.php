@@ -91,7 +91,10 @@ $currentArticle = $dbo->getArticleByURL($url);
 		<div class="card">
 			<div class="card-block">
 				<h2 class="card-title">Sources</h2>
-				<p class="card-text"><?php foreach($currentArticle->getArticleSources() as $s){print "<a href='$s'>$s</a><br/>";}?></p>
+				<p class="card-text"><?php foreach($currentArticle->getArticleSources() as $s){
+					print "<a href='".$s["URL"]."'>".$s["URL"]."</a><br/>";
+				}?>
+				</p>
 			</div>
 		</div>
 		<div class="card">

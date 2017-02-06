@@ -76,10 +76,48 @@ class Scrapers(object):
 		self.current_article.publish_date = self.my_parser.get_article_publish_date(response)
 		self.current_article.article_text = self.my_parser.get_article_text(response)
 		self.current_article.sources = self.my_parser.get_article_sources(response)
+		self.current_article.sources = self.parse_sources(self.current_article.sources)
+		self.current_article.text_sources = self.parse_text_sources(self.current_article.article_text)
 		self.current_article.full_html = response
 
 		text_stats = textstat.textstatistics()
 		self.current_article.grade_level = text_stats.flesch_kincaid_grade(self.current_article.article_text)
+
+	def parse_sources(self, sources):
+		from Router import Router
+		from urlparse import urlparse
+		my_r = Router(self.database_filename)
+		for i,s in enumerate(sources):
+			parsed = urlparse(s)
+			if parsed.path is None or parsed.path == "" or parsed.path == "/":
+				sources[i] = {"URL": s, "Quality": 0}
+			elif my_r.get_parsers_by_url(s) is not None:
+				sources[i] = {"URL": s, "Quality": 1}
+			elif len(parsed.path.split("/")) > 1:
+				sources[i] = {"URL": s, "Quality": 2}
+			else:
+				sources[i] = {"URL": s, "Quality": -1}
+				from unidecode import unidecode
+				print unidecode(s)+" UNKNOWN QUALITY!!!!!"
+		return sources
+
+	def parse_text_sources(self, text):
+		text_sources = []
+		import re
+		from unidecode import unidecode
+		sentence_regex = r'[\.\?!]\s+(\"[A-Z][^\"]*[\.\?!]+\")|[\.\?!][\'\"\)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)\s+'
+		source_regex = r'.*according to\s+([^,;]*)|.*reported by\s+([^,;]*)'
+		fragments = re.split(sentence_regex, unidecode(text))
+		for f in fragments:
+			if f is not None:
+				f = f.strip()
+				if len(f) >= 20:
+					matches = re.match(source_regex, f)
+					if matches is not None:
+						for match in matches.groups():
+							if match is not None:
+								text_sources.append({"sentence": f, "source": match})
+		return text_sources
 
 	@staticmethod
 	def get_article_html_from_db(url, database_filename):
@@ -134,10 +172,10 @@ class Scrapers(object):
 		conn.text_factory = str
 		c = conn.cursor()
 		c.execute('''REPLACE INTO `Articles` (ArticleURL, Headline, Subtitle, Author, Publisher, PublishDate, ArticleText,
-				  ArticleHTML, ArticleSources, RetrievalDate, ArticleSection, GradeLevel, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+				  ArticleHTML, ArticleSources, TextSources, RetrievalDate, ArticleSection, GradeLevel, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
 				  [self.url, ca.title, ca.subtitle, ca.author, ca.publisher,
-				   ca.publish_date, ca.article_text, ca.full_html, json.dumps(ca.sources), ca.fetch_date,
-				   json.dumps(ca.section), ca.grade_level, ca.updates, ca.editor_notes])
+				   ca.publish_date, ca.article_text, ca.full_html, json.dumps(ca.sources), json.dumps(ca.text_sources),
+				   ca.fetch_date, json.dumps(ca.section), ca.grade_level, ca.updates, ca.editor_notes])
 		conn.commit()
 		conn.close()
 

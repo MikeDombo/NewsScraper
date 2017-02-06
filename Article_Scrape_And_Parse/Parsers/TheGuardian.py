@@ -32,14 +32,14 @@ class TheGuardian(Parsers):
 		:rtype: str
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		return_text = ""
+		return_text = u""
 		for text in bw.find("div", {'itemprop': ['articleBody', 'reviewBody']}).find_all("p"):
 			p = text.parent.name
 			if not p == "li":
 				for br in text.find_all("br"):
 					br.replace_with("\r\n")
 				if not text.text == "":
-					return_text += text.text.encode("UTF-8") + "\r\n\r\n"
+					return_text += text.text + "\r\n\r\n"
 		return_text = return_text.strip()
 		return return_text
 
@@ -52,6 +52,7 @@ class TheGuardian(Parsers):
 		:return: list of sources, typically URLs of the sources
 		:rtype: list
 		"""
+		import urllib
 		my_sources = []
 		bw = BeautifulSoup(webpage, 'html.parser')
 		for text in bw.find("div", {'itemprop': ['articleBody', 'reviewBody']}).find_all("p"):
@@ -61,8 +62,12 @@ class TheGuardian(Parsers):
 					if "auto-linked-tag" not in link['data-link-name']:
 						l = link.get('href')
 						if l is not None:
-							if l.find("mailto:") == -1:
-								my_sources.append(l)
+							if "mailto:" not in l and "tel:" not in l:
+								m = re.match(r".*\[link:\s*(.*)\s*\].*", urllib.unquote(l))
+								if m is not None:
+									my_sources.append(m.groups()[0])
+								else:
+									my_sources.append(l)
 		return my_sources
 
 	@staticmethod

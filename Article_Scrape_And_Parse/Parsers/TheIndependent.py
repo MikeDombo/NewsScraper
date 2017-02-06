@@ -18,14 +18,14 @@ class TheIndependent(Parsers):
 		:rtype: str
 		"""
 		bw = BeautifulSoup(webpage, 'html.parser')
-		return_text = ""
+		return_text = u""
 		for text in bw.find("div", {'itemprop': ['articleBody', 'reviewBody']}).find_all("p"):
 			p = text.parent.name
 			if not p == "li":
 				for br in text.find_all("br"):
 					br.replace_with("\r\n")
 				if not text.text == "":
-					return_text += text.text.encode("UTF-8") + "\r\n\r\n"
+					return_text += text.text + "\r\n\r\n"
 		return_text = return_text.strip()
 		return return_text
 
@@ -47,7 +47,7 @@ class TheIndependent(Parsers):
 					if link.get('class') is None:
 						l = link.get('href')
 						if l is not None:
-							if l.find("mailto:") == -1:
+							if "mailto:" not in l and "tel:" not in l:
 								my_sources.append(l)
 		return my_sources
 

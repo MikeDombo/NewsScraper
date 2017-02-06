@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="sourcesListing.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/sourcesListing.php" size="3756" time="2017-01-22T04:38:26+01:00" unixtime="1485056306" sha1="3bd89453da8fa0965cd3fffac90adae7e6ec48d8" relative="sourcesListing.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="sourcesListing.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/sourcesListing.php" size="3797" time="2017-02-05T20:03:55+01:00" unixtime="1486321435" sha1="172360ef17fbb367b2ba1b05d7fc043f33228c85" relative="sourcesListing.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -429,33 +429,49 @@
     <token name="T_VARIABLE">$s</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
-    <token name="T_PRINT">print</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
-    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;a href='</token>
-    <token name="T_VARIABLE">$s</token>
-    <token name="T_ENCAPSED_AND_WHITESPACE">'&gt;</token>
-    <token name="T_VARIABLE">$s</token>
-    <token name="T_ENCAPSED_AND_WHITESPACE">&lt;/a&gt;&lt;br/&gt;</token>
-    <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
-    <token name="T_CLOSE_TAG">?&gt;</token>
-    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
   </line>
   <line no="95">
-    <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
+    <token name="T_WHITESPACE">					</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;a href='"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_VARIABLE">$s</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"URL"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"'&gt;"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_VARIABLE">$s</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"URL"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/a&gt;&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="96">
-    <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
+    <token name="T_WHITESPACE">				</token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
   <line no="97">
-    <token name="T_INLINE_HTML">		&lt;div class="card"&gt;</token>
+    <token name="T_INLINE_HTML">				&lt;/p&gt;</token>
   </line>
   <line no="98">
-    <token name="T_INLINE_HTML">			&lt;div class="card-block"&gt;</token>
+    <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
   </line>
   <line no="99">
+    <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">		&lt;div class="card"&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">			&lt;div class="card-block"&gt;</token>
+  </line>
+  <line no="102">
     <token name="T_INLINE_HTML">				&lt;h3 class="card-title"&gt;Published By </token>
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_PRINT">print</token>
@@ -471,7 +487,7 @@
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_PRINT">print</token>
   </line>
-  <line no="100">
+  <line no="103">
     <token name="T_WHITESPACE">						</token>
     <token name="T_VARIABLE">$currentArticle</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -487,25 +503,25 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">&lt;/h3&gt;</token>
   </line>
-  <line no="101">
+  <line no="104">
     <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
   </line>
-  <line no="102">
+  <line no="105">
     <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
   </line>
-  <line no="103">
+  <line no="106">
     <token name="T_INLINE_HTML">		&lt;div class="card"&gt;</token>
   </line>
-  <line no="104">
+  <line no="107">
     <token name="T_INLINE_HTML">			&lt;div class="card-block"&gt;</token>
   </line>
-  <line no="105">
+  <line no="108">
     <token name="T_INLINE_HTML">				&lt;h3 class="card-title"&gt;Section(s) Published in&lt;/h3&gt;</token>
   </line>
-  <line no="106">
+  <line no="109">
     <token name="T_INLINE_HTML">				&lt;p class="card-text"&gt;</token>
   </line>
-  <line no="107">
+  <line no="110">
     <token name="T_INLINE_HTML">					</token>
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_FOREACH">foreach</token>
@@ -524,7 +540,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="108">
+  <line no="111">
     <token name="T_WHITESPACE">						</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -535,7 +551,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"'&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="109">
+  <line no="112">
     <token name="T_WHITESPACE">						</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -545,14 +561,14 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="110">
+  <line no="113">
     <token name="T_WHITESPACE">						</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/a&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="111">
+  <line no="114">
     <token name="T_WHITESPACE">						</token>
     <token name="T_IF">if</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -575,41 +591,41 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="112">
+  <line no="115">
     <token name="T_WHITESPACE">							</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;-"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="113">
+  <line no="116">
     <token name="T_WHITESPACE">						</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="114">
+  <line no="117">
     <token name="T_WHITESPACE">					</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
-  <line no="115">
+  <line no="118">
     <token name="T_INLINE_HTML">				&lt;/p&gt;</token>
   </line>
-  <line no="116">
+  <line no="119">
     <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
   </line>
-  <line no="117">
+  <line no="120">
     <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
   </line>
-  <line no="118">
+  <line no="121">
     <token name="T_INLINE_HTML">		&lt;div class="card"&gt;</token>
   </line>
-  <line no="119">
+  <line no="122">
     <token name="T_INLINE_HTML">			&lt;div class="card-block"&gt;</token>
   </line>
-  <line no="120">
+  <line no="123">
     <token name="T_INLINE_HTML">				&lt;h2 class="card-title"&gt;Full Text&lt;/h2&gt;</token>
   </line>
-  <line no="121">
+  <line no="124">
     <token name="T_INLINE_HTML">				&lt;p class="card-text"&gt;</token>
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_PRINT">print</token>
@@ -626,23 +642,23 @@
     <token name="T_CLOSE_TAG">?&gt;</token>
     <token name="T_INLINE_HTML">&lt;/p&gt;</token>
   </line>
-  <line no="122">
+  <line no="125">
     <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
   </line>
-  <line no="123">
+  <line no="126">
     <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
   </line>
-  <line no="124">
+  <line no="127">
     <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
   </line>
-  <line no="125">
+  <line no="128">
     <token name="T_INLINE_HTML">&lt;/div&gt;</token>
   </line>
-  <line no="126">
+  <line no="129">
     <token name="T_INLINE_HTML">&lt;/body&gt;</token>
   </line>
-  <line no="127">
+  <line no="130">
     <token name="T_INLINE_HTML">&lt;/html&gt;</token>
   </line>
-  <line no="128"/>
+  <line no="131"/>
 </source>

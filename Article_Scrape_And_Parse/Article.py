@@ -5,9 +5,10 @@ class Article(object):
 	author = ""
 	publisher = ""
 	publish_date = ""
-	article_text = ""
+	article_text = u""
 	full_html = ""
 	sources = []
+	text_sources = []
 	fetch_date = ""
 	grade_level = 0
 	updates = False
