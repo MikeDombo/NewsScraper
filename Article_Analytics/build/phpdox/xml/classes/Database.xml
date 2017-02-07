@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="8" end="199">
-  <file path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Database.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Database.php" size="5089" time="2017-01-22T20:34:42+01:00" unixtime="1485113682" sha1="2949afb8f9ef77c1aee0615601690f99681883c0" relative="Database.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Database" namespace="" name="Database" abstract="false" final="false" start="8" end="211">
+  <file path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Database.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Database.php" size="6257" time="2017-02-07T22:24:58+01:00" unixtime="1486502698" sha1="ced6ee698f87283326816ba7b4d910c686b2f38e" relative="Database.php"/>
   <docblock>
     <description/>
     <author value="Michael Dombrowski"/>
@@ -19,7 +19,7 @@
       </var>
     </docblock>
   </member>
-  <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
+  <constructor name="__construct" start="18" end="22" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="object" variable="$pdo">
@@ -30,7 +30,7 @@
       <type full="PDO" namespace="" name="PDO"/>
     </parameter>
   </constructor>
-  <method name="getArticles" start="26" end="28" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticles" start="27" end="29" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="object">
@@ -38,7 +38,7 @@
       </return>
     </docblock>
   </method>
-  <method name="getArticleByURL" start="35" end="43" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticleByURL" start="36" end="41" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns \Article object with the given URL"/>
       <param type="string" variable="$url"/>
@@ -50,7 +50,7 @@
       <type full="\\string" namespace="\" name="string"/>
     </parameter>
   </method>
-  <method name="getArticlesByPublisher" start="50" end="59" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticlesByPublisher" start="48" end="57" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns array of \Article objects that have the same publisher as the given $publisher"/>
       <param type="string" variable="$publisher"/>
@@ -62,7 +62,7 @@
       <type full="\\string" namespace="\" name="string"/>
     </parameter>
   </method>
-  <method name="getArticlesByAuthor" start="66" end="75" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticlesByAuthor" start="64" end="73" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns array of \Article objects that have the same author as the given $author"/>
       <param type="string" variable="$author"/>
@@ -74,7 +74,7 @@
       <type full="\\string" namespace="\" name="string"/>
     </parameter>
   </method>
-  <method name="getArticlesBySection" start="82" end="93" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticlesBySection" start="80" end="95" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns array of \Article objects that have the same section as the given $section"/>
       <param type="string" variable="$section"/>
@@ -86,7 +86,7 @@
       <type full="\\string" namespace="\" name="string"/>
     </parameter>
   </method>
-  <method name="getArticlesByDayOfWeek" start="100" end="109" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticlesByDayOfWeek" start="102" end="111" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns array of \Article objects that were published on a given day of the week"/>
       <param description="Day of the week" type="string" variable="$day"/>
@@ -98,7 +98,7 @@
       <type full="\\string" namespace="\" name="string"/>
     </parameter>
   </method>
-  <method name="listAllSections" start="115" end="128" abstract="false" final="false" static="false" visibility="public">
+  <method name="listAllSections" start="117" end="131" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns a list of all the sections any article in the database was published in"/>
       <return type="object">
@@ -106,7 +106,7 @@
       </return>
     </docblock>
   </method>
-  <method name="listAllAuthors" start="134" end="144" abstract="false" final="false" static="false" visibility="public">
+  <method name="listAllAuthors" start="137" end="147" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns a list of all the authors any article in the database wrote"/>
       <return type="object">
@@ -114,7 +114,7 @@
       </return>
     </docblock>
   </method>
-  <method name="listAllPublishers" start="150" end="160" abstract="false" final="false" static="false" visibility="public">
+  <method name="listAllPublishers" start="153" end="163" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description compact="Returns a list of all the publishers in the database"/>
       <return type="object">
@@ -122,12 +122,15 @@
       </return>
     </docblock>
   </method>
-  <method name="readDatabase" start="166" end="198" abstract="false" final="false" static="false" visibility="private">
+  <method name="readDatabase" start="168" end="182" abstract="false" final="false" static="false" visibility="private">
     <docblock>
       <description compact="Reads database of given \PDO and creates \Article objects for each row"/>
-      <return description="Array of article objects from the Articles table of the connected database" type="object">
-        <type full="array|Article" namespace="" name="array|Article"/>
-      </return>
     </docblock>
+    <inline>
+      <comment value="Fetch only 50 articles at a time to limit the memory impact" line="173"/>
+    </inline>
+  </method>
+  <method name="makeArticleFromDB" start="184" end="210" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="a" byreference="false" type="{unknown}"/>
   </method>
 </class>

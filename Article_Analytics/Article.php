@@ -14,6 +14,7 @@ class Article{
 	private $articleText;
 	private $articleHTML;
 	private $articleSources;
+	private $textSources;
 	private $retrievalDate;
 	private $articleSection;
 	private $gradeLevel;
@@ -238,6 +239,20 @@ class Article{
 	 */
 	public function setHasNotes($hasNotes){
 		$this->hasNotes = $hasNotes;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getTextSources(){
+		return $this->textSources;
+	}
+
+	/**
+	 * @param mixed $textSources
+	 */
+	public function setTextSources($textSources){
+		$this->textSources = $textSources;
 	}
 
 

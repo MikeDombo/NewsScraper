@@ -17,7 +17,8 @@ class Database{
 	 */
 	public function __construct(\PDO $pdo){
 		$this->pdo = $pdo;
-		$this->articles = $this->readDatabase();
+		$this->articles = [];
+		$this->readDatabase();
 	}
 
 	/**
@@ -33,13 +34,10 @@ class Database{
 	 * @return \Article
 	 */
 	public function getArticleByURL(string $url): \Article {
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			if($a->getArticleURL() == $url){
-				return $a;
-			}
-		}
-		return null;
+		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `ArticleURL`=:url");
+		$q->bindValue(":url", $url, PDO::PARAM_STR);
+		$q->execute();
+		return $this->makeArticleFromDB($q->fetch(PDO::FETCH_ASSOC));
 	}
 
 	/**
@@ -49,11 +47,11 @@ class Database{
 	 */
 	public function getArticlesByPublisher(string $publisher): array {
 		$selected = [];
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			if($a->getPublisher() == $publisher){
-				$selected[] = $a;
-			}
+		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `Publisher`=:publisher");
+		$q->bindValue(":publisher", $publisher, PDO::PARAM_STR);
+		$q->execute();
+		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+			$selected[] = $this->makeArticleFromDB($a);
 		}
 		return $selected;
 	}
@@ -65,11 +63,11 @@ class Database{
 	 */
 	public function getArticlesByAuthor(string $author): array {
 		$selected = [];
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			if($a->getAuthor() == $author){
-				$selected[] = $a;
-			}
+		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `Author`=:author");
+		$q->bindValue(":author", $author, PDO::PARAM_STR);
+		$q->execute();
+		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+			$selected[] = $this->makeArticleFromDB($a);
 		}
 		return $selected;
 	}
@@ -81,11 +79,15 @@ class Database{
 	 */
 	public function getArticlesBySection(string $section): array {
 		$selected = [];
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			foreach($a->getArticleSection() as $checkSection){
-				if(mb_strtolower($section) == mb_strtolower($checkSection)){
-					$selected[] = $a;
+		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `ArticleSection` LIKE :section");
+		$q->bindValue(":section", "%\"".$section."\"%", PDO::PARAM_STR);
+		$q->execute();
+		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+			$sections = json_decode($a["ArticleSection"], true);
+			foreach($sections as $s){
+				$article = $this->makeArticleFromDB($a);
+				if(mb_strtolower($section) == mb_strtolower($s) && !in_array($article, $selected, true)){
+					$selected[] = $article;
 				}
 			}
 		}
@@ -114,9 +116,10 @@ class Database{
 	 */
 	public function listAllSections(): array {
 		$sections = [];
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			foreach($a->getArticleSection() as $s){
+		$q = $this->pdo->query("SELECT `ArticleSection` from `articles` GROUP BY `ArticleSection`");
+		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+			$section = json_decode($a["ArticleSection"], true);
+			foreach($section as $s){
 				/* @var $s string */
 				if(!in_array(mb_strtolower($s), $sections, true)){
 					$sections[] = mb_strtolower($s);
@@ -133,10 +136,10 @@ class Database{
 	 */
 	public function listAllAuthors(): array {
 		$authors = [];
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			if(!in_array($a->getAuthor(), $authors, true)){
-				$authors[] = $a->getAuthor();
+		$q = $this->pdo->query("SELECT `Author` from `articles` GROUP BY `Author`");
+		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+			if(!in_array($a["Author"], $authors, true)){
+				$authors[] = $a["Author"];
 			}
 		}
 		sort($authors);
@@ -149,10 +152,10 @@ class Database{
 	 */
 	public function listAllPublishers(): array {
 		$publishers = [];
-		foreach($this->articles as $a){
-			/* @var $a \Article */
-			if(!in_array($a->getPublisher(), $publishers, true)){
-				$publishers[] = $a->getPublisher();
+		$q = $this->pdo->query("SELECT `Publisher` from `articles` GROUP BY `Publisher`");
+		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+			if(!in_array($a["Publisher"], $publishers, true)){
+				$publishers[] = $a["Publisher"];
 			}
 		}
 		sort($publishers);
@@ -161,39 +164,48 @@ class Database{
 
 	/**
 	 * Reads database of given \PDO and creates \Article objects for each row
-	 * @return array|Article Array of article objects from the Articles table of the connected database
 	 */
-	private function readDatabase(): array {
-		$localArticles = [];
-
-		$q = $this->pdo->query("SELECT * FROM `Articles`");
-		foreach($q->fetchAll() as $a){
-			$article = new Article();
-
-			$pDate = new DateTime();
-			$pDate->setTimestamp(strtotime($a["PublishDate"]));
-			$fDate = new DateTime();
-			$fDate->setTimestamp(strtotime($a["RetrievalDate"]));
-
-
-			$article->setArticleURL($a["ArticleURL"]);
-			$article->setHeadline($a["Headline"]);
-			$article->setSubtitle($a["Subtitle"]);
-			$article->setAuthor($a["Author"]);
-			$article->setPublisher($a["Publisher"]);
-			$article->setPublishDate($pDate);
-			$article->setArticleText($a["ArticleText"]);
-			$article->setArticleHTML($a["ArticleHTML"]);
-			$article->setArticleSources(json_decode($a["ArticleSources"], true));
-			$article->setRetrievalDate($fDate);
-			$article->setArticleSection(json_decode($a["ArticleSection"], true));
-			$article->setGradeLevel($a["GradeLevel"]);
-			$article->setIsPrimarySource($a["IsPrimarySource"]);
-			$article->setHasUpdates($a["HasUpdates"]);
-			$article->setHasNotes($a["HasNotes"]);
-
-			$localArticles[] = $article;
+	private function readDatabase() {
+		$q = $this->pdo->query("SELECT count(*) FROM `Articles`");
+		$count = $q->fetch(PDO::FETCH_ASSOC)["count(*)"];
+		$numFetched = 0;
+		$start = 0;
+		// Fetch only 50 articles at a time to limit the memory impact
+		while($numFetched < $count){
+			$q = $this->pdo->query("SELECT * FROM `Articles` LIMIT $start,50");
+			foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
+				$this->articles[] = $this->makeArticleFromDB($a);
+				$numFetched += 1;
+			}
+			$start += 50;
 		}
-		return $localArticles;
+	}
+
+	private function makeArticleFromDB($a){
+		$article = new Article();
+
+		$pDate = new DateTime();
+		$pDate->setTimestamp(strtotime($a["PublishDate"]));
+		$fDate = new DateTime();
+		$fDate->setTimestamp(strtotime($a["RetrievalDate"]));
+
+		$article->setArticleURL($a["ArticleURL"]);
+		$article->setHeadline($a["Headline"]);
+		$article->setSubtitle($a["Subtitle"]);
+		$article->setAuthor($a["Author"]);
+		$article->setPublisher($a["Publisher"]);
+		$article->setPublishDate($pDate);
+		$article->setArticleText($a["ArticleText"]);
+		$article->setArticleHTML($a["ArticleHTML"]);
+		$article->setArticleSources(json_decode($a["ArticleSources"], true));
+		$article->setTextSources(json_decode($a["TextSources"], true));
+		$article->setRetrievalDate($fDate);
+		$article->setArticleSection(json_decode($a["ArticleSection"], true));
+		$article->setGradeLevel($a["GradeLevel"]);
+		$article->setIsPrimarySource($a["IsPrimarySource"]);
+		$article->setHasUpdates($a["HasUpdates"]);
+		$article->setHasNotes($a["HasNotes"]);
+
+		return $article;
 	}
 }

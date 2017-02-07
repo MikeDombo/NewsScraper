@@ -1,19 +1,7 @@
 <?php
-require_once "Article.php";
-require_once "Database.php";
-require_once "Analysis.php";
-
-$db = "../news.db";
-try{
-	$pdo = new PDO('sqlite:'.$db);
-}
-catch(PDOException $p){
-	print 'Exception : '.$p->getMessage();
-	return;
-}
-
-$dbo = new Database($pdo);
-
+	require_once "Article.php";
+	require_once "Analysis.php";
+	require "DBConnection.php";
 ?>
 
 <html>
