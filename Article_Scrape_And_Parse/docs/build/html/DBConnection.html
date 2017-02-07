@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DBConnection module &#8212; NewsScraper 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NewsScraper 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-DBConnection">
+<span id="dbconnection-module"></span><h1>DBConnection module<a class="headerlink" href="#module-DBConnection" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="DBConnection.DBConnection">
+<em class="property">class </em><code class="descclassname">DBConnection.</code><code class="descname">DBConnection</code><span class="sig-paren">(</span><em>options=False</em><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="DBConnection.DBConnection.conn">
+<code class="descname">conn</code><em class="property"> = None</em><a class="headerlink" href="#DBConnection.DBConnection.conn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DBConnection.DBConnection.db_name">
+<code class="descname">db_name</code><em class="property"> = None</em><a class="headerlink" href="#DBConnection.DBConnection.db_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="DBConnection.DBConnection.db_type">
+<code class="descname">db_type</code><em class="property"> = None</em><a class="headerlink" href="#DBConnection.DBConnection.db_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.get_article_html_from_db">
+<code class="descname">get_article_html_from_db</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.get_article_html_from_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns only the HTML of the selected URL if it is in the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.is_already_analyzed">
+<code class="descname">is_already_analyzed</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.is_already_analyzed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the current URL is in the Articles table</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the set URL is already in the Articles table of the database</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.queue_article_list">
+<code class="descname">queue_article_list</code><span class="sig-paren">(</span><em>article_list</em><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.queue_article_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds each URL in the given article_list to the Queue table of the database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>article_list</strong> &#8211; List of article URLs to be inserted into the DB</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Void</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.read_article_queue">
+<code class="descname">read_article_queue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.read_article_queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads database Queue table and returns the whole table as a list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of URLs to be downloaded and parsed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.save_data_to_db">
+<code class="descname">save_data_to_db</code><span class="sig-paren">(</span><em>sc</em><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.save_data_to_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves current article to the connected database</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Void</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.verify_mysql_db">
+<code class="descname">verify_mysql_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.verify_mysql_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="DBConnection.DBConnection.verify_sqlite_db">
+<code class="descname">verify_sqlite_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DBConnection.DBConnection.verify_sqlite_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/DBConnection.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">NewsScraper 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Michael Dombrowski.
+      Last updated on Feb 06, 2017.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  </body>
+</html>
