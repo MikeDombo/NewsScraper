@@ -86,7 +86,7 @@ class Scrapers(object):
 	def parse_sources(self, sources):
 		from Router import Router
 		from urlparse import urlparse
-		my_r = Router(self.database_filename)
+		my_r = Router()
 		for i,s in enumerate(sources):
 			parsed = urlparse(s)
 			if parsed.path is None or parsed.path == "" or parsed.path == "/":
@@ -120,22 +120,6 @@ class Scrapers(object):
 		return text_sources
 
 	@staticmethod
-	def get_article_html_from_db(url, database_filename):
-		"""
-		Returns only the HTML of the selected URL if it is in the database
-
-		:param database_filename:
-		:return:
-		"""
-		conn = sqlite3.connect(database_filename)
-		c = conn.cursor()
-		c.execute('SELECT `ArticleURL`, `ArticleHTML` FROM `Articles` WHERE `ArticleURL` = ?', [url])
-		ret = c.fetchone()
-		conn.close()
-		# Return the HTML of the selected webpage
-		return ret[1]
-
-	@staticmethod
 	def get_article_list(date):
 		"""
 		Returns list of article URLs from a given scraper subclass
@@ -147,65 +131,6 @@ class Scrapers(object):
 		"""
 		pass
 
-	def queue_article_list(self, article_list):
-		"""
-		Adds each URL in the given article_list to the Queue table of the database
-
-		:param article_list: List of article URLs to be inserted into the DB
-		:return: Void
-		"""
-		conn = sqlite3.connect(self.database_filename)
-		c = conn.cursor()
-		for a in article_list:
-			c.execute('INSERT OR IGNORE INTO `Queue` (url, dateAdded) VALUES (?,?)', [self.normalize_url(a), dt.datetime.now().__str__()])
-		conn.commit()
-		conn.close()
-
-	def save_data_to_db(self):
-		"""
-		Saves current article to the connected database
-
-		:return: Void
-		"""
-		ca = self.current_article
-		conn = sqlite3.connect(self.database_filename)
-		conn.text_factory = str
-		c = conn.cursor()
-		c.execute('''REPLACE INTO `Articles` (ArticleURL, Headline, Subtitle, Author, Publisher, PublishDate, ArticleText,
-				  ArticleHTML, ArticleSources, TextSources, RetrievalDate, ArticleSection, GradeLevel, HasUpdates, HasNotes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-				  [self.url, ca.title, ca.subtitle, ca.author, ca.publisher,
-				   ca.publish_date, ca.article_text, ca.full_html, json.dumps(ca.sources), json.dumps(ca.text_sources),
-				   ca.fetch_date, json.dumps(ca.section), ca.grade_level, ca.updates, ca.editor_notes])
-		conn.commit()
-		conn.close()
-
-	@staticmethod
-	def read_article_queue(database_filename):
-		"""
-		Reads database Queue table and returns the whole table as a list
-
-		:return: list of URLs to be downloaded and parsed
-		"""
-		conn = sqlite3.connect(database_filename)
-		c = conn.cursor()
-		c.execute('SELECT * FROM `Queue`')
-		ret = c.fetchall()
-		conn.close()
-		return ret
-
-	def is_already_analyzed(self):
-		"""
-		Checks if the current URL is in the Articles table
-
-		:rtype: Boolean
-		:return: True if the set URL is already in the Articles table of the database
-		"""
-		conn = sqlite3.connect(self.database_filename)
-		c = conn.cursor()
-		c.execute('SELECT * FROM `Articles` WHERE `ArticleURL` = ?', [self.url])
-		return c.fetchone() is not None
-
-	def __init__(self, db):
+	def __init__(self):
 		self.current_article = Article()
 		self.my_parser = Parsers()
-		self.database_filename = db

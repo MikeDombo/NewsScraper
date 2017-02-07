@@ -32,5 +32,5 @@ class WashingtonPost(Scrapers):
 						article_list.append(article_link)
 		return article_list
 
-	def __init__(self, db):
-		super(WashingtonPost, self).__init__(db)
+	def __init__(self):
+		super(WashingtonPost, self).__init__()

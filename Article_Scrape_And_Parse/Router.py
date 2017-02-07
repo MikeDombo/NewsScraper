@@ -5,13 +5,12 @@ import Parsers
 
 
 class Router(object):
-	def __init__(self, db):
-		self.db = db
+	def __init__(self):
 		self.__import_submodules(Scrapers)
 		self.__import_submodules(Parsers)
 
-		self.__scrapers = [Scrapers.NYTimes.NYTimes(self.db), Scrapers.WashingtonPost.WashingtonPost(self.db),
-						   Scrapers.TheIndependent.TheIndependent(self.db), Scrapers.TheGuardian.TheGuardian(self.db)]
+		self.__scrapers = [Scrapers.NYTimes.NYTimes(), Scrapers.WashingtonPost.WashingtonPost(),
+						   Scrapers.TheIndependent.TheIndependent(), Scrapers.TheGuardian.TheGuardian()]
 		self.__parsers = [Parsers.NYTimes.NYTimes(), Parsers.WashingtonPost.WashingtonPost(),
 						  Parsers.TheIndependent.TheIndependent(), Parsers.TheGuardian.TheGuardian()]
 

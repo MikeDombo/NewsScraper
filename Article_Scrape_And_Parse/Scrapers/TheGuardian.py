@@ -46,5 +46,5 @@ class TheGuardian(Scrapers):
 						article_list.append(article_link)
 		return article_list
 
-	def __init__(self, db):
-		super(TheGuardian, self).__init__(db)
+	def __init__(self):
+		super(TheGuardian, self).__init__()

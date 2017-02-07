@@ -1,9 +1,9 @@
 import sys
-import sqlite3
 from datetime import datetime as dt
 from datetime import timedelta
 import time
 import Scrapers
+from DBConnection import DBConnection
 import multiprocessing
 
 
@@ -79,11 +79,18 @@ def main():
 	else:
 		print("Running with defaults\r\n")
 
+	db_options = False
+	db = False
 	# If we are using a database, then verify or create it
 	if not no_db:
-		verify_db(database_filename)
-		print("Running with database: " + database_filename)
-
+		if '-f' in sys.argv:
+			db_options = {"db": "sqlite", "file": database_filename}
+			db = DBConnection(db_options)
+			print("Running with database: " + database_filename)
+		else:
+			db_options = {"db": "mysql", "file": "newsscraper", "user": "root", "password": "", "host": "localhost"};
+			db = DBConnection(db_options)
+			print("Running with MySQL database")
 	if not no_queuing:
 		print("Queuing Today's Articles")
 
@@ -91,12 +98,17 @@ def main():
 		pool = multiprocessing.Pool(processes=number_cores)
 
 		from Router import Router
-		my_router = Router(database_filename)
-		r = [pool.apply_async(make_queue, args=(s, no_db)) for s in my_router.get_scrapers()]
-		q = [p.get() for p in r]
-		for q in q:
-			q.pop(0)
-		pool.terminate()
+		my_router = Router()
+		if run_multiprocessing:
+			r = [pool.apply_async(make_queue, args=(s, no_db, db_options)) for s in my_router.get_scrapers()]
+			q = [p.get() for p in r]
+			for q in q:
+				q.pop(0)
+			pool.terminate()
+		else:
+			q = []
+			for s in my_router.get_scrapers():
+				q += make_queue(s, no_db, db_options)
 
 		if queue_only:
 			print("Queuing Complete With " + str(len(q)) + " Articles")
@@ -104,7 +116,7 @@ def main():
 
 	# If we are running with a database, overwrite the local q with one from the database which will already contain q
 	if not no_db:
-		q = Scrapers.Scrapers.read_article_queue(database_filename)
+		q = db.read_article_queue()
 
 	print("Queuing Complete With " + str(len(q)) + " Articles")
 	print("Beginning Scraping and Parsing")
@@ -114,23 +126,24 @@ def main():
 		print("Starting with user-specified URL")
 		# Execute a single article with no sleeping, and reparse implicitly set to True
 		# because if a user gives us a URL, they want it parsed, even without the -r flag
-		execute_article_parse(one_url, database_filename, no_db, True, True, False)
+		execute_article_parse(one_url, db, no_db, True, True, False)
 		print("Continuing with Queued Articles\r\n")
 
 	if run_multiprocessing:
 		pool = multiprocessing.Pool(processes=number_cores)
-		r = [pool.apply_async(execute_article_parse, args=(a[1], database_filename, no_db, reparse, redownload, True)) for a in q]
+		r = [pool.apply_async(execute_article_parse, args=(a[1], db_options, no_db, reparse, redownload, True)) for a in q]
 		r = [p.get() for p in r]
 		pool.terminate()
 	else:
 		for a in q:
-			execute_article_parse(a[1], database_filename, no_db, reparse, redownload, True)
+			execute_article_parse(a[1], db_options, no_db, reparse, redownload, True)
 
 	print("\r\n==============================")
 	print("Program Complete!")
 
 
-def make_queue(s, no_db):
+def make_queue(s, no_db, db_options):
+	db = DBConnection(db_options)
 	q = []
 	# Get today's articles
 	articles = s.get_article_list()
@@ -142,15 +155,16 @@ def make_queue(s, no_db):
 	for a in articles:
 		q.append([0, a, dt.now()])
 	if not no_db:
-		s.queue_article_list(articles)
+		db.queue_article_list(articles)
 	return q
 
 
-def execute_article_parse(url, database_filename, no_db, reparse, redownload, sleep=True):
+def execute_article_parse(url, db_options, no_db, reparse, redownload, sleep=True):
 	# Basic setup of objects
+	db = DBConnection(db_options)
 	from Router import Router
-	my_router = Router(database_filename)
-	sc = Scrapers.Scrapers(database_filename)
+	my_router = Router()
+	sc = Scrapers.Scrapers()
 	sc.url = url
 	sc.my_parser = my_router.get_parsers_by_url(sc.url)
 	if sc.my_parser is None:
@@ -158,67 +172,22 @@ def execute_article_parse(url, database_filename, no_db, reparse, redownload, sl
 		return
 
 	# Check if we should download and parse the article or not
-	if no_db or reparse or not sc.is_already_analyzed():
-		if not no_db and sc.is_already_analyzed():
+	if no_db or reparse or not db.is_already_analyzed(sc.url):
+		if not no_db and db.is_already_analyzed(sc.url):
 			print("Reparsing: " + sc.url)
 		else:
 			print(sc.url)
 		if (sleep and redownload) or (sleep and not (redownload or reparse)):
 			time.sleep(1)
 		try:
-			if redownload or not sc.is_already_analyzed():
+			if redownload or no_db or not db.is_already_analyzed(sc.url):
 				sc.get_article_data()
 			else:
-				sc.get_article_data(sc.get_article_html_from_db(url, database_filename))
+				sc.get_article_data(db.get_article_html_from_db(url))
 			if not no_db:
-				sc.save_data_to_db()
+				db.save_data_to_db(sc)
 		except RuntimeError as e:
 			print "Runtime Error: "+e.message
-
-
-def is_sqlite3(filename):
-	from os.path import isfile, getsize
-	if not isfile(filename):
-		return False
-	if getsize(filename) < 100: # SQLite database file header is 100 bytes
-		return False
-	with open(filename, 'rb') as fd:
-		header = fd.read(100)
-	return header[:16] == 'SQLite format 3\x00'
-
-
-def verify_db(file):
-	# Verify the database
-	if not is_sqlite3(file):
-		conn = sqlite3.connect(file)
-		c = conn.cursor()
-		# Create Article Table
-		c.execute('''CREATE TABLE `Articles` (
-						`ID` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-						`ArticleURL` TEXT UNIQUE,
-						`Headline` TEXT,
-						`Subtitle` TEXT,
-						`Author` TEXT,
-						`Publisher` TEXT,
-						`PublishDate` TEXT,
-						`ArticleText` TEXT,
-						`ArticleHTML` TEXT,
-						`ArticleSources` TEXT,
-						`TextSources` TEXT,
-						`RetrievalDate` TEXT,
-						`ArticleSection` TEXT,
-						`GradeLevel` REAL,
-						`IsPrimarySource` INTEGER,
-						`HasUpdates` INTEGER,
-						`HasNotes` INTEGER
-					);''')
-		# Create Queue Table
-		c.execute('''CREATE TABLE `Queue` (
-						`ID` INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-						`url` TEXT UNIQUE,
-						`dateAdded` TEXT
-					);''')
-		conn.commit()
 
 if __name__ == '__main__':
 	# Execute the main program
