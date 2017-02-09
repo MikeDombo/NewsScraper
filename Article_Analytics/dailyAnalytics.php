@@ -40,7 +40,8 @@ if(isset($_GET["day"])){
 <div class="container-fluid" id="maincontent">
 	<div class="col-lg-12 pb-5">
 		<?php
-		print "<h1>Average Analytics:</h1>";
+		print "<h1>Average Analytics</h1>";
+		$dbo->readDatabase();
 		overallAnalytics($dbo->getArticles());
 		print "<hr/><h1>Analytics by Day of Week:</h1>";
 

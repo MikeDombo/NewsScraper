@@ -88,13 +88,12 @@ def main():
 			db = DBConnection(db_options)
 			print("Running with database: " + database_filename)
 		else:
-			db_options = {"db": "mysql", "file": "newsscraper", "user": "root", "password": "", "host": "localhost"};
+			db_options = {"db": "mysql", "file": "newsscraper", "user": "root", "password": "", "host": "localhost"}
 			db = DBConnection(db_options)
 			print("Running with MySQL database")
+	number_cores = multiprocessing.cpu_count()
 	if not no_queuing:
 		print("Queuing Today's Articles")
-
-		number_cores = multiprocessing.cpu_count()
 		pool = multiprocessing.Pool(processes=number_cores)
 
 		from Router import Router
@@ -126,7 +125,7 @@ def main():
 		print("Starting with user-specified URL")
 		# Execute a single article with no sleeping, and reparse implicitly set to True
 		# because if a user gives us a URL, they want it parsed, even without the -r flag
-		execute_article_parse(one_url, db, no_db, True, True, False)
+		execute_article_parse(one_url, db_options, no_db, True, True, False)
 		print("Continuing with Queued Articles\r\n")
 
 	if run_multiprocessing:

@@ -40,8 +40,6 @@ else{
 <div class="container-fluid" id="maincontent">
 	<div class="col-lg-12 pb-5">
 		<?php
-		print "<h1>Average Analytics:</h1>";
-		overallAnalytics($dbo->getArticles());
 		foreach($authors as $currentAuthor){
 			print "<hr/><h2>Analytics For Author <a href='author?author=".rawurlencode($currentAuthor)."'>"
 				.htmlspecialchars($currentAuthor)."</a>:</h2>";

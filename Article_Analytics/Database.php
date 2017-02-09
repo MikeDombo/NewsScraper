@@ -18,7 +18,6 @@ class Database{
 	public function __construct(\PDO $pdo){
 		$this->pdo = $pdo;
 		$this->articles = [];
-		$this->readDatabase();
 	}
 
 	/**
@@ -165,7 +164,7 @@ class Database{
 	/**
 	 * Reads database of given \PDO and creates \Article objects for each row
 	 */
-	private function readDatabase() {
+	public function readDatabase() {
 		$q = $this->pdo->query("SELECT count(*) FROM `Articles`");
 		$count = $q->fetch(PDO::FETCH_ASSOC)["count(*)"];
 		$numFetched = 0;

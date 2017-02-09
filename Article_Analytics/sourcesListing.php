@@ -52,14 +52,6 @@ $currentArticle = $dbo->getArticleByURL($url);
 	<div class="card-columns">
 		<div class="card">
 			<div class="card-block">
-				<h1 class="card-title">Average Analytics</h1>
-				<p class="card-text">
-					<?php overallAnalytics($dbo->getArticles());?>
-				</p>
-			</div>
-		</div>
-		<div class="card">
-			<div class="card-block">
 				<?php
 				print "<h1 class='card-title'>Analytics For <em><a target='_blank' href='".$currentArticle->getArticleURL
 					()."'>".$currentArticle->getHeadline()."</em></a></h1>";

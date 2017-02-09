@@ -30,8 +30,6 @@
 		<div class="container-fluid" id="maincontent">
 			<div class="col-lg-12">
 				<?php
-					print "<h1>Average Analytics:</h1>";
-					overallAnalytics($dbo->getArticles());
 					print "<hr/><h1>Analytics By Publisher:</h1>";
 
 					foreach($dbo->listAllPublishers() as $p){

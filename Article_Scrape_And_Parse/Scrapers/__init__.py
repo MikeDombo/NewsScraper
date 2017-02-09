@@ -106,7 +106,7 @@ class Scrapers(object):
 		import re
 		from unidecode import unidecode
 		sentence_regex = r'[\.\?!]\s+(\"[A-Z][^\"]*[\.\?!]+\")|[\.\?!][\'\"\)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)\s+'
-		source_regex = r'.*according to\s+([^,;]*)|.*reported by\s+([^,;]*)'
+		source_regex = r'([^,;]*) are reporting.*|.*according to\s+([^,;]*)|.*reported by\s+([^,;]*)'
 		fragments = re.split(sentence_regex, unidecode(text))
 		for f in fragments:
 			if f is not None:

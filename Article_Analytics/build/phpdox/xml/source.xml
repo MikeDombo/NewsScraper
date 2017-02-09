@@ -3,15 +3,15 @@
   <dir name="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics">
     <file name="Analysis.php" size="3944" time="2017-02-07T22:02:55+01:00" unixtime="1486501375" sha1="73506cc15ccc6c7d813385bc25fbedf690f3fea1" xml="tokens/Analysis.php.xml"/>
     <file name="Article.php" size="4488" time="2017-02-07T21:57:44+01:00" unixtime="1486501064" sha1="17f2a43ac2973ebb03e4ade7ad2b44bf9e17771d" xml="tokens/Article.php.xml"/>
-    <file name="authorAnalytics.php" size="2734" time="2017-02-07T22:30:24+01:00" unixtime="1486503024" sha1="e7f30f2e89b3c4e65f8d2183a691f6e59db8f153" xml="tokens/authorAnalytics.php.xml"/>
+    <file name="authorAnalytics.php" size="2652" time="2017-02-09T05:46:22+01:00" unixtime="1486615582" sha1="156b0f6903d3bb5f3db1807e960ebbeb409ccd7f" xml="tokens/authorAnalytics.php.xml"/>
     <file name="classify.php" size="3399" time="2017-01-29T05:09:39+01:00" unixtime="1485662979" sha1="9d286b425d479cef9da6a0a8ccfd0cdd46eaeabe" xml="tokens/classify.php.xml"/>
-    <file name="dailyAnalytics.php" size="2761" time="2017-02-07T22:30:30+01:00" unixtime="1486503030" sha1="a8e3b8198fddc352db46d0395e7ff6c92dfffaf4" xml="tokens/dailyAnalytics.php.xml"/>
-    <file name="Database.php" size="6257" time="2017-02-07T22:24:58+01:00" unixtime="1486502698" sha1="ced6ee698f87283326816ba7b4d910c686b2f38e" xml="tokens/Database.php.xml"/>
+    <file name="dailyAnalytics.php" size="2785" time="2017-02-09T05:48:21+01:00" unixtime="1486615701" sha1="f51f0fc7af87f7089137bd02d4f4007238124a77" xml="tokens/dailyAnalytics.php.xml"/>
+    <file name="Database.php" size="6230" time="2017-02-09T05:48:49+01:00" unixtime="1486615729" sha1="0873450c965806b4edbef6ad96bca6db48e2578b" xml="tokens/Database.php.xml"/>
     <file name="DBConnection.php" size="304" time="2017-02-07T22:29:11+01:00" unixtime="1486502951" sha1="4e0e869590a075ae7c85a7ee522ca250073b4465" xml="tokens/DBConnection.php.xml"/>
-    <file name="index.php" size="2518" time="2017-02-07T22:31:54+01:00" unixtime="1486503114" sha1="b2fdfc7cddd36c2e892276f88bda72c51975c762" xml="tokens/index.php.xml"/>
+    <file name="index.php" size="2430" time="2017-02-09T05:46:37+01:00" unixtime="1486615597" sha1="d38d0813cf0e8cb88dce3134f94c453f46c6fd55" xml="tokens/index.php.xml"/>
     <file name="makeNav.php" size="1878" time="2017-01-23T06:03:35+01:00" unixtime="1485147815" sha1="c08f18b0f1dfcd5913ae49ca42c0a7a2cc79ef7f" xml="tokens/makeNav.php.xml"/>
     <file name="route.php" size="747" time="2017-01-22T01:45:41+01:00" unixtime="1485045941" sha1="e4302f9a0920deddc25b3a5678e898291fc1d8ad" xml="tokens/route.php.xml"/>
-    <file name="sectionAnalytics.php" size="2699" time="2017-02-07T22:30:01+01:00" unixtime="1486503001" sha1="237c6d92a059dc6f76dbce545aa30241d0d8930f" xml="tokens/sectionAnalytics.php.xml"/>
-    <file name="sourcesListing.php" size="3624" time="2017-02-07T22:29:30+01:00" unixtime="1486502970" sha1="a038b92bda04faee37fc3503b38895e16fd88f5c" xml="tokens/sourcesListing.php.xml"/>
+    <file name="sectionAnalytics.php" size="2617" time="2017-02-09T05:46:15+01:00" unixtime="1486615575" sha1="d7ad9a6fc1a5c505943a9f32d088474628f6ed34" xml="tokens/sectionAnalytics.php.xml"/>
+    <file name="sourcesListing.php" size="3411" time="2017-02-09T05:44:25+01:00" unixtime="1486615465" sha1="3260352aec2dec6d291fd1ced5521eb85684ebc2" xml="tokens/sourcesListing.php.xml"/>
   </dir>
 </source>

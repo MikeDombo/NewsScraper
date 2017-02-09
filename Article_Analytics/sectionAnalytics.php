@@ -41,8 +41,6 @@ else{
 <div class="container-fluid" id="maincontent">
 	<div class="col-lg-12 pb-5">
 		<?php
-		print "<h1>Average Analytics:</h1>";
-		overallAnalytics($dbo->getArticles());
 		foreach($sectionList as $section){
 			print "<hr/><h2>Analytics For Section: <a href='section?section=".$section."'>$section</a></h2>";
 			$p = $dbo->getArticlesBySection($section);
