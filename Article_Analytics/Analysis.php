@@ -1,5 +1,7 @@
 <?php
 
+$qualityDefinition = [-1=> "no links", 0=> "link", 1=> "newspaper source", 2=> "assumed primary source"];
+
 /**
  * Prints into a table the article headline (linked to URL) and statistics
  * @param array|\Article $articles
@@ -15,6 +17,9 @@ function analyticsByHeadline(array $articles){
 			<a href='sources?url=".rawurlencode($a->getArticleURL())."'>".$analytics["numLinks"]
 		."</a></td>";
 		print "<td>".number_format($analytics["linksPerMWords"], 2)."</td>";
+		print "<td>".number_format($analytics["averageLinkQuality"], 2)."</td>";
+		print "<td>".number_format($analytics["numSources"])."</td>";
+		print "<td>".number_format($analytics["sourcesPerMWords"], 2)."</td>";
 		print "<td>".number_format($analytics["numWords"])."</td>";
 		print "</tr>";
 	}
@@ -27,11 +32,23 @@ function analyticsByHeadline(array $articles){
  * @return array
  */
 function articleAnalytics(\Article $article): array {
-	$numLinks = count($article->getArticleSources());
+	$numLinks = 0;
+	$cumulativeLinkQuality = 0;
 	$numWords = str_word_count($article->getArticleText());
+	$numSources = count($article->getTextSources());
+	$sourcesPerMWords = $numSources/($numWords/1000);
 	$linksPerMWords = $numLinks/($numWords/1000);
 
-	return ["numLinks"=>$numLinks, "numWords"=>$numWords, "linksPerMWords"=>$linksPerMWords];
+	foreach($article->getArticleSources() as $t){
+		$numLinks += 1;
+		$cumulativeLinkQuality += $t["Quality"];
+	}
+
+	$linkQualityAverage = $numLinks == 0 ? -1 : $cumulativeLinkQuality/$numLinks;
+
+	return ["numLinks"=>$numLinks, "numWords"=>$numWords, "linksPerMWords"=>$linksPerMWords,
+			"numSources"=>$numSources, "sourcesPerMWords"=>$sourcesPerMWords,
+			"averageLinkQuality"=>$linkQualityAverage];
 }
 
 /**
@@ -45,13 +62,17 @@ function overallAnalytics(array $articles){
 	$numWords = 0;
 	$numArticles = count($articles);
 	$cumulativeGradeLevel= 0;
+	$cumulativeLinkQuality = 0;
 
 	foreach($articles as $a){
 		/* @var $a \Article */
-		$numLinks += count($a->getArticleSources());
 		$numSources += count($a->getTextSources());
 		$numWords += str_word_count($a->getArticleText());
 		$cumulativeGradeLevel += $a->getGradeLevel();
+		foreach($a->getArticleSources() as $t){
+			$numLinks += 1;
+			$cumulativeLinkQuality += $t["Quality"];
+		}
 	}
 
 	// Ternary operations added to resolve divide by zero errors
@@ -61,12 +82,17 @@ function overallAnalytics(array $articles){
 	$sourcesPerMWords = $numWords == 0 ? 0 : $numSources/($numWords/1000);
 	$wordsPerArticle = $numArticles == 0 ? 0 : $numWords/$numArticles;
 	$avgGradeLevel = $numArticles == 0 ? 0 : $cumulativeGradeLevel/$numArticles;
+	$linkQualityAverage = $numLinks == 0 ? -1 : $cumulativeLinkQuality/$numLinks;
+
+	global $qualityDefinition;
+	$quality = $qualityDefinition[intval($linkQualityAverage)];
 
 
 	if(count($articles) > 1){
 		print "<h1 class='lead'>Number of Articles: ".number_format($numArticles)."</h1>";
 		print "<h1 class='lead'>Links per Article: ".number_format($linksPerArticle, 2)."</h1>";
 		print "<h1 class='lead'>Links per 1000 Words: ".number_format($linksPerMWords, 2)."</h1>";
+		print "<h1 class='lead'>Link Quality: ".number_format($linkQualityAverage, 2)." ($quality)</h1>";
 		print "<h1 class='lead'>Sources in Text per Article: ".number_format($sourcesPerArticle, 2)."</h1>";
 		print "<h1 class='lead'>Sources in Text per 1000 Words: ".number_format($sourcesPerMWords, 2)."</h1>";
 		print "<h1 class='lead'>Average Word Count: ".number_format($wordsPerArticle, 0)."</h1>";
@@ -76,6 +102,7 @@ function overallAnalytics(array $articles){
 		print "<h1 class='lead'>Number of Articles: ".number_format($numArticles)."</h1>";
 		print "<h1 class='lead'>Links: ".number_format($linksPerArticle)."</h1>";
 		print "<h1 class='lead'>Links per 1000 words: ".number_format($linksPerMWords, 2)."</h1>";
+		print "<h1 class='lead'>Link Quality: ".number_format($linkQualityAverage, 2)." ($quality)</h1>";
 		print "<h1 class='lead'>Sources in Text per Article: ".number_format($sourcesPerArticle)."</h1>";
 		print "<h1 class='lead'>Sources in Text per 1000 Words: ".number_format($sourcesPerMWords)."</h1>";
 		print "<h1 class='lead'>Word count: ".number_format($wordsPerArticle)."</h1>";

@@ -66,7 +66,11 @@
         </ul>
         <h2 id="synopsis">Synopsis</h2>
         <div class="synopsis">class Database
-            {<br/><ul class="none"><li>// members</li><li>private <span title="\PDO">PDO</span> <a href="#members">$pdo</a>;
+            {<br/><ul class="none"><li>// members</li><li>private string <a href="#members">$columns</a> =
+                        "`ArticleURL`, `Headline`, `Subtitle`, `Author`, `Publisher`, `PublishDate`, `ArticleSources`,&#13;
+		`TextSources`, `RetrievalDate`, `ArticleSection`, `GradeLevel`, `IsPrimarySource`, `HasUpdates`, `HasNotes`,&#13;
+		`ArticleText`";
+                    </li><li>private <span title="\PDO">PDO</span> <a href="#members">$pdo</a>;
                     </li><li>private <span title="\Article">Article</span> <a href="#members">$articles</a>;
                     </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Database" href="../classes/Database/__construct.html">__construct</a>()
                     </li><li>public array|Article <a title="Database" href="../classes/Database/getArticles.html">getArticles</a>()
@@ -90,6 +94,9 @@
             <li id="articles"><strong>$articles</strong>
                 —
                 <a title="\Article" href="../classes/_Article.html">\Article</a></li>
+            <li id="columns">
+              <strong>$columns</strong>
+            </li>
             <li id="pdo"><strong>$pdo</strong>
                 —
                 <a title="\PDO" href="../classes/_PDO.html">\PDO</a></li>

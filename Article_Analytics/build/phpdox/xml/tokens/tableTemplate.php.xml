@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="tableTemplate.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/tableTemplate.php" size="444" time="2017-02-10T20:44:36+01:00" unixtime="1486755876" sha1="e0d35558cd5978dbc4118b2fe48d6efc612d2747" relative="tableTemplate.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">makeTable</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$p</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="3">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">		&lt;table class="table table-responsive analytics-table"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">			&lt;thead&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">			&lt;tr&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Headline&lt;/th&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Links in Article&lt;/th&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Links per 1000 Words&lt;/th&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Link Quality&lt;/th&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Sources in Article&lt;/th&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Sources per 1000 Words&lt;/th&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">				&lt;th&gt;Word Count&lt;/th&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">			&lt;/tr&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">			&lt;/thead&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">			&lt;tbody&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">			</token>
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="18">
+    <token name="T_WHITESPACE">			</token>
+    <token name="T_STRING">analyticsByHeadline</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$p</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="19">
+    <token name="T_WHITESPACE">			</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">			&lt;/tbody&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">		&lt;/table&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">	</token>
+    <token name="T_OPEN_TAG">&lt;?php </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+    <token name="T_CLOSE_TAG">?&gt;</token>
+  </line>
+</source>

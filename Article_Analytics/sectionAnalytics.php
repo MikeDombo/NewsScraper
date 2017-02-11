@@ -51,21 +51,7 @@ else{
 					print "<button class=\"btn btn-outline-primary individualArticle\">Individual Article Analytics</button>
 				<div class=\"collapse mt-2\">";
 				}?>
-					<table class="table table-responsive analytics-table">
-						<thead>
-						<tr>
-							<th>Headline</th>
-							<th>Sources in Article</th>
-							<th>Sources per 1000 Words</th>
-							<th>Word Count</th>
-						</tr>
-						</thead>
-						<tbody>
-						<?php
-							analyticsByHeadline($p);
-						?>
-						</tbody>
-					</table>
+				<?php require_once "tableTemplate.php"; makeTable($p);?>
 				<?php if(!$singleSection){print "</div>";}?>
 			</div>
 			<?php }?>

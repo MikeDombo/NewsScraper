@@ -7,6 +7,13 @@ require "DBConnection.php";
 $url = rawurldecode($_GET["url"]);
 $currentArticle = $dbo->getArticleByURL($url);
 
+function markSources($text, $sources){
+	foreach($sources as $s){
+		$text = mb_ereg_replace($s["sentence"], "<strong>".$s["sentence"]."</strong>", $text);
+	}
+	return $text;
+}
+
 ?>
 
 <html>
@@ -72,10 +79,19 @@ $currentArticle = $dbo->getArticleByURL($url);
 		</div>
 		<div class="card">
 			<div class="card-block">
-				<h2 class="card-title">Sources</h2>
+				<h2 class="card-title">Links</h2>
 				<p class="card-text"><?php foreach($currentArticle->getArticleSources() as $s){
-					print "<a href='".$s["URL"]."'>".$s["URL"]."</a><br/>";
+					print "<a target='_blank' href='".$s["URL"]."'>".$s["URL"]."</a> -- Quality: ".$s["Quality"]."<br/>";
 				}?>
+				</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-block">
+				<h2 class="card-title">Sources</h2>
+				<p class="card-text"><?php foreach($currentArticle->getTextSources() as $s){
+						print "\"".$s["source"]."\" -- from sentence: ".$s["sentence"]."<br/>";
+					}?>
 				</p>
 			</div>
 		</div>
@@ -103,7 +119,8 @@ $currentArticle = $dbo->getArticleByURL($url);
 		<div class="card">
 			<div class="card-block">
 				<h2 class="card-title">Full Text</h2>
-				<p class="card-text"><?php print nl2br($currentArticle->getArticleText());?></p>
+				<p class="card-text"><?php print markSources(nl2br($currentArticle->getArticleText()),
+					$currentArticle->getTextSources());?></p>
 			</div>
 		</div>
 	</div>

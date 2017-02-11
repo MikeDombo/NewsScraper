@@ -104,10 +104,9 @@ class Scrapers(object):
 	def parse_text_sources(self, text):
 		text_sources = []
 		import re
-		from unidecode import unidecode
-		sentence_regex = r'[\.\?!]\s+(\"[A-Z][^\"]*[\.\?!]+\")|[\.\?!][\'\"\)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)\s+'
+		sentence_regex = ur'[\.\?!]\s+(\"\'\u2018\u2019\u201c\u201d[A-Z][^\"\u2018\u2019\u201c\u201d]*[\.\?!]+\"\u2018\u2019\u201c\u201d)|[\.\?!][\'\"\\u2018\u2019\u201c\u201d)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)\s+'
 		source_regex = r'([^,;]*) are reporting.*|.*according to\s+([^,;]*)|.*reported by\s+([^,;]*)'
-		fragments = re.split(sentence_regex, unidecode(text))
+		fragments = re.split(sentence_regex, text)
 		for f in fragments:
 			if f is not None:
 				f = f.strip()

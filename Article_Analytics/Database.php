@@ -6,6 +6,10 @@ require_once "Article.php";
  * @author Michael Dombrowski
  */
 class Database{
+	private $columns = "`ArticleURL`, `Headline`, `Subtitle`, `Author`, `Publisher`, `PublishDate`, `ArticleSources`,
+		`TextSources`, `RetrievalDate`, `ArticleSection`, `GradeLevel`, `IsPrimarySource`, `HasUpdates`, `HasNotes`,
+		`ArticleText`";
+
 	/** @var  \PDO */
 	private $pdo;
 
@@ -46,7 +50,7 @@ class Database{
 	 */
 	public function getArticlesByPublisher(string $publisher): array {
 		$selected = [];
-		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `Publisher`=:publisher");
+		$q = $this->pdo->prepare("SELECT ".$this->columns." from `articles` WHERE `Publisher`=:publisher");
 		$q->bindValue(":publisher", $publisher, PDO::PARAM_STR);
 		$q->execute();
 		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
@@ -62,7 +66,7 @@ class Database{
 	 */
 	public function getArticlesByAuthor(string $author): array {
 		$selected = [];
-		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `Author`=:author");
+		$q = $this->pdo->prepare("SELECT ".$this->columns." from `articles` WHERE `Author`=:author");
 		$q->bindValue(":author", $author, PDO::PARAM_STR);
 		$q->execute();
 		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
@@ -78,7 +82,7 @@ class Database{
 	 */
 	public function getArticlesBySection(string $section): array {
 		$selected = [];
-		$q = $this->pdo->prepare("SELECT * from `articles` WHERE `ArticleSection` LIKE :section");
+		$q = $this->pdo->prepare("SELECT ".$this->columns." from `articles` WHERE `ArticleSection` LIKE :section");
 		$q->bindValue(":section", "%\"".$section."\"%", PDO::PARAM_STR);
 		$q->execute();
 		foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
@@ -171,12 +175,12 @@ class Database{
 		$start = 0;
 		// Fetch only 50 articles at a time to limit the memory impact
 		while($numFetched < $count){
-			$q = $this->pdo->query("SELECT * FROM `Articles` LIMIT $start,50");
+			$q = $this->pdo->query("SELECT ".$this->columns." FROM `Articles` LIMIT $start,100");
 			foreach($q->fetchAll(PDO::FETCH_ASSOC) as $a){
 				$this->articles[] = $this->makeArticleFromDB($a);
 				$numFetched += 1;
 			}
-			$start += 50;
+			$start += 100;
 		}
 	}
 
@@ -194,8 +198,12 @@ class Database{
 		$article->setAuthor($a["Author"]);
 		$article->setPublisher($a["Publisher"]);
 		$article->setPublishDate($pDate);
-		$article->setArticleText($a["ArticleText"]);
-		$article->setArticleHTML($a["ArticleHTML"]);
+		if(isset($a["ArticleText"])){
+			$article->setArticleText($a["ArticleText"]);
+		}
+		if(isset($a["ArticleHTML"])){
+			$article->setArticleHTML($a["ArticleHTML"]);
+		}
 		$article->setArticleSources(json_decode($a["ArticleSources"], true));
 		$article->setTextSources(json_decode($a["TextSources"], true));
 		$article->setRetrievalDate($fDate);
