@@ -1,14 +1,13 @@
 <?php if(isset($_GET["answer"])){
-	$db = "../news-old-2.db";
 	try{
-		$pdo = new PDO('sqlite:'.$db);
+		$pdo = new PDO('mysql:host=localhost;dbname=newsscraper;charset=utf8', "root", "");
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch(PDOException $p){
 		print 'Exception : '.$p->getMessage();
 		return;
 	}
 	if($_GET["answer"] > -1 && isset($_GET["ID"])){
-		error_log("Saving Answer");
 		$q = $pdo->exec("UPDATE `Article-Fragments` SET `IsSource`=".$_GET["answer"]." WHERE `ID` =".$_GET["ID"]);
 	}
 	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 LIMIT 0,1");

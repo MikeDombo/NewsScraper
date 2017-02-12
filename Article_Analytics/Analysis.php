@@ -37,13 +37,13 @@ function articleAnalytics(\Article $article): array {
 	$numWords = str_word_count($article->getArticleText());
 	$numSources = count($article->getTextSources());
 	$sourcesPerMWords = $numSources/($numWords/1000);
-	$linksPerMWords = $numLinks/($numWords/1000);
 
 	foreach($article->getArticleSources() as $t){
 		$numLinks += 1;
 		$cumulativeLinkQuality += $t["Quality"];
 	}
 
+	$linksPerMWords = $numLinks/($numWords/1000);
 	$linkQualityAverage = $numLinks == 0 ? -1 : $cumulativeLinkQuality/$numLinks;
 
 	return ["numLinks"=>$numLinks, "numWords"=>$numWords, "linksPerMWords"=>$linksPerMWords,

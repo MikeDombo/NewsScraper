@@ -101,8 +101,6 @@ def main():
 		if run_multiprocessing:
 			r = [pool.apply_async(make_queue, args=(s, no_db, db_options)) for s in my_router.get_scrapers()]
 			q = [p.get() for p in r]
-			for q in q:
-				q.pop(0)
 			pool.terminate()
 		else:
 			q = []

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Analysis.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Analysis.php" size="5152" time="2017-02-10T20:41:40+01:00" unixtime="1486755700" sha1="7e1e69f5dbec912c752e9e40a6ab4dd3fe387797" relative="Analysis.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Analysis.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Analysis.php" size="5152" time="2017-02-11T22:11:38+01:00" unixtime="1486847498" sha1="52c57c16f567a9c103bd6ad26e0fa61d0c6aece3" relative="Analysis.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -395,23 +395,8 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="40">
-    <token name="T_WHITESPACE">	</token>
-    <token name="T_VARIABLE">$linksPerMWords</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_PHPDOX_EQUAL">=</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_VARIABLE">$numLinks</token>
-    <token name="T_PHPDOX_DIV">/</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_VARIABLE">$numWords</token>
-    <token name="T_PHPDOX_DIV">/</token>
-    <token name="T_LNUMBER">1000</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-  </line>
-  <line no="41"/>
-  <line no="42">
+  <line no="40"/>
+  <line no="41">
     <token name="T_WHITESPACE">	</token>
     <token name="T_FOREACH">foreach</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -427,7 +412,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="43">
+  <line no="42">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_WHITESPACE"> </token>
@@ -436,7 +421,7 @@
     <token name="T_LNUMBER">1</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="44">
+  <line no="43">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$cumulativeLinkQuality</token>
     <token name="T_WHITESPACE"> </token>
@@ -448,11 +433,26 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="45">
+  <line no="44">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="46"/>
+  <line no="45"/>
+  <line no="46">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$linksPerMWords</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numLinks</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$numWords</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_LNUMBER">1000</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
   <line no="47">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$linkQualityAverage</token>

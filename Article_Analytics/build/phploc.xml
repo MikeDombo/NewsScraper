@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phploc>
-  <loc>1233</loc>
-  <lloc>315</lloc>
+  <loc>1232</loc>
+  <lloc>314</lloc>
   <llocClasses>128</llocClasses>
   <llocFunctions>71</llocFunctions>
-  <llocGlobal>116</llocGlobal>
+  <llocGlobal>115</llocGlobal>
   <cloc>178</cloc>
   <ccn>76</ccn>
   <ccnMethods>20</ccnMethods>
@@ -26,11 +26,11 @@
   <globalConstants>0</globalConstants>
   <testClasses>0</testClasses>
   <testMethods>0</testMethods>
-  <ccnByLloc>0.24126984126984</ccnByLloc>
+  <ccnByLloc>0.24203821656051</ccnByLloc>
   <llocByNof>8.875</llocByNof>
-  <methodCalls>92</methodCalls>
+  <methodCalls>93</methodCalls>
   <staticMethodCalls>0</staticMethodCalls>
-  <instanceMethodCalls>92</instanceMethodCalls>
+  <instanceMethodCalls>93</instanceMethodCalls>
   <attributeAccesses>51</attributeAccesses>
   <staticAttributeAccesses>0</staticAttributeAccesses>
   <instanceAttributeAccesses>51</instanceAttributeAccesses>
@@ -51,5 +51,5 @@
   <methodLlocAvg>2.4222222222222</methodLlocAvg>
   <methodLlocMax>22</methodLlocMax>
   <namespaces>0</namespaces>
-  <ncloc>1055</ncloc>
+  <ncloc>1054</ncloc>
 </phploc>

@@ -35,7 +35,11 @@ class NYTimes(Scrapers):
 					article_link = href.scheme+'://'+href.netloc+href.path
 					has_match = re.match('.*/\d{4}/\d{2}/\d{2}/*', article_link) is not None
 					if article_link not in article_list and has_match and "/interactive/" not in article_link and "/watching/" not in article_link:
-						article_list.append(article_link)
+						import httplib
+						conn = httplib.HTTPConnection(href.netloc)
+						conn.request("HEAD", href.path)
+						if conn.getresponse().status == 200:
+							article_list.append(article_link)
 		return article_list
 
 	def __init__(self):
