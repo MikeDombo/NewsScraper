@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phploc>
-  <loc>1232</loc>
+  <loc>1237</loc>
   <lloc>314</lloc>
   <llocClasses>128</llocClasses>
   <llocFunctions>71</llocFunctions>
@@ -51,5 +51,5 @@
   <methodLlocAvg>2.4222222222222</methodLlocAvg>
   <methodLlocMax>22</methodLlocMax>
   <namespaces>0</namespaces>
-  <ncloc>1054</ncloc>
+  <ncloc>1059</ncloc>
 </phploc>

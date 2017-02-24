@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="3459" time="2017-02-12T21:31:38+01:00" unixtime="1486931498" sha1="3f34c20d7c497429c37ac31c56e44026071d3d48" relative="classify.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="3670" time="2017-02-12T21:37:42+01:00" unixtime="1486931862" sha1="4b75e6b69cc94893d7ea5333f05f8827143dce6f" relative="classify.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_IF">if</token>
@@ -299,167 +299,182 @@
     <token name="T_INLINE_HTML">				&lt;button class="btn btn-outline-primary not-src m-1"&gt;&lt;u&gt;N&lt;/u&gt;ot a Source&lt;/button&gt;</token>
   </line>
   <line no="43">
-    <token name="T_INLINE_HTML">				&lt;button class="btn btn-outline-danger skip-src m-1"&gt;S&lt;u&gt;k&lt;/u&gt;ip&lt;/button&gt;</token>
+    <token name="T_INLINE_HTML">				&lt;button class="btn btn-outline-primary should-src m-1"&gt;Should &lt;u&gt;B&lt;/u&gt;e Sourced&lt;/button&gt;</token>
   </line>
   <line no="44">
-    <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">				&lt;button class="btn btn-outline-danger skip-src m-1"&gt;S&lt;u&gt;k&lt;/u&gt;ip&lt;/button&gt;</token>
   </line>
   <line no="45">
-    <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">			&lt;/div&gt;</token>
   </line>
   <line no="46">
-    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
+    <token name="T_INLINE_HTML">		&lt;/div&gt;</token>
   </line>
   <line no="47">
-    <token name="T_INLINE_HTML">	&lt;script&gt;</token>
+    <token name="T_INLINE_HTML">	&lt;/div&gt;</token>
   </line>
   <line no="48">
-    <token name="T_INLINE_HTML">		var ID = -1;</token>
+    <token name="T_INLINE_HTML">	&lt;script&gt;</token>
   </line>
   <line no="49">
-    <token name="T_INLINE_HTML">		$(document).ready(function(){</token>
+    <token name="T_INLINE_HTML">		var ID = -1;</token>
   </line>
   <line no="50">
-    <token name="T_INLINE_HTML">			$.get("?answer=-1", function(data){</token>
+    <token name="T_INLINE_HTML">		$(document).ready(function(){</token>
   </line>
   <line no="51">
-    <token name="T_INLINE_HTML">				data = JSON.parse(data);</token>
+    <token name="T_INLINE_HTML">			$.get("?answer=-1", function(data){</token>
   </line>
   <line no="52">
-    <token name="T_INLINE_HTML">				$("#fragment").text(data["Fragment"]);</token>
+    <token name="T_INLINE_HTML">				data = JSON.parse(data);</token>
   </line>
   <line no="53">
-    <token name="T_INLINE_HTML">				ID = data["ID"];}</token>
+    <token name="T_INLINE_HTML">				$("#fragment").text(data["Fragment"]);</token>
   </line>
   <line no="54">
-    <token name="T_INLINE_HTML">			);</token>
+    <token name="T_INLINE_HTML">				ID = data["ID"];}</token>
   </line>
   <line no="55">
-    <token name="T_INLINE_HTML">		});</token>
-  </line>
-  <line no="56"/>
-  <line no="57">
-    <token name="T_INLINE_HTML">		function saveResult(id, result){</token>
-  </line>
-  <line no="58">
-    <token name="T_INLINE_HTML">			$.get("?answer="+result+"&amp;ID="+id, function(data){</token>
-  </line>
-  <line no="59">
-    <token name="T_INLINE_HTML">					data = JSON.parse(data);</token>
-  </line>
-  <line no="60">
-    <token name="T_INLINE_HTML">					$("#fragment").text(data["Fragment"]);</token>
-  </line>
-  <line no="61">
-    <token name="T_INLINE_HTML">					ID = data["ID"];</token>
-  </line>
-  <line no="62">
-    <token name="T_INLINE_HTML">				}</token>
-  </line>
-  <line no="63">
     <token name="T_INLINE_HTML">			);</token>
   </line>
-  <line no="64">
-    <token name="T_INLINE_HTML">		}</token>
-  </line>
-  <line no="65"/>
-  <line no="66">
-    <token name="T_INLINE_HTML">		$(".original-rep").on("click", function(){saveResult(ID, 1)});</token>
-  </line>
-  <line no="67">
-    <token name="T_INLINE_HTML">		$(".primary-src").on("click", function(){saveResult(ID, 2)});</token>
-  </line>
-  <line no="68">
-    <token name="T_INLINE_HTML">		$(".sec-src").on("click", function(){saveResult(ID, 3)});</token>
-  </line>
-  <line no="69">
-    <token name="T_INLINE_HTML">		$(".quote-src").on("click", function(){saveResult(ID, 4)});</token>
-  </line>
-  <line no="70">
-    <token name="T_INLINE_HTML">		$(".not-src").on("click", function(){saveResult(ID, 0)});</token>
-  </line>
-  <line no="71">
-    <token name="T_INLINE_HTML">		$(".skip-src").on("click", function(){saveResult(ID, -1)});</token>
-  </line>
-  <line no="72">
-    <token name="T_INLINE_HTML">		$(document).on('keyup', function(event){</token>
-  </line>
-  <line no="73">
-    <token name="T_INLINE_HTML">			var k = event.key.toLowerCase();</token>
-  </line>
-  <line no="74">
-    <token name="T_INLINE_HTML">			switch(k){</token>
-  </line>
-  <line no="75">
-    <token name="T_INLINE_HTML">				case 'o':</token>
-  </line>
-  <line no="76">
-    <token name="T_INLINE_HTML">					saveResult(ID, 1);</token>
-  </line>
-  <line no="77">
-    <token name="T_INLINE_HTML">					break;</token>
-  </line>
-  <line no="78">
-    <token name="T_INLINE_HTML">				case 'p':</token>
-  </line>
-  <line no="79">
-    <token name="T_INLINE_HTML">					saveResult(ID, 2);</token>
-  </line>
-  <line no="80">
-    <token name="T_INLINE_HTML">					break;</token>
-  </line>
-  <line no="81">
-    <token name="T_INLINE_HTML">				case 's':</token>
-  </line>
-  <line no="82">
-    <token name="T_INLINE_HTML">					saveResult(ID, 3);</token>
-  </line>
-  <line no="83">
-    <token name="T_INLINE_HTML">					break;</token>
-  </line>
-  <line no="84">
-    <token name="T_INLINE_HTML">				case 'q':</token>
-  </line>
-  <line no="85">
-    <token name="T_INLINE_HTML">					saveResult(ID, 4);</token>
-  </line>
-  <line no="86">
-    <token name="T_INLINE_HTML">					break;</token>
-  </line>
-  <line no="87">
-    <token name="T_INLINE_HTML">				case 'n':</token>
-  </line>
-  <line no="88">
-    <token name="T_INLINE_HTML">					saveResult(ID, 0);</token>
-  </line>
-  <line no="89">
-    <token name="T_INLINE_HTML">					break;</token>
-  </line>
-  <line no="90">
-    <token name="T_INLINE_HTML">				case 'k':</token>
-  </line>
-  <line no="91">
-    <token name="T_INLINE_HTML">					saveResult(ID, -1);</token>
-  </line>
-  <line no="92">
-    <token name="T_INLINE_HTML">					break;</token>
-  </line>
-  <line no="93">
-    <token name="T_INLINE_HTML">			}</token>
-  </line>
-  <line no="94">
+  <line no="56">
     <token name="T_INLINE_HTML">		});</token>
   </line>
+  <line no="57"/>
+  <line no="58">
+    <token name="T_INLINE_HTML">		function saveResult(id, result){</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">			$.get("?answer="+result+"&amp;ID="+id, function(data){</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">					data = JSON.parse(data);</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">					$("#fragment").text(data["Fragment"]);</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">					ID = data["ID"];</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">				}</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">			);</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">		}</token>
+  </line>
+  <line no="66"/>
+  <line no="67">
+    <token name="T_INLINE_HTML">		$(".original-rep").on("click", function(){saveResult(ID, 1)});</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">		$(".primary-src").on("click", function(){saveResult(ID, 2)});</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">		$(".sec-src").on("click", function(){saveResult(ID, 3)});</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">		$(".quote-src").on("click", function(){saveResult(ID, 4)});</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">		$(".should-src").on("click", function(){saveResult(ID, 5)});</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">		$(".not-src").on("click", function(){saveResult(ID, 0)});</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">		$(".skip-src").on("click", function(){saveResult(ID, -1)});</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">		$(document).on('keyup', function(event){</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">			var k = event.key.toLowerCase();</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">			switch(k){</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">				case 'b':</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">					saveResult(ID, 5);</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">					break;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">				case 'o':</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">					saveResult(ID, 1);</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">					break;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">				case 'p':</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">					saveResult(ID, 2);</token>
+  </line>
+  <line no="85">
+    <token name="T_INLINE_HTML">					break;</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">				case 's':</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">					saveResult(ID, 3);</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">					break;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">				case 'q':</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">					saveResult(ID, 4);</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">					break;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">				case 'n':</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">					saveResult(ID, 0);</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">					break;</token>
+  </line>
   <line no="95">
-    <token name="T_INLINE_HTML">	&lt;/script&gt;</token>
+    <token name="T_INLINE_HTML">				case 'k':</token>
   </line>
   <line no="96">
-    <token name="T_INLINE_HTML">&lt;/body&gt;</token>
+    <token name="T_INLINE_HTML">					saveResult(ID, -1);</token>
   </line>
   <line no="97">
-    <token name="T_INLINE_HTML">&lt;/html&gt;</token>
+    <token name="T_INLINE_HTML">					break;</token>
   </line>
   <line no="98">
+    <token name="T_INLINE_HTML">			}</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">		});</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">	&lt;/script&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">&lt;/body&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">&lt;/html&gt;</token>
+  </line>
+  <line no="103">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
     <token name="T_WHITESPACE"> </token>

@@ -2,6 +2,7 @@ import MySQLdb
 from db_connection import dbConnection
 import re
 import unidecode
+import random
 
 
 def main():
@@ -13,13 +14,14 @@ def main():
 	dbOptions = {'host': 'localhost', 'user': 'root', 'password': '', 'file': 'newsscraper'}
 	verify_db(dbOptions)
 	db = dbConnection(dbOptions)
-	articles = db.get_all_article_text()
+	articles = list(db.get_all_article_text())
+	random.shuffle(articles)
 
-	new_fragments = []
 	for i, a in enumerate(articles):
-		if i < 100:
+		if i < 500:
 			print "WORKING ON: "+a[0]
 			fragments = re.split(sentence_regex, a[1])
+			new_fragments = []
 			for f in fragments:
 				if f is not None:
 					f = f.strip()

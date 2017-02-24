@@ -10,7 +10,7 @@
 	if($_GET["answer"] > -1 && isset($_GET["ID"])){
 		$q = $pdo->exec("UPDATE `Article-Fragments` SET `IsSource`=".$_GET["answer"]." WHERE `ID` =".$_GET["ID"]);
 	}
-	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 LIMIT 0,1");
+	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 ORDER BY RAND() LIMIT 0,1");
 	$new_fragment = $q->fetchAll()[0];
 	echo json_encode(["ID"=>$new_fragment["ID"], "Fragment"=>$new_fragment["Fragment"]]);
 }?>
@@ -40,6 +40,7 @@
 				<button class="btn btn-outline-primary sec-src m-1"><u>S</u>econdary Source</button>
 				<button class="btn btn-outline-primary quote-src m-1"><u>Q</u>uote</button>
 				<button class="btn btn-outline-primary not-src m-1"><u>N</u>ot a Source</button>
+				<button class="btn btn-outline-primary should-src m-1">Should <u>B</u>e Sourced</button>
 				<button class="btn btn-outline-danger skip-src m-1">S<u>k</u>ip</button>
 			</div>
 		</div>
@@ -67,11 +68,15 @@
 		$(".primary-src").on("click", function(){saveResult(ID, 2)});
 		$(".sec-src").on("click", function(){saveResult(ID, 3)});
 		$(".quote-src").on("click", function(){saveResult(ID, 4)});
+		$(".should-src").on("click", function(){saveResult(ID, 5)});
 		$(".not-src").on("click", function(){saveResult(ID, 0)});
 		$(".skip-src").on("click", function(){saveResult(ID, -1)});
 		$(document).on('keyup', function(event){
 			var k = event.key.toLowerCase();
 			switch(k){
+				case 'b':
+					saveResult(ID, 5);
+					break;
 				case 'o':
 					saveResult(ID, 1);
 					break;
