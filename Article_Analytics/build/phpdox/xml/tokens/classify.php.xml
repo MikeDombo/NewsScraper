@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="3670" time="2017-02-12T21:37:42+01:00" unixtime="1486931862" sha1="4b75e6b69cc94893d7ea5333f05f8827143dce6f" relative="classify.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="3686" time="2017-02-24T23:13:17+01:00" unixtime="1487974397" sha1="ad9276930155e41d863591cb2c12ae2225a01581" relative="classify.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_IF">if</token>
@@ -159,7 +159,7 @@
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
     <token name="T_STRING">query</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 LIMIT 0,1"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 ORDER BY RAND() LIMIT 0,1"</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
