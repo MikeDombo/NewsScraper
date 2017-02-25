@@ -27,6 +27,7 @@ var/
 */.idea
 */.sonar
 *.pyc
+*.pkl
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

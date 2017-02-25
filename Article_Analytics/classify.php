@@ -12,9 +12,10 @@
 	}
 	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 ORDER BY RAND() LIMIT 0,1");
 	$new_fragment = $q->fetchAll()[0];
-	echo json_encode(["ID"=>$new_fragment["ID"], "Fragment"=>$new_fragment["Fragment"]]);
-}?>
-<?php if(!isset($_GET["answer"])){
+	$prediction = exec('python ../Auto_Classifier/app.py -p "'.$new_fragment["Fragment"].'"');
+	echo json_encode(["ID"=>$new_fragment["ID"], "Fragment"=>$new_fragment["Fragment"], "Prediction"=>intval($prediction)]);
+}
+if(!isset($_GET["answer"])){
 ?>
 <html>
 <head>
@@ -32,6 +33,9 @@
 			<div class="offset-2 col-8 d-flex justify-content-center">
 				<h4 id="fragment"></h4>
 			</div>
+			<div class="offset-2 col-8 d-flex justify-content-center mt-2">
+				<h5><em id="prediction"></em></h5>
+			</div>
 		</div>
 		<div class="row m-5">
 			<div class="col-12 d-flex justify-content-center">
@@ -46,20 +50,41 @@
 		</div>
 	</div>
 	<script>
+		function intToText(p){
+			switch(p){
+				case 0:
+					return "Not a Source";
+				case 1:
+					return "Original Reporting";
+				case 2:
+					return "Primary Source";
+				case 3:
+					return "Secondary Source";
+				case 4:
+					return "Quote";
+				case 5:
+					return "Should Source"
+			}
+		}
 		var ID = -1;
 		$(document).ready(function(){
 			$.get("?answer=-1", function(data){
 				data = JSON.parse(data);
 				$("#fragment").text(data["Fragment"]);
-				ID = data["ID"];}
+				console.log(intToText(data["Prediction"]));
+				ID = data["ID"];
+				$("#prediction").text(intToText(data["Prediction"]));
+				}
 			);
 		});
 
 		function saveResult(id, result){
 			$.get("?answer="+result+"&ID="+id, function(data){
 					data = JSON.parse(data);
+					console.log(intToText(data["Prediction"]));
 					$("#fragment").text(data["Fragment"]);
 					ID = data["ID"];
+					$("#prediction").text(intToText(data["Prediction"]));
 				}
 			);
 		}
@@ -100,4 +125,4 @@
 	</script>
 </body>
 </html>
-<?php } ?>
+<?php }?>
