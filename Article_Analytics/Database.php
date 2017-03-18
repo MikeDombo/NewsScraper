@@ -16,6 +16,8 @@ class Database{
 	/** @var  \Article */
 	private $articles;
 
+	private $fragments = [];
+
 	/**
 	 * @param \PDO $pdo
 	 */
@@ -184,6 +186,65 @@ class Database{
 		}
 	}
 
+	private function getFragments(){
+		$q = $this->pdo->prepare("SELECT `ArticleURL`, `IsSource`, `Guess`, count(*) FROM `Fragments-Table` 
+			GROUP BY `ArticleURL`, `IsSource`, `Guess`");
+		$q->execute();
+		$rows = $q->fetchAll(PDO::FETCH_ASSOC);
+
+		// Index fragments by ArticleURL for faster access times
+		foreach($rows as $r){
+			if(!isset($this->fragments[$r["ArticleURL"]])){
+				$this->fragments[$r["ArticleURL"]] = [];
+			}
+			$this->fragments[$r["ArticleURL"]][] = ["IsSource"=>$r["IsSource"], "Guess"=>$r["Guess"], "count(*)"=>$r["count(*)"]];
+		}
+	}
+
+	private function setClassificationData(\Article $article){
+		if(count($this->fragments) <= 0){
+			$this->getFragments();
+		}
+
+		foreach($this->fragments[$article->getArticleURL()] as $r){
+			$article->setNumSentences($article->getNumSentences() + $r["count(*)"]);
+			if($r["IsSource"] != -1){
+				$article = $this->setClassification($article, $r["IsSource"], $r["count(*)"]);
+			}
+			else if($r["Guess"] != null){
+				$article = $this->setClassification($article, $r["Guess"], $r["count(*)"]);
+			}
+		}
+
+		return $article;
+	}
+
+	private function setClassification(\Article $article, $value, $num){
+		switch($value){
+			case 0:
+				$article->setNumNotSourced($article->getNumNotSourced() + $num);
+				break;
+			case 1:
+				$article->setNumOriginalReporting($article->getNumOriginalReporting() + $num);
+				break;
+			case 2:
+				$article->setNumPrimarySource($article->getNumPrimarySource() + $num);
+				break;
+			case 3:
+				$article->setNumSecondarySource($article->getNumSecondarySource() + $num);
+				break;
+			case 4:
+				$article->setNumQuote($article->getNumQuote() + $num);
+				break;
+			case 5:
+				$article->setNumNeedsSource($article->getNumNeedsSource() + $num);
+				break;
+			default:
+				break;
+		}
+		return $article;
+	}
+
 	private function makeArticleFromDB($a){
 		$article = new Article();
 
@@ -213,6 +274,7 @@ class Database{
 		$article->setHasUpdates($a["HasUpdates"]);
 		$article->setHasNotes($a["HasNotes"]);
 
+		$article = $this->setClassificationData($article);
 		return $article;
 	}
 }

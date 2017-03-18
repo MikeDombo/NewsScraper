@@ -22,6 +22,14 @@ class Article{
 	private $hasUpdates;
 	private $hasNotes;
 
+	private $numSentences = 0;
+	private $numOriginalReporting = 0;
+	private $numPrimarySource = 0;
+	private $numSecondarySource = 0;
+	private $numQuote = 0;
+	private $numNotSourced = 0;
+	private $numNeedsSource = 0;
+
 	public function __construct(){
 	}
 
@@ -255,5 +263,102 @@ class Article{
 		$this->textSources = $textSources;
 	}
 
+	/**
+	 * @return mixed
+	 */
+	public function getNumSentences(){
+		return $this->numSentences;
+	}
+
+	/**
+	 * @param mixed $numSentences
+	 */
+	public function setNumSentences($numSentences){
+		$this->numSentences = $numSentences;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNumOriginalReporting(){
+		return $this->numOriginalReporting;
+	}
+
+	/**
+	 * @param mixed $numOriginalReporting
+	 */
+	public function setNumOriginalReporting($numOriginalReporting){
+		$this->numOriginalReporting = $numOriginalReporting;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNumPrimarySource(){
+		return $this->numPrimarySource;
+	}
+
+	/**
+	 * @param mixed $numPrimarySource
+	 */
+	public function setNumPrimarySource($numPrimarySource){
+		$this->numPrimarySource = $numPrimarySource;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNumSecondarySource(){
+		return $this->numSecondarySource;
+	}
+
+	/**
+	 * @param mixed $numSecondarySource
+	 */
+	public function setNumSecondarySource($numSecondarySource){
+		$this->numSecondarySource = $numSecondarySource;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNumQuote(){
+		return $this->numQuote;
+	}
+
+	/**
+	 * @param mixed $numQuote
+	 */
+	public function setNumQuote($numQuote){
+		$this->numQuote = $numQuote;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNumNotSourced(){
+		return $this->numNotSourced;
+	}
+
+	/**
+	 * @param mixed $numNotSourced
+	 */
+	public function setNumNotSourced($numNotSourced){
+		$this->numNotSourced = $numNotSourced;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getNumNeedsSource(){
+		return $this->numNeedsSource;
+	}
+
+	/**
+	 * @param mixed $numNeedsSource
+	 */
+	public function setNumNeedsSource($numNeedsSource){
+		$this->numNeedsSource = $numNeedsSource;
+	}
 
 }

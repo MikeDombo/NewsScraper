@@ -5,12 +5,14 @@
 			<thead>
 			<tr>
 				<th>Headline</th>
+				<th>% Original Reporting</th>
 				<th>Links in Article</th>
 				<th>Links per 1000 Words</th>
 				<th>Link Quality</th>
 				<th>Sources in Article</th>
 				<th>Sources per 1000 Words</th>
 				<th>Word Count</th>
+				<th>Sentence Count</th>
 			</tr>
 			</thead>
 			<tbody>
