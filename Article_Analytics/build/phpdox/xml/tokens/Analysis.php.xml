@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Analysis.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Analysis.php" size="5152" time="2017-02-11T22:11:38+01:00" unixtime="1486847498" sha1="52c57c16f567a9c103bd6ad26e0fa61d0c6aece3" relative="Analysis.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Analysis.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Analysis.php" size="9119" time="2017-03-18T21:39:36+01:00" unixtime="1489869576" sha1="60f46acc06822df033a0da35641b0c49018cc093" relative="Analysis.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -149,6 +149,26 @@
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;td&gt;"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$analytics</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"originalReportingPercent"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/td&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="17">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;td onclick='return navigate(event, \"sources?url="</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">rawurlencode</token>
@@ -162,7 +182,7 @@
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"\");'&gt;</token>
   </line>
-  <line no="17">
+  <line no="18">
     <token name="T_CONSTANT_ENCAPSED_STRING">			&lt;a href='sources?url="</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">rawurlencode</token>
@@ -181,30 +201,10 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"numLinks"</token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
   </line>
-  <line no="18">
+  <line no="19">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/a&gt;&lt;/td&gt;"</token>
-    <token name="T_PHPDOX_SEMICOLON">;</token>
-  </line>
-  <line no="19">
-    <token name="T_WHITESPACE">		</token>
-    <token name="T_PRINT">print</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;td&gt;"</token>
-    <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_STRING">number_format</token>
-    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
-    <token name="T_VARIABLE">$analytics</token>
-    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"linksPerMWords"</token>
-    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
-    <token name="T_PHPDOX_COMMA">,</token>
-    <token name="T_WHITESPACE"> </token>
-    <token name="T_LNUMBER">2</token>
-    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
-    <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/td&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
   <line no="20">
@@ -217,7 +217,7 @@
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$analytics</token>
     <token name="T_PHPDOX_OPEN_SQUARE">[</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"averageLinkQuality"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"linksPerMWords"</token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_COMMA">,</token>
     <token name="T_WHITESPACE"> </token>
@@ -237,6 +237,26 @@
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$analytics</token>
     <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"averageLinkQuality"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/td&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="22">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;td&gt;"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$analytics</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"numSources"</token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
@@ -244,7 +264,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/td&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="22">
+  <line no="23">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -264,7 +284,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/td&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="23">
+  <line no="24">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -281,40 +301,57 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/td&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="24">
+  <line no="25">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;td&gt;"</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$analytics</token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"numSentences"</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/td&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="26">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/tr&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="25">
+  <line no="27">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="26">
+  <line no="28">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="27"/>
-  <line no="28">
+  <line no="29"/>
+  <line no="30">
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="29">
+  <line no="31">
     <token name="T_DOC_COMMENT"> * Returns statistics from a given article including number of sources, number of words, and sources</token>
   </line>
-  <line no="30">
+  <line no="32">
     <token name="T_DOC_COMMENT"> * per 1000 words.</token>
   </line>
-  <line no="31">
+  <line no="33">
     <token name="T_DOC_COMMENT"> * @param \Article $article article you want statistics about</token>
   </line>
-  <line no="32">
+  <line no="34">
     <token name="T_DOC_COMMENT"> * @return array</token>
   </line>
-  <line no="33">
+  <line no="35">
     <token name="T_DOC_COMMENT"> */</token>
   </line>
-  <line no="34">
+  <line no="36">
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">articleAnalytics</token>
@@ -330,7 +367,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="35">
+  <line no="37">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_WHITESPACE"> </token>
@@ -339,7 +376,7 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="36">
+  <line no="38">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$cumulativeLinkQuality</token>
     <token name="T_WHITESPACE"> </token>
@@ -348,7 +385,7 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="37">
+  <line no="39">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -364,7 +401,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="38">
+  <line no="40">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numSources</token>
     <token name="T_WHITESPACE"> </token>
@@ -380,7 +417,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="39">
+  <line no="41">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$sourcesPerMWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -395,8 +432,99 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="40"/>
-  <line no="41">
+  <line no="42">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumSentences</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="43">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$unsourced</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumNotSourced</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="44">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$originalReporting</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumOriginalReporting</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="45">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$primarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumPrimarySource</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="46">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$secondarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumSecondarySource</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="47">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$quote</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumQuote</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="48">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$needsSource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$article</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumNeedsSource</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="49"/>
+  <line no="50">
     <token name="T_WHITESPACE">	</token>
     <token name="T_FOREACH">foreach</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -412,7 +540,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="42">
+  <line no="51">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_WHITESPACE"> </token>
@@ -421,7 +549,7 @@
     <token name="T_LNUMBER">1</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="43">
+  <line no="52">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$cumulativeLinkQuality</token>
     <token name="T_WHITESPACE"> </token>
@@ -433,12 +561,12 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="44">
+  <line no="53">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="45"/>
-  <line no="46">
+  <line no="54"/>
+  <line no="55">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$linksPerMWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -453,7 +581,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="47">
+  <line no="56">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$linkQualityAverage</token>
     <token name="T_WHITESPACE"> </token>
@@ -477,8 +605,146 @@
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="48"/>
-  <line no="49">
+  <line no="57">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgUnsourced</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$unsourced</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="58">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgOriginalReporting</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$originalReporting</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="59">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgPrimarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$primarySource</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="60">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgSecondarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$secondarySource</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="61">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgQuote</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$quote</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="62">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgNeedsSource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$needsSource</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="63"/>
+  <line no="64">
     <token name="T_WHITESPACE">	</token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
@@ -498,8 +764,8 @@
     <token name="T_VARIABLE">$linksPerMWords</token>
     <token name="T_PHPDOX_COMMA">,</token>
   </line>
-  <line no="50">
-    <token name="T_WHITESPACE">			</token>
+  <line no="65">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"numSources"</token>
     <token name="T_DOUBLE_ARROW">=&gt;</token>
     <token name="T_VARIABLE">$numSources</token>
@@ -509,35 +775,125 @@
     <token name="T_DOUBLE_ARROW">=&gt;</token>
     <token name="T_VARIABLE">$sourcesPerMWords</token>
     <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"numSentences"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$numSentences</token>
+    <token name="T_PHPDOX_COMMA">,</token>
   </line>
-  <line no="51">
-    <token name="T_WHITESPACE">			</token>
+  <line no="66">
+    <token name="T_WHITESPACE">		</token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"averageLinkQuality"</token>
     <token name="T_DOUBLE_ARROW">=&gt;</token>
     <token name="T_VARIABLE">$linkQualityAverage</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"unsource"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$unsourced</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"originalReporting"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$originalReporting</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="67">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"primarySource"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$primarySource</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"secondarySource"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$secondarySource</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"quote"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$quote</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="68">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"needsSource"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$needsSource</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"originalReportingPercent"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$avgOriginalReporting</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="69">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"unsourcedPercent"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$avgUnsourced</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"primarySourcePercent"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$avgPrimarySource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="70">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"secondarySourcePercent"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$avgSecondarySource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"quotePercent"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$avgQuote</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+  </line>
+  <line no="71">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"needsSourcePercent"</token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_VARIABLE">$avgNeedsSource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+  </line>
+  <line no="72">
+    <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="52">
+  <line no="73">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="53"/>
-  <line no="54">
+  <line no="74"/>
+  <line no="75">
     <token name="T_DOC_COMMENT">/**</token>
   </line>
-  <line no="55">
+  <line no="76">
     <token name="T_DOC_COMMENT"> * Generates average analytics for a given list of articles</token>
   </line>
-  <line no="56">
+  <line no="77">
     <token name="T_DOC_COMMENT"> * Prints these analytics in h1.lead format</token>
   </line>
-  <line no="57">
+  <line no="78">
     <token name="T_DOC_COMMENT"> * @param array|\Article $articles</token>
   </line>
-  <line no="58">
+  <line no="79">
     <token name="T_DOC_COMMENT"> */</token>
   </line>
-  <line no="59">
+  <line no="80">
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">overallAnalytics</token>
@@ -548,7 +904,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="60">
+  <line no="81">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_WHITESPACE"> </token>
@@ -557,7 +913,7 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="61">
+  <line no="82">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numSources</token>
     <token name="T_WHITESPACE"> </token>
@@ -566,7 +922,7 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="62">
+  <line no="83">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -575,7 +931,7 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="63">
+  <line no="84">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$numArticles</token>
     <token name="T_WHITESPACE"> </token>
@@ -587,7 +943,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="64">
+  <line no="85">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$cumulativeGradeLevel</token>
     <token name="T_PHPDOX_EQUAL">=</token>
@@ -595,7 +951,7 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="65">
+  <line no="86">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$cumulativeLinkQuality</token>
     <token name="T_WHITESPACE"> </token>
@@ -604,8 +960,72 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="66"/>
-  <line no="67">
+  <line no="87"/>
+  <line no="88">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativeUnsourced</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="89">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativeOriginalReporting</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="90">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativePrimarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="91">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativeSecondarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="92">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativeQuote</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="93">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativeNeedsSource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="94">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="95"/>
+  <line no="96">
     <token name="T_WHITESPACE">	</token>
     <token name="T_FOREACH">foreach</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -617,11 +1037,11 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="68">
+  <line no="97">
     <token name="T_WHITESPACE">		</token>
     <token name="T_COMMENT">/* @var $a \Article */</token>
   </line>
-  <line no="69">
+  <line no="98">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$numSources</token>
     <token name="T_WHITESPACE"> </token>
@@ -637,7 +1057,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="70">
+  <line no="99">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$numWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -653,7 +1073,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="71">
+  <line no="100">
     <token name="T_WHITESPACE">		</token>
     <token name="T_VARIABLE">$cumulativeGradeLevel</token>
     <token name="T_WHITESPACE"> </token>
@@ -666,7 +1086,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="72">
+  <line no="101">
     <token name="T_WHITESPACE">		</token>
     <token name="T_FOREACH">foreach</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -682,7 +1102,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="73">
+  <line no="102">
     <token name="T_WHITESPACE">			</token>
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_WHITESPACE"> </token>
@@ -691,7 +1111,7 @@
     <token name="T_LNUMBER">1</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="74">
+  <line no="103">
     <token name="T_WHITESPACE">			</token>
     <token name="T_VARIABLE">$cumulativeLinkQuality</token>
     <token name="T_WHITESPACE"> </token>
@@ -703,20 +1123,112 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="75">
+  <line no="104">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="76">
+  <line no="105"/>
+  <line no="106">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumSentences</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="107">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativeUnsourced</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumNotSourced</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="108">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativeOriginalReporting</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumOriginalReporting</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="109">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativePrimarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumPrimarySource</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="110">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativeSecondarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumSecondarySource</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="111">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativeQuote</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumQuote</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="112">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_VARIABLE">$cumulativeNeedsSource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PLUS_EQUAL">+=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$a</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getNumNeedsSource</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="113">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="77"/>
-  <line no="78">
+  <line no="114"/>
+  <line no="115">
     <token name="T_WHITESPACE">	</token>
     <token name="T_COMMENT">// Ternary operations added to resolve divide by zero errors</token>
   </line>
-  <line no="79">
+  <line no="116">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$linksPerArticle</token>
     <token name="T_WHITESPACE"> </token>
@@ -739,7 +1251,7 @@
     <token name="T_VARIABLE">$numArticles</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="80">
+  <line no="117">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$linksPerMWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -766,7 +1278,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="81">
+  <line no="118">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$sourcesPerArticle</token>
     <token name="T_WHITESPACE"> </token>
@@ -789,7 +1301,7 @@
     <token name="T_VARIABLE">$numArticles</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="82">
+  <line no="119">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$sourcesPerMWords</token>
     <token name="T_WHITESPACE"> </token>
@@ -816,7 +1328,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="83">
+  <line no="120">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$wordsPerArticle</token>
     <token name="T_WHITESPACE"> </token>
@@ -839,7 +1351,30 @@
     <token name="T_VARIABLE">$numArticles</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="84">
+  <line no="121">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$sentencesPerArticle</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$numArticles</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$numArticles</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="122">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$avgGradeLevel</token>
     <token name="T_WHITESPACE"> </token>
@@ -862,7 +1397,145 @@
     <token name="T_VARIABLE">$numArticles</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="85">
+  <line no="123">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgUnsourced</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeUnsourced</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="124">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgOriginalReporting</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeOriginalReporting</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="125">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgPrimarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativePrimarySource</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="126">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgSecondarySource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSecondarySource</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="127">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgQuote</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeQuote</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="128">
+    <token name="T_WHITESPACE">	</token>
+    <token name="T_VARIABLE">$avgNeedsSource</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IS_EQUAL">==</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_QUESTION_MARK">?</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_COLON">:</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$cumulativeNeedsSource</token>
+    <token name="T_PHPDOX_DIV">/</token>
+    <token name="T_VARIABLE">$cumulativeSentenceCount</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="129">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$linkQualityAverage</token>
     <token name="T_WHITESPACE"> </token>
@@ -886,15 +1559,15 @@
     <token name="T_VARIABLE">$numLinks</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="86"/>
-  <line no="87">
+  <line no="130"/>
+  <line no="131">
     <token name="T_WHITESPACE">	</token>
     <token name="T_GLOBAL">global</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$qualityDefinition</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="88">
+  <line no="132">
     <token name="T_WHITESPACE">	</token>
     <token name="T_VARIABLE">$quality</token>
     <token name="T_WHITESPACE"> </token>
@@ -909,9 +1582,9 @@
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="89"/>
-  <line no="90"/>
-  <line no="91">
+  <line no="133"/>
+  <line no="134"/>
+  <line no="135">
     <token name="T_WHITESPACE">	</token>
     <token name="T_IF">if</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -926,25 +1599,139 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="92">
+  <line no="136">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Number of Articles: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;p&gt;Number of Articles: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_VARIABLE">$numArticles</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="93">
+  <line no="137">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Links per Article: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Percent Unsourced: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgUnsourced</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="138">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Percent Original Reporting: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgOriginalReporting</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="139">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Percent Primary Source: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgPrimarySource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="140">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Percent Secondary Source: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgSecondarySource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="141">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Percent Quote: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgQuote</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="142">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Percent That Needs A Source: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgNeedsSource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="143">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Links per Article: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -954,14 +1741,14 @@
     <token name="T_LNUMBER">2</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="94">
+  <line no="144">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Links per 1000 Words: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Links per 1000 Words: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -971,14 +1758,14 @@
     <token name="T_LNUMBER">2</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="95">
+  <line no="145">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Link Quality: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Link Quality: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -991,15 +1778,15 @@
     <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
     <token name="T_ENCAPSED_AND_WHITESPACE"> (</token>
     <token name="T_VARIABLE">$quality</token>
-    <token name="T_ENCAPSED_AND_WHITESPACE">)&lt;/h1&gt;</token>
+    <token name="T_ENCAPSED_AND_WHITESPACE">)&lt;br/&gt;</token>
     <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="96">
+  <line no="146">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Sources in Text per Article: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Sources in Text per Article: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -1009,14 +1796,14 @@
     <token name="T_LNUMBER">2</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="97">
+  <line no="147">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Sources in Text per 1000 Words: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Sources in Text per 1000 Words: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -1026,14 +1813,14 @@
     <token name="T_LNUMBER">2</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="98">
+  <line no="148">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Average Word Count: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Word Count: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -1043,14 +1830,31 @@
     <token name="T_LNUMBER">0</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="99">
+  <line no="149">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Average Flesch-Kincaid Grade Level: "</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Sentence Count: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$sentencesPerArticle</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">0</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;br/&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="150">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"Average Flesch-Kincaid Grade Level: "</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_STRING">number_format</token>
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
@@ -1060,14 +1864,14 @@
     <token name="T_LNUMBER">1</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/p&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="100">
+  <line no="151">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="101">
+  <line no="152">
     <token name="T_WHITESPACE">	</token>
     <token name="T_ELSE">else</token>
     <token name="T_WHITESPACE"> </token>
@@ -1084,7 +1888,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="102">
+  <line no="153">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1098,7 +1902,121 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="103">
+  <line no="154">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Percent Unsourced: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgUnsourced</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="155">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Percent Original Reporting: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgOriginalReporting</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="156">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Percent Primary Source: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgPrimarySource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="157">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Percent Secondary Source: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgSecondarySource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="158">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Percent Quote: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgQuote</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="159">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Percent That Needs A Source: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$avgNeedsSource</token>
+    <token name="T_PHPDOX_MULT">*</token>
+    <token name="T_LNUMBER">100</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_LNUMBER">2</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"%&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="160">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1112,7 +2030,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="104">
+  <line no="161">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1129,7 +2047,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="105">
+  <line no="162">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1150,7 +2068,7 @@
     <token name="T_PHPDOX_DOUBLE_QUOTES">"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="106">
+  <line no="163">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1164,7 +2082,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="107">
+  <line no="164">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1178,7 +2096,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="108">
+  <line no="165">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1192,7 +2110,21 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="109">
+  <line no="166">
+    <token name="T_WHITESPACE">		</token>
+    <token name="T_PRINT">print</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;Sentence Count: "</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_STRING">number_format</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$sentencesPerArticle</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="167">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
@@ -1209,11 +2141,11 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="110">
+  <line no="168">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="111">
+  <line no="169">
     <token name="T_WHITESPACE">	</token>
     <token name="T_ELSE">else</token>
     <token name="T_WHITESPACE"> </token>
@@ -1230,18 +2162,18 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="112">
+  <line no="170">
     <token name="T_WHITESPACE">		</token>
     <token name="T_PRINT">print</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"&lt;h1 class='lead'&gt;No Articles to Analyze&lt;/h1&gt;"</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="113">
+  <line no="171">
     <token name="T_WHITESPACE">	</token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="114">
+  <line no="172">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
 </source>

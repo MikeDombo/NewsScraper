@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="Article" namespace="" name="Article" abstract="false" final="false" start="7" end="259">
-  <file path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Article.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Article.php" size="4488" time="2017-02-07T21:57:44+01:00" unixtime="1486501064" sha1="17f2a43ac2973ebb03e4ade7ad2b44bf9e17771d" relative="Article.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="Article" namespace="" name="Article" abstract="false" final="false" start="7" end="364">
+  <file path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="Article.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/Article.php" size="6542" time="2017-03-18T20:22:38+01:00" unixtime="1489864958" sha1="932c5e060c41a528db07f7cfbce8983c7687e028" relative="Article.php"/>
   <docblock>
     <description compact="Class to hold all data about individual articles based on the structure of the Articles table of the database"/>
     <author value="Michael Dombrowski"/>
@@ -21,92 +21,99 @@
   <member name="isPrimarySource" visibility="private" static="false" line="21"/>
   <member name="hasUpdates" visibility="private" static="false" line="22"/>
   <member name="hasNotes" visibility="private" static="false" line="23"/>
-  <constructor name="__construct" start="25" end="26" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="getGradeLevel" start="31" end="33" abstract="false" final="false" static="false" visibility="public">
+  <member name="numSentences" type="integer" default="0" visibility="private" static="false" line="25"/>
+  <member name="numOriginalReporting" type="integer" default="0" visibility="private" static="false" line="26"/>
+  <member name="numPrimarySource" type="integer" default="0" visibility="private" static="false" line="27"/>
+  <member name="numSecondarySource" type="integer" default="0" visibility="private" static="false" line="28"/>
+  <member name="numQuote" type="integer" default="0" visibility="private" static="false" line="29"/>
+  <member name="numNotSourced" type="integer" default="0" visibility="private" static="false" line="30"/>
+  <member name="numNeedsSource" type="integer" default="0" visibility="private" static="false" line="31"/>
+  <constructor name="__construct" start="33" end="34" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getGradeLevel" start="39" end="41" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="float"/>
     </docblock>
   </method>
-  <method name="setGradeLevel" start="38" end="45" abstract="false" final="false" static="false" visibility="public">
+  <method name="setGradeLevel" start="46" end="53" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="float" variable="$gradeLevel"/>
     </docblock>
     <parameter name="gradeLevel" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getArticleURL" start="51" end="53" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticleURL" start="59" end="61" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setArticleURL" start="58" end="60" abstract="false" final="false" static="false" visibility="public">
+  <method name="setArticleURL" start="66" end="68" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$articleURL"/>
     </docblock>
     <parameter name="articleURL" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getHeadline" start="65" end="67" abstract="false" final="false" static="false" visibility="public">
+  <method name="getHeadline" start="73" end="75" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setHeadline" start="72" end="74" abstract="false" final="false" static="false" visibility="public">
+  <method name="setHeadline" start="80" end="82" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$headline"/>
     </docblock>
     <parameter name="headline" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getSubtitle" start="79" end="81" abstract="false" final="false" static="false" visibility="public">
+  <method name="getSubtitle" start="87" end="89" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setSubtitle" start="86" end="88" abstract="false" final="false" static="false" visibility="public">
+  <method name="setSubtitle" start="94" end="96" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$subtitle"/>
     </docblock>
     <parameter name="subtitle" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getAuthor" start="93" end="95" abstract="false" final="false" static="false" visibility="public">
+  <method name="getAuthor" start="101" end="103" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setAuthor" start="100" end="102" abstract="false" final="false" static="false" visibility="public">
+  <method name="setAuthor" start="108" end="110" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$author"/>
     </docblock>
     <parameter name="author" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPublisher" start="107" end="109" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPublisher" start="115" end="117" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setPublisher" start="114" end="116" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPublisher" start="122" end="124" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$publisher"/>
     </docblock>
     <parameter name="publisher" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getPublishDate" start="121" end="123" abstract="false" final="false" static="false" visibility="public">
+  <method name="getPublishDate" start="129" end="131" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setPublishDate" start="128" end="130" abstract="false" final="false" static="false" visibility="public">
+  <method name="setPublishDate" start="136" end="138" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$publishDate"/>
@@ -115,52 +122,52 @@
       <type full="DateTime" namespace="" name="DateTime"/>
     </parameter>
   </method>
-  <method name="getArticleText" start="135" end="137" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticleText" start="143" end="145" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setArticleText" start="142" end="144" abstract="false" final="false" static="false" visibility="public">
+  <method name="setArticleText" start="150" end="152" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$articleText"/>
     </docblock>
     <parameter name="articleText" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getArticleHTML" start="149" end="151" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticleHTML" start="157" end="159" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setArticleHTML" start="156" end="158" abstract="false" final="false" static="false" visibility="public">
+  <method name="setArticleHTML" start="164" end="166" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$articleHTML"/>
     </docblock>
     <parameter name="articleHTML" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getArticleSources" start="163" end="165" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticleSources" start="171" end="173" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setArticleSources" start="170" end="172" abstract="false" final="false" static="false" visibility="public">
+  <method name="setArticleSources" start="178" end="180" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$articleSources"/>
     </docblock>
     <parameter name="articleSources" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getRetrievalDate" start="177" end="179" abstract="false" final="false" static="false" visibility="public">
+  <method name="getRetrievalDate" start="185" end="187" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setRetrievalDate" start="184" end="186" abstract="false" final="false" static="false" visibility="public">
+  <method name="setRetrievalDate" start="192" end="194" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$retrievalDate"/>
@@ -169,69 +176,160 @@
       <type full="DateTime" namespace="" name="DateTime"/>
     </parameter>
   </method>
-  <method name="getArticleSection" start="191" end="193" abstract="false" final="false" static="false" visibility="public">
+  <method name="getArticleSection" start="199" end="201" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setArticleSection" start="198" end="200" abstract="false" final="false" static="false" visibility="public">
+  <method name="setArticleSection" start="206" end="208" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$articleSection"/>
     </docblock>
     <parameter name="articleSection" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getIsPrimarySource" start="205" end="207" abstract="false" final="false" static="false" visibility="public">
+  <method name="getIsPrimarySource" start="213" end="215" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setIsPrimarySource" start="212" end="214" abstract="false" final="false" static="false" visibility="public">
+  <method name="setIsPrimarySource" start="220" end="222" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$isPrimarySource"/>
     </docblock>
     <parameter name="isPrimarySource" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getHasUpdates" start="219" end="221" abstract="false" final="false" static="false" visibility="public">
+  <method name="getHasUpdates" start="227" end="229" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setHasUpdates" start="226" end="228" abstract="false" final="false" static="false" visibility="public">
+  <method name="setHasUpdates" start="234" end="236" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$hasUpdates"/>
     </docblock>
     <parameter name="hasUpdates" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getHasNotes" start="233" end="235" abstract="false" final="false" static="false" visibility="public">
+  <method name="getHasNotes" start="241" end="243" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setHasNotes" start="240" end="242" abstract="false" final="false" static="false" visibility="public">
+  <method name="setHasNotes" start="248" end="250" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$hasNotes"/>
     </docblock>
     <parameter name="hasNotes" byreference="false" type="{unknown}"/>
   </method>
-  <method name="getTextSources" start="247" end="249" abstract="false" final="false" static="false" visibility="public">
+  <method name="getTextSources" start="255" end="257" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <return type="mixed"/>
     </docblock>
   </method>
-  <method name="setTextSources" start="254" end="256" abstract="false" final="false" static="false" visibility="public">
+  <method name="setTextSources" start="262" end="264" abstract="false" final="false" static="false" visibility="public">
     <docblock>
       <description/>
       <param type="mixed" variable="$textSources"/>
     </docblock>
     <parameter name="textSources" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumSentences" start="269" end="271" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumSentences" start="276" end="278" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numSentences"/>
+    </docblock>
+    <parameter name="numSentences" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumOriginalReporting" start="283" end="285" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumOriginalReporting" start="290" end="292" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numOriginalReporting"/>
+    </docblock>
+    <parameter name="numOriginalReporting" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumPrimarySource" start="297" end="299" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumPrimarySource" start="304" end="306" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numPrimarySource"/>
+    </docblock>
+    <parameter name="numPrimarySource" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumSecondarySource" start="311" end="313" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumSecondarySource" start="318" end="320" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numSecondarySource"/>
+    </docblock>
+    <parameter name="numSecondarySource" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumQuote" start="325" end="327" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumQuote" start="332" end="334" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numQuote"/>
+    </docblock>
+    <parameter name="numQuote" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumNotSourced" start="339" end="341" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumNotSourced" start="346" end="348" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numNotSourced"/>
+    </docblock>
+    <parameter name="numNotSourced" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNumNeedsSource" start="353" end="355" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="setNumNeedsSource" start="360" end="362" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$numNeedsSource"/>
+    </docblock>
+    <parameter name="numNeedsSource" byreference="false" type="{unknown}"/>
   </method>
 </class>

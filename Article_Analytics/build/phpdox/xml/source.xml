@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <source xmlns="http://xml.phpdox.net/src">
   <dir name="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics">
-    <file name="Analysis.php" size="5152" time="2017-02-11T22:11:38+01:00" unixtime="1486847498" sha1="52c57c16f567a9c103bd6ad26e0fa61d0c6aece3" xml="tokens/Analysis.php.xml"/>
-    <file name="Article.php" size="4488" time="2017-02-07T21:57:44+01:00" unixtime="1486501064" sha1="17f2a43ac2973ebb03e4ade7ad2b44bf9e17771d" xml="tokens/Article.php.xml"/>
+    <file name="Analysis.php" size="9119" time="2017-03-18T21:39:36+01:00" unixtime="1489869576" sha1="60f46acc06822df033a0da35641b0c49018cc093" xml="tokens/Analysis.php.xml"/>
+    <file name="Article.php" size="6542" time="2017-03-18T20:22:38+01:00" unixtime="1489864958" sha1="932c5e060c41a528db07f7cfbce8983c7687e028" xml="tokens/Article.php.xml"/>
     <file name="authorAnalytics.php" size="2366" time="2017-02-10T20:46:08+01:00" unixtime="1486755968" sha1="778d5e944b8f3b78d68457a4b2449d61f258f5a2" xml="tokens/authorAnalytics.php.xml"/>
-    <file name="classify.php" size="4483" time="2017-02-25T20:55:46+01:00" unixtime="1488052546" sha1="ad6fbab9e11968f20cd7b98cb47ef3913ed67a7c" xml="tokens/classify.php.xml"/>
+    <file name="classify.php" size="4457" time="2017-02-25T20:59:41+01:00" unixtime="1488052781" sha1="76b73732d45f919d742e00e2a2ba2fb5ade14cc8" xml="tokens/classify.php.xml"/>
     <file name="dailyAnalytics.php" size="2499" time="2017-02-10T20:46:00+01:00" unixtime="1486755960" sha1="ae27b781870804ec9bf48c6aaa2f4be0a2e7f4b2" xml="tokens/dailyAnalytics.php.xml"/>
-    <file name="Database.php" size="6627" time="2017-02-10T20:47:58+01:00" unixtime="1486756078" sha1="b5f7f7157e801fcd6ce8c22e870af7bda35ef710" xml="tokens/Database.php.xml"/>
+    <file name="Database.php" size="8563" time="2017-03-18T21:13:43+01:00" unixtime="1489868023" sha1="d952d0bf1e3845f03e7ffbfaae7885d52b1ed60a" xml="tokens/Database.php.xml"/>
     <file name="DBConnection.php" size="304" time="2017-02-07T22:29:11+01:00" unixtime="1486502951" sha1="4e0e869590a075ae7c85a7ee522ca250073b4465" xml="tokens/DBConnection.php.xml"/>
     <file name="index.php" size="2138" time="2017-02-10T20:45:10+01:00" unixtime="1486755910" sha1="6ea88b6dc51af3b24a79dceffdb3eb8a48e065a6" xml="tokens/index.php.xml"/>
     <file name="makeNav.php" size="1878" time="2017-01-23T06:03:35+01:00" unixtime="1485147815" sha1="c08f18b0f1dfcd5913ae49ca42c0a7a2cc79ef7f" xml="tokens/makeNav.php.xml"/>
     <file name="route.php" size="747" time="2017-01-22T01:45:41+01:00" unixtime="1485045941" sha1="e4302f9a0920deddc25b3a5678e898291fc1d8ad" xml="tokens/route.php.xml"/>
     <file name="sectionAnalytics.php" size="2330" time="2017-02-10T20:45:49+01:00" unixtime="1486755949" sha1="563b62d60546899591da479407e3c6c78a7c8863" xml="tokens/sectionAnalytics.php.xml"/>
     <file name="sourcesListing.php" size="3985" time="2017-02-10T18:12:12+01:00" unixtime="1486746732" sha1="e617cbcbdb67f6322ebc3a75568d77a7f100fd8e" xml="tokens/sourcesListing.php.xml"/>
-    <file name="tableTemplate.php" size="444" time="2017-02-10T20:44:36+01:00" unixtime="1486755876" sha1="e0d35558cd5978dbc4118b2fe48d6efc612d2747" xml="tokens/tableTemplate.php.xml"/>
+    <file name="tableTemplate.php" size="508" time="2017-03-18T21:34:02+01:00" unixtime="1489869242" sha1="b36ef9ee32082b297624b1fadf9251b9d7bb0750" xml="tokens/tableTemplate.php.xml"/>
   </dir>
 </source>
