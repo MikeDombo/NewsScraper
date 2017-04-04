@@ -1,0 +1,1 @@
+UPDATE `fragments-table` SET `Train` = 1 WHERE `IsSource` != -1 AND `IsSource` != 4 AND `IsSource` != `Guess` AND `Train` != 1

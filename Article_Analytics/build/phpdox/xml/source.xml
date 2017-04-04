@@ -4,7 +4,7 @@
     <file name="Analysis.php" size="9119" time="2017-03-18T21:39:36+01:00" unixtime="1489869576" sha1="60f46acc06822df033a0da35641b0c49018cc093" xml="tokens/Analysis.php.xml"/>
     <file name="Article.php" size="6542" time="2017-03-18T20:22:38+01:00" unixtime="1489864958" sha1="932c5e060c41a528db07f7cfbce8983c7687e028" xml="tokens/Article.php.xml"/>
     <file name="authorAnalytics.php" size="2366" time="2017-02-10T20:46:08+01:00" unixtime="1486755968" sha1="778d5e944b8f3b78d68457a4b2449d61f258f5a2" xml="tokens/authorAnalytics.php.xml"/>
-    <file name="classify.php" size="4457" time="2017-02-25T20:59:41+01:00" unixtime="1488052781" sha1="76b73732d45f919d742e00e2a2ba2fb5ade14cc8" xml="tokens/classify.php.xml"/>
+    <file name="classify.php" size="4504" time="2017-03-20T00:20:28+01:00" unixtime="1489965628" sha1="83a8b627b3535a8e9c662aed0b886dc547dbb66a" xml="tokens/classify.php.xml"/>
     <file name="dailyAnalytics.php" size="2499" time="2017-02-10T20:46:00+01:00" unixtime="1486755960" sha1="ae27b781870804ec9bf48c6aaa2f4be0a2e7f4b2" xml="tokens/dailyAnalytics.php.xml"/>
     <file name="Database.php" size="8563" time="2017-03-18T21:13:43+01:00" unixtime="1489868023" sha1="d952d0bf1e3845f03e7ffbfaae7885d52b1ed60a" xml="tokens/Database.php.xml"/>
     <file name="DBConnection.php" size="304" time="2017-02-07T22:29:11+01:00" unixtime="1486502951" sha1="4e0e869590a075ae7c85a7ee522ca250073b4465" xml="tokens/DBConnection.php.xml"/>

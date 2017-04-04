@@ -144,3 +144,5 @@ $RECYCLE.BIN/
 */*.db
 *.db
 *.doctree
+.scannerwork/
+.scannerwork/*

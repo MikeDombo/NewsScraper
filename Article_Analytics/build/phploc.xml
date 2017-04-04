@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phploc>
-  <loc>1489</loc>
+  <loc>1490</loc>
   <lloc>412</lloc>
   <llocClasses>175</llocClasses>
   <llocFunctions>121</llocFunctions>
   <llocGlobal>116</llocGlobal>
-  <cloc>221</cloc>
+  <cloc>222</cloc>
   <ccn>101</ccn>
   <ccnMethods>32</ccnMethods>
   <interfaces>0</interfaces>

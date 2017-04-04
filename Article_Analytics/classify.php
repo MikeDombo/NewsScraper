@@ -8,11 +8,12 @@
 		return;
 	}
 	if($_GET["answer"] > -1 && isset($_GET["ID"])){
-		$q = $pdo->exec("UPDATE `Article-Fragments` SET `IsSource`=".$_GET["answer"]." WHERE `ID` =".$_GET["ID"]);
+		$q = $pdo->exec("UPDATE `Fragments-Table` SET `IsSource`=".$_GET["answer"]." WHERE `ID` =".$_GET["ID"]);
 	}
-	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource` FROM `Article-Fragments` WHERE `IsSource` = -1 ORDER BY RAND() LIMIT 0,1");
+	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource`, `Guess` FROM `Fragments-Table` WHERE `IsSource` = -1 ORDER BY RAND() LIMIT 0,1");
 	$new_fragment = $q->fetchAll()[0];
-	$prediction = exec('python ../Auto_Classifier/app.py -p "'.$new_fragment["Fragment"].'"');
+	//$prediction = exec('python ../Auto_Classifier/app.py -p "'.$new_fragment["Fragment"].'"');
+	$prediction = $new_fragment["Guess"];
 	echo json_encode(["ID"=>$new_fragment["ID"], "Fragment"=>$new_fragment["Fragment"], "Prediction"=>intval($prediction)]);
 }
 if(!isset($_GET["answer"])){

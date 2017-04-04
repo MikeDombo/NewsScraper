@@ -10,11 +10,14 @@ from sklearn import metrics
 from fetch_article_fragments import dataset
 from sklearn.externals import joblib
 import os.path
+import numpy as np
+from decimal import *
 
 seed = 534654321
 model_filename = 'trained.pkl'
 
 categories = ["Not a Source", "Original Reporting", "Primary Source", "Secondary Source", "Quote", "Should Source"]
+
 
 def train_and_print(limit=10):
 	my_train = dataset("train", categories, seed, limit=limit)
@@ -32,18 +35,27 @@ def train_and_print(limit=10):
 	predicted = text_clf.predict(my_test.data)
 	print(metrics.classification_report(my_test.target, predicted, target_names=my_test.target_names))
 
+	p = len(categories)
+	classification_matrix = np.zeros((p, p)).astype(int)
+	for i, a in enumerate(my_test.target):
+		if a != predicted[i]:
+			classification_matrix[a][predicted[i]] += 1
+	for i, correct in enumerate(classification_matrix):
+		print("")
+		print(categories[i] + " misclassified as:")
+		s = sum(correct)
+		for wrong, numWrong in enumerate(correct):
+			if wrong != i:
+				percent = (numWrong.item() / float(s.item()))*100
+				percentStr = str(Decimal(percent).quantize(Decimal(10)**-2))
+				print("\t" + categories[wrong] + ": " + str(numWrong) + " (" + percentStr + "%)")
+
 if len(sys.argv) > 1:
 	if sys.argv[1] == "-t":
 		if len(sys.argv) > 2:
 			train_and_print(int(sys.argv[2]))
 		else:
 			train_and_print()
-
-	elif sys.argv[1] == "-p":
-		if os.path.isfile(model_filename):
-			text_clf = joblib.load(model_filename)
-			predicted = text_clf.predict([sys.argv[2]])
-			print(predicted[0])
 
 	elif sys.argv[1] == "-l":
 		conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="newsscraper", charset="utf8")
@@ -60,6 +72,13 @@ if len(sys.argv) > 1:
 	elif sys.argv[1] == "-r":
 		if os.path.isfile(model_filename):
 			running_set = dataset("run", categories, seed)
+			text_clf = joblib.load(model_filename)
+			for i, text in enumerate(running_set.data):
+				predicted = text_clf.predict([text])
+				running_set.save_data_to_db(running_set.data_ids[i], predicted[0])
+	elif sys.argv[1] == "-ra":
+		if os.path.isfile(model_filename):
+			running_set = dataset("run-all", categories, seed)
 			text_clf = joblib.load(model_filename)
 			for i, text in enumerate(running_set.data):
 				predicted = text_clf.predict([text])
