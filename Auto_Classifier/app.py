@@ -16,7 +16,7 @@ from decimal import *
 seed = 534654321
 model_filename = 'trained.pkl'
 
-categories = ["Not a Source", "Original Reporting", "Primary Source", "Secondary Source", "Quote", "Should Source"]
+categories = ["Not a Source", "Original Reporting", "Primary Source", "Secondary Source", "Should Source"]
 
 
 def train_and_print(limit=10):
@@ -39,7 +39,7 @@ def train_and_print(limit=10):
 	classification_matrix = np.zeros((p, p)).astype(int)
 	for i, a in enumerate(my_test.target):
 		if a != predicted[i]:
-			classification_matrix[a][predicted[i]] += 1
+			classification_matrix[categories.index(my_test.categories_names[a])][categories.index(my_test.categories_names[predicted[i]])] += 1
 	for i, correct in enumerate(classification_matrix):
 		print("")
 		print(categories[i] + " misclassified as:")
