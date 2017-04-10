@@ -8,7 +8,7 @@
 		return;
 	}
 	if($_GET["answer"] > -1 && isset($_GET["ID"])){
-		$q = $pdo->exec("UPDATE `Fragments-Table` SET `IsSource`=".$_GET["answer"]." WHERE `ID` =".$_GET["ID"]);
+		$q = $pdo->exec("UPDATE `Fragments-Table` SET `IsSource`=".$_GET["answer"].", `Time_Classified`=NOW() WHERE `ID` =".$_GET["ID"]);
 	}
 	$q = $pdo->query("SELECT `ID`, `Fragment`, `IsSource`, `Guess` FROM `Fragments-Table` WHERE `IsSource` = -1 ORDER BY RAND() LIMIT 0,1");
 	$new_fragment = $q->fetchAll()[0];
