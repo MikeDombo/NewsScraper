@@ -3,11 +3,10 @@ from db_connection import dbConnection
 import re
 import random
 
-def main():
 
-	quote_regex = r'(\"[^\"]*\")'
-	sentence_regex = ur'([\.\?!][\'\"\u2018\u2019\u201c\u201d\)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)\s*)'
-	#sentence_regex = ur'(.*[\.\?!][\'\"\u2018\u2019\u201c\u201d\)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.))\s+'
+def main():
+	sentence_regex = ur'([\.\?!][\'\"\u2018\u2019\u201c\u201d\)\]]*\s*(?<!\w\.\w.)(?<![A-Z][a-z][a-z]\.)(?<![A-Z][a-z]\.)(?<![A-Z]\.)\s+)'
+	regex = re.compile(sentence_regex, flags=re.UNICODE)
 
 	dbOptions = {'host': 'localhost', 'user': 'root', 'password': '', 'file': 'newsscraper'}
 	verify_db(dbOptions)
@@ -15,9 +14,9 @@ def main():
 	articles = list(db.get_all_article_text())
 	random.shuffle(articles)
 
-	for a in articles:
-		print "WORKING ON: "+a[0]
-		fragments = re.split(sentence_regex, a[1])
+	for i,a in enumerate(articles):
+		print("WORKING ON: "+a[0])
+		fragments = regex.split(a[1])
 		new_fragments = []
 		for f in fragments:
 			if f is not None:
@@ -56,7 +55,9 @@ def verify_db(options):
 						`ArticleURL` text NOT NULL,
 						`Fragment` text NOT NULL ,
 						`IsSource` integer DEFAULT -1,
-						`Guess` integer NULL
+						`Guess` integer NULL,
+						`Train` integer NULL,
+						`Time_Classified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 					);''')
 		conn.commit()
 	conn.close()

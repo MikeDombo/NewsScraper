@@ -4,8 +4,7 @@ from warnings import filterwarnings
 
 class dbConnection(object):
 	conn = None
-	#Fragment_Table = "Article-Fragments"
-	Fragment_Table = "Fragments-Table"
+	Fragment_Table = "fragments-table-fix"
 
 	def __init__(self, options):
 		filterwarnings('ignore', category=MySQLdb.Warning)
