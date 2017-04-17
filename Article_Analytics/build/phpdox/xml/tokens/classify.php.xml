@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="4504" time="2017-03-20T00:20:28+01:00" unixtime="1489965628" sha1="83a8b627b3535a8e9c662aed0b886dc547dbb66a" relative="classify.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics" file="classify.php" realpath="C:/Users/Mike/Desktop/NewsScraper/Article_Analytics/classify.php" size="4529" time="2017-04-08T22:09:52+02:00" unixtime="1491682192" sha1="536b074cfdf60727b38f7465ce80305a47fe5fb6" relative="classify.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php </token>
     <token name="T_IF">if</token>
@@ -136,7 +136,7 @@
     <token name="T_CONSTANT_ENCAPSED_STRING">"answer"</token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_DOT">.</token>
-    <token name="T_CONSTANT_ENCAPSED_STRING">" WHERE `ID` ="</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">", `Time_Classified`=NOW() WHERE `ID` ="</token>
     <token name="T_PHPDOX_DOT">.</token>
     <token name="T_VARIABLE">$_GET</token>
     <token name="T_PHPDOX_OPEN_SQUARE">[</token>
