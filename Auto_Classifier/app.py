@@ -19,7 +19,7 @@ seed = 534654321
 model_filename = 'trained.pkl'
 
 # List of categories to train on. Must be a subset of the categories available in fetch_article_fragments.py (dataset class)
-categories = ["Not a Source", "Original Reporting", "Primary Source", "Secondary Source", "Should Source"]
+categories = ["Not a Source", "Original Reporting", "Primary Source", "Secondary Source", "Quote", "Should Source"]
 
 
 def train_and_print(limit=10):
@@ -77,7 +77,7 @@ if len(sys.argv) > 1:
 	elif sys.argv[1] == "-l":
 		conn = MySQLdb.connect(host="localhost", user="root", passwd="", db="newsscraper", charset="utf8")
 		c = conn.cursor()
-		c.execute("SELECT * FROM `fragments-table` WHERE `IsSource` > -1")
+		c.execute("SELECT * FROM `fragments-table` WHERE `IsSource` != -1 and `IsSource` != 4")
 		trained = c.fetchall()
 		for a in trained:
 			c.execute("UPDATE `fragments-table-fix` SET `IsSource`=%s WHERE `ArticleURL`=%s AND `Fragment`=%s",
